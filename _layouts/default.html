@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    
+    <link href='http://fonts.googleapis.com/css?family=Dosis:200,300|Montserrat:400,700'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/assets/javascript/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+    <div id="wrap">
+      {% include navigation.html %}
+      
+      <div class="page-content">
+        {{ content }}
+      </div>
+    </div>
+    
+    {% include footer.html %}
+  </body>
+</html>
