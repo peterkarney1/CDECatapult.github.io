@@ -13,6 +13,7 @@ nav.navbar.navbar-default {
   background: #fff;
   border: 0;
   border-radius: 0;
+  border-left: 9px solid #ededed;
 }
 nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a {
   font-family: 'Montserrat', sans-serif;
@@ -82,16 +83,112 @@ body {
   height: 60px;
   background-color: #f5f5f5;
 }
-.block {
-  height: 200px;
-  background: red;
-}
 .block.homepage-challenge-block {
-  background: blue;
+  border-left: 9px solid #5eaeba;
+  background: url(/assets/images/graph.png) center 55px no-repeat #65bbc8;
+  padding-top: 50px;
+  background-size: 300px;
+}
+.block.homepage-challenge-block .container h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #076d7c;
+  margin: 0 0 0 0;
+  text-shadow: 3px 3px 0 #62a8b1;
+  padding-top: 5px;
+  font-size: 23px;
+  line-height: 120%;
+}
+.block.homepage-challenge-block .container h1 span.dotted-line {
+  display: block;
+}
+.block.homepage-challenge-block .container h1 span.highlight {
+  background: white;
+  padding: 2px;
+  text-shadow: 3px 3px 0 #f8e5e2;
+  color: #e2604d;
+}
+.block.homepage-challenge-block .container h2 {
+  font-family: 'Dosis', sans-serif;
+  color: #fff;
+  text-align: center;
+  font-weight: 100;
+  width: 100%;
+  font-size: 20px;
+  margin: 20px 0 0 0;
+}
+@media (min-width: 400px) {
+  .block.homepage-challenge-block {
+    background-size: 400px;
+  }
+  .block.homepage-challenge-block .container h1 {
+    padding-top: 5px;
+    font-size: 30px;
+    line-height: 120%;
+  }
+  .block.homepage-challenge-block .container h2 {
+    font-size: 20px;
+    width: 80%;
+    margin: 40px auto;
+  }
+}
+@media (min-width: 500px) {
+  .block.homepage-challenge-block {
+    background-size: 500px;
+  }
+  .block.homepage-challenge-block .container h1 {
+    padding-top: 5px;
+    font-size: 37px;
+    line-height: 120%;
+  }
+  .block.homepage-challenge-block .container h2 {
+    font-size: 26px;
+    width: 80%;
+    margin: 40px auto;
+  }
+}
+@media (min-width: 768px) {
+  .block.homepage-challenge-block {
+    background-size: 768px;
+  }
+  .block.homepage-challenge-block .container h1 {
+    font-size: 57px;
+  }
+  .block.homepage-challenge-block .container h2 {
+    font-size: 30px;
+    width: 80%;
+    margin: 40px auto;
+  }
+}
+@media (min-width: 992px) {
+  .block.homepage-challenge-block {
+    background-size: 992px;
+  }
+  .block.homepage-challenge-block .container h1 {
+    font-size: 65px;
+    line-height: 135%;
+  }
+  .block.homepage-challenge-block .container h2 {
+    font-size: 30px;
+    width: 65%;
+    margin: 40px auto;
+  }
+}
+@media (min-width: 1200px) {
+  .block.homepage-challenge-block .container h1 {
+    font-size: 65px;
+  }
 }
 .block.homepage-whowhathow-block {
-  background: green;
+  background: #399e85;
+  border-left: 9px solid #35937c;
 }
 .block.homepage-latest-block {
-  background: yellow;
+  background: #f8e29f;
+  border-left: 9px solid #e6d294;
+}
+.block {
+  min-height: 400px;
 }
