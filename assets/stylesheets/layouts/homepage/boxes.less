@@ -1,0 +1,53 @@
+.homepage-boxes {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  
+  .homepage-box {
+    padding: 10px;
+    
+    .inner {
+      background: #ecfdff;
+      min-height: 200px;
+      box-shadow: 5px 5px #58acbe;
+      text-decoration: none;
+      
+      .icon {
+        width: 83px;
+        height: 83px;
+        background: red;
+        margin: 0 auto 0 auto;
+        position: relative;
+        top: -30px;
+        
+        &.chat {
+          background: url(/assets/images/circle-chat.png) no-repeat center center;
+        }
+        
+        &.lightbulb {
+          background: url(/assets/images/circle-lightbulb.png) no-repeat center center;
+        }
+        
+        &.chart {
+          background: url(/assets/images/circle-graph.png) no-repeat center center;
+        }
+      }
+      
+      h3 {
+        .font-montserrat();
+        color: #e05c48;
+        text-decoration: underline;
+        text-align: center;
+        font-size: 14px;
+        margin-top: -10px;
+        text-transform: uppercase;
+      }
+      
+      p {
+        .font-dosis();
+        color: #272727;
+        padding: 10px;
+        text-align: center;
+      }
+    }
+  }
+}
