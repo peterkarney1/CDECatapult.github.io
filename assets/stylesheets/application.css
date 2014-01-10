@@ -439,7 +439,7 @@ body {
   font-size: 16px;
 }
 .subpage-layout .contact-the-team p.email {
-  font-size: 22px;
+  font-size: 15px;
   font-weight: bold;
   word-wrap: break-word;
 }
@@ -456,5 +456,8 @@ body {
   .subpage-layout .title h1 {
     float: left;
     margin: 25px 0 0 20px;
+  }
+  .subpage-layout .contact-the-team p.email {
+    font-size: 22px;
   }
 }
