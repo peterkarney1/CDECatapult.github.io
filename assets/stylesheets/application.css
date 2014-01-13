@@ -15,6 +15,10 @@ body {
   -webkit-font-smoothing: antialiased;
   background: #fff;
 }
+html.showheader .page-content {
+  background: url(/assets/images/grad-top.png) repeat-x #ffffff;
+  min-height: 100px;
+}
 nav.navbar.navbar-default {
   margin: 0;
   background: #fff;
@@ -81,13 +85,13 @@ body {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -174px;
+  margin: 0 auto -100px;
   /* Pad bottom by footer height */
-  padding: 0 0 174px;
+  padding: 0 0 100px;
 }
 /* Set the fixed height of the footer here */
 #footer {
-  height: 174px;
+  height: 100px;
   background-color: #fff;
 }
 #footer .container {
@@ -96,7 +100,29 @@ body {
 #footer .container a {
   margin-right: 5px;
 }
-#footer-gradient {
+html.showfooter {
+  /* Wrapper for page content to push down footer */
+  /* Set the fixed height of the footer here */
+}
+html.showfooter #wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -174px;
+  /* Pad bottom by footer height */
+  padding: 0 0 174px;
+}
+html.showfooter #footer {
+  height: 174px;
+  background-color: #fff;
+}
+html.showfooter #footer .container {
+  padding: 25px 0 0 0;
+}
+html.showfooter #footer .container a {
+  margin-right: 5px;
+}
+html.showfooter #footer-gradient {
   background: url(/assets/images/grad-bottom.png) bottom center repeat-x;
   height: 74px;
 }
@@ -321,7 +347,6 @@ body {
   min-height: 400px;
 }
 .subpage-layout {
-  background: url(/assets/images/grad-top.png) repeat-x #ffffff;
   min-height: 148px;
 }
 .subpage-layout .title {
@@ -547,4 +572,177 @@ body {
   .subpage-layout .contact-the-team p.email {
     font-size: 22px;
   }
+}
+.case-studies h2 {
+  font-family: 'Dosis', sans-serif;
+  text-align: left;
+  font-size: 35px;
+  color: #3e9e89;
+}
+.case-studies .row {
+  padding: 25px 0 60px 0;
+}
+.case-studies .row .intro-column h3 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.case-studies .row .intro-column.the-challenge h3 {
+  color: #df5c48;
+}
+.case-studies .row .intro-column.the-challenge p {
+  font-weight: bold;
+  font-size: 22px;
+}
+.case-studies .row .intro-column.the-solution h3 {
+  color: #3e9e89;
+}
+.case-studies .row .intro-column.the-solution p {
+  font-size: 18px;
+}
+.case-studies .tutorial {
+  background: #3e9e89;
+  min-height: 400px;
+  padding: 20px 0 50px 0;
+}
+.case-studies .tutorial h2 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ecfdff;
+  text-shadow: 4px 4px 0 #51a58c;
+  padding: 0 0 0 30px;
+}
+.case-studies .tutorial h3 {
+  font-family: 'Dosis', sans-serif;
+  color: #ecfdff;
+  padding: 0 0 30px 30px;
+  font-weight: bold;
+}
+.case-studies .tutorial .step {
+  background: #fff;
+  min-height: 300px;
+  padding: 30px;
+}
+.case-studies .tutorial .step.zebra1 {
+  background: #ecfdff;
+}
+.case-studies .tutorial .step.zebra2 {
+  background: #c3e6ec;
+}
+.case-studies .tutorial .step .step-circle {
+  border-radius: 100%;
+  background: #e05c49;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  padding: 5px 0 0 0;
+  font-size: 50px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  margin: -50px 0 0 0;
+}
+.case-studies .tutorial .step .step-content .step-text h4 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  color: #3e9e89;
+  font-size: 20px;
+}
+.case-studies .tutorial .step .step-content .step-text p {
+  font-size: 15px;
+}
+.case-studies .tutorial .step .step-content .step-text p.lead {
+  font-weight: bold;
+}
+.case-studies .tutorial .step .step-content .step-text a.btn.btn-default {
+  background: #3e9e89;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.case-studies .tutorial .step .step-content .step-text a.btn.btn-default .subtext {
+  color: #d4f3ec;
+  text-transform: uppercase;
+  display: block;
+  text-align: left;
+}
+.case-studies .tutorial .step .step-content .step-text a.btn.btn-default .text {
+  display: block;
+  text-align: left;
+  color: #fff;
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+}
+.case-studies .join-collaborate .text {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 25px;
+  padding: 20px 0 0 50px;
+  font-weight: bold;
+  color: #fff;
+}
+.case-studies .join-collaborate a.btn.btn-default {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+  border-radius: 0;
+  background: #dd5b48;
+  float: right;
+  margin: 30px auto;
+  padding: 20px 40px;
+  box-shadow: 4px 4px 0 #2b6e60;
+}
+.case-studies .useful-links {
+  background: #f8e29f;
+  padding: 20px 0;
+}
+.case-studies .useful-links h2 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #e05c48;
+  text-shadow: 4px 4px #f0c98b;
+}
+.case-studies .useful-links .useful-link-cols .useful-link-col h3 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 0;
+}
+.the-api h2 {
+  font-family: 'Dosis', sans-serif;
+  text-align: left;
+  font-size: 35px;
+  color: #3e9e89;
+}
+.the-api h3 {
+  font-size: 22px;
+}
+.the-api p.intro {
+  font-size: 20px;
+}
+.the-api .api-docs {
+  background: #b3dfe6;
+  min-height: 400px;
+  margin: 50px 0 0 0;
+  padding: 30px 0;
+}
+.the-api .api-docs .row .col.nav .inner {
+  height: 400px;
+  background: #ecfdff;
+  box-shadow: 4px 4px 0 #9bcdda;
+}
+.the-api .api-docs .row .col.content .inner {
+  height: 600px;
+  background: #fff;
 }
