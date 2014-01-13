@@ -719,6 +719,46 @@ html.showfooter #footer-gradient {
   font-size: 18px;
   margin-top: 0;
 }
+.howto-template .case-studies-column h2,
+.howto-template .how-tos-column h2 {
+  font-family: 'Dosis', sans-serif;
+  text-align: left;
+  font-size: 40px;
+}
+.howto-template .case-studies-column h2 {
+  color: #e05c48;
+}
+.howto-template .how-tos-column h2 {
+  color: #3e9e89;
+  margin-bottom: 50px;
+}
+.howto-template .how-tos-column ul.how-tos-list {
+  padding: 0;
+}
+.howto-template .how-tos-column ul.how-tos-list li.how-to-item {
+  list-style: none;
+  margin: 0 0 20px 0;
+}
+.howto-template .how-tos-column ul.how-tos-list li.how-to-item a {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  padding: 15px;
+  background: #3e9e89;
+  box-shadow: 4px 4px 0 #e2f1ed;
+  color: #fff;
+}
+.howto-template .how-tos-column ul.how-tos-list li.how-to-item a span {
+  display: block;
+  text-transform: uppercase;
+  color: #d4f3ec;
+}
+.howto-template .how-tos-column ul.how-tos-list li.how-to-item a strong {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 5px;
+}
 .the-api h2 {
   font-family: 'Dosis', sans-serif;
   text-align: left;

@@ -1,0 +1,53 @@
+.howto-template {
+  .case-studies-column, .how-tos-column {
+    h2 {
+      .font-dosis();
+      text-align: left;
+      font-size: 40px;
+    }
+  }
+  
+  .case-studies-column {
+    h2 {
+      color: @orange_red;
+    }
+  }
+  
+  .how-tos-column {
+    h2 {
+      color: @teal_green;
+      margin-bottom: 50px;
+    }
+    
+    ul.how-tos-list {
+      padding: 0;
+      
+      li.how-to-item {
+        list-style: none;
+        margin: 0 0 20px 0;
+        
+        a {
+          .font-montserrat();
+          display: block;
+          padding: 15px;
+          background: @teal_green;
+          box-shadow: 4px 4px 0 #e2f1ed;
+          color: #fff;
+          
+          span {
+            display: block;
+            text-transform: uppercase;
+            color: #d4f3ec;
+          }
+          
+          strong {
+            display: block;
+            font-weight: bold;
+            font-size: 18px;
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
