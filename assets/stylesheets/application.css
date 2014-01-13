@@ -774,6 +774,7 @@ html.showfooter #footer-gradient {
   min-height: 600px;
   background: #fff;
   padding-bottom: 30px;
+  box-shadow: 4px 4px 0 #9bcdda;
 }
 .the-api .api-docs .row .col.content .inner h1,
 .the-api .api-docs .row .col.content .inner h2,
