@@ -1,5 +1,6 @@
 ---
 layout: default
+code_highlight: true
 html_class: showheader
 title: API - The Open Health Data Platform
 page_title: The API
@@ -31,44 +32,13 @@ icon: circle-script.png
       <div class="row">
         <div class="col-sm-3 col nav">
           <div class="inner">
-            <ul>
-              {% for p in site.pages %}
-                {% if p.layout == "api" %}
-                  <li>
-                    <a {% if p.url == page.url %}class="active"{% endif %} href="{{ p.url }}">
-                      {{ p.title }}
-                    </a>
-                  </li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-            
-            <!-- <ul class="api-nav">
-              <li><a href="#">Introduction</a></li>
-              <li><a href="#">Authentication</a></li>
-              <li><a href="#">Errors</a></li>
-              <li><a href="#">Versioning</a></li>
-              <li><a href="#">Rights of Use</a></li>
-            </ul>
-            
-            <h4>API Endpoints</h4>
-            <ul class="api-nav">
-              <li><a href="#">Clinical Commissioning Groups</a></li>
-              <li><a href="#">GP Surgeries</a></li>
-              <li><a href="#">Patients</a></li>
-              <li><a href="#">Trusts</a></li>
-              <li><a href="#">Council Boundaries</a></li>
-              <li><a href="#">Ethnicities</a></li>
-              <li><a href="#">Medical Conditions</a></li>
-              <li><a href="#">Drug Names</a></li>
-              <li><a href="#">Drug Classes</a></li>
-            </ul> -->
+            {% include api-navigation.html %}
           </div>
         </div>
         
         <div class="col-sm-9 col content">
           <div class="inner">
-            
+            {{ content }}
           </div>
         </div>
       </div>

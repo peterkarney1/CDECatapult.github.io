@@ -738,11 +738,73 @@ html.showfooter #footer-gradient {
   padding: 30px 0;
 }
 .the-api .api-docs .row .col.nav .inner {
-  height: 400px;
   background: #ecfdff;
   box-shadow: 4px 4px 0 #9bcdda;
+  padding: 20px;
+}
+.the-api .api-docs .row .col.nav .inner ul {
+  padding: 0;
+}
+.the-api .api-docs .row .col.nav .inner ul li {
+  list-style: none;
+}
+.the-api .api-docs .row .col.nav .inner ul li a {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  font-size: 14px;
+  padding: 5px 5px;
+  color: #e05c48;
+  text-decoration: underline;
+}
+.the-api .api-docs .row .col.nav .inner ul li.active a {
+  color: #fff;
+  background: #e05c48;
+  text-decoration: none;
+}
+.the-api .api-docs .row .col.nav .inner h4 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  font-size: 16px;
+  color: #243032;
+  margin: 25px 0 10px 5px;
 }
 .the-api .api-docs .row .col.content .inner {
-  height: 600px;
+  min-height: 600px;
   background: #fff;
+  padding-bottom: 30px;
+}
+.the-api .api-docs .row .col.content .inner h1,
+.the-api .api-docs .row .col.content .inner h2,
+.the-api .api-docs .row .col.content .inner h3 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  color: #4ca790;
+  font-weight: bold;
+}
+.the-api .api-docs .row .col.content .inner h1 {
+  font-size: 25px;
+  padding: 30px 30px 10px 30px;
+}
+.the-api .api-docs .row .col.content .inner h2 {
+  font-size: 20px;
+  padding: 20px 30px 0px 30px;
+}
+.the-api .api-docs .row .col.content .inner h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #243032;
+  padding: 10px 30px 0px 30px;
+}
+.the-api .api-docs .row .col.content .inner p {
+  padding: 10px 30px;
+  font-size: 16px;
+}
+.the-api .api-docs .row .col.content .inner pre {
+  border: 0;
+  border-radius: 0;
+  background: #f2f2f2;
+  padding: 20px 30px;
 }
