@@ -126,6 +126,44 @@ html.showfooter #footer-gradient {
   background: url(/assets/images/grad-bottom.png) bottom center repeat-x;
   height: 74px;
 }
+#footer ul.nav.navbar-nav.navbar-right li a {
+  color: #e05c48;
+  font-size: 16px;
+}
+@media (min-width: 0px) {
+  #footer .social-links {
+    text-align: center;
+  }
+  #footer .footer-nav {
+    margin-bottom: 0;
+  }
+  #footer .footer-nav li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+  #footer .footer-nav li:first-child {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+  }
+}
+@media (min-width: 768px) {
+  #footer .social-links {
+    text-align: left;
+  }
+  #footer .footer-nav li {
+    width: auto;
+    border: 0;
+  }
+  #footer .footer-nav li:first-child {
+    margin-top: 0;
+    border-top: 0;
+  }
+  #footer .footer-nav li a:hover {
+    background: transparent;
+    text-decoration: underline;
+  }
+}
 .homepage-boxes {
   margin-bottom: 30px;
   margin-top: 20px;
@@ -727,6 +765,36 @@ html.showfooter #footer-gradient {
 }
 .howto-template .case-studies-column h2 {
   color: #e05c48;
+  margin-bottom: 50px;
+}
+.howto-template .case-studies-column div.case-study {
+  margin-bottom: 30px;
+}
+.howto-template .case-studies-column div.case-study img {
+  float: left;
+  max-width: 160px;
+  max-height: 160px;
+  box-shadow: 5px 5px 0 #ddeaf2;
+}
+.howto-template .case-studies-column div.case-study .article {
+  padding-left: 160px;
+  margin-top: -185px;
+}
+.howto-template .case-studies-column div.case-study .article .title {
+  color: #e05c48;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: underline;
+  padding: 40px 0 5px 0;
+}
+.howto-template .case-studies-column div.case-study .article .organisation {
+  color: #373737;
+  font-weight: bold;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.howto-template .case-studies-column div.case-study .article .description {
+  color: #252525;
 }
 .howto-template .how-tos-column h2 {
   color: #3e9e89;
