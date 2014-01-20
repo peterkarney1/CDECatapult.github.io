@@ -767,33 +767,34 @@ html.showfooter #footer-gradient {
   color: #e05c48;
   margin-bottom: 50px;
 }
-.howto-template .case-studies-column div.case-study {
+.howto-template .case-studies-column a.case-study {
+  display: block;
   margin-bottom: 30px;
 }
-.howto-template .case-studies-column div.case-study img {
+.howto-template .case-studies-column a.case-study img {
   float: left;
   max-width: 160px;
   max-height: 160px;
   box-shadow: 5px 5px 0 #ddeaf2;
 }
-.howto-template .case-studies-column div.case-study .article {
+.howto-template .case-studies-column a.case-study .article {
   padding-left: 160px;
   margin-top: -185px;
 }
-.howto-template .case-studies-column div.case-study .article .title {
+.howto-template .case-studies-column a.case-study .article .article-title {
   color: #e05c48;
   font-weight: bold;
   font-size: 18px;
   text-decoration: underline;
   padding: 40px 0 5px 0;
 }
-.howto-template .case-studies-column div.case-study .article .organisation {
+.howto-template .case-studies-column a.case-study .article .organisation {
   color: #373737;
   font-weight: bold;
   font-size: 16px;
   padding-bottom: 10px;
 }
-.howto-template .case-studies-column div.case-study .article .description {
+.howto-template .case-studies-column a.case-study .article .description {
   color: #252525;
 }
 .howto-template .how-tos-column h2 {
