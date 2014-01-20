@@ -14,12 +14,19 @@
     <script src="/assets/javascript/handlebars.js"></script>
     <script src="/assets/javascript/sprintf.js"></script>
     <script src="/assets/javascript/github_activity.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
     
-    {% if page.code_highlight %}
-      <link rel="stylesheet" href="/assets/stylesheets/vendor/atelier-forest.light.css">
-      <script src="/assets/javascript/highlight.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script>
-    {% endif %}
+    <link rel="stylesheet" href="/assets/stylesheets/vendor/atelier-forest.light.css">
+    <script src="/assets/javascript/highlight.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+      
+      $(function() {
+        $('pre').each(function(key, block) {
+          hljs.highlightBlock(block);
+        })
+      });
+    </script>
   </head>
   
   <body>

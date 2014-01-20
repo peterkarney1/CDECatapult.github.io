@@ -715,6 +715,16 @@ html.showfooter #footer-gradient {
   font-weight: bold;
   border-bottom: 2px solid #fff;
 }
+.case-studies .tutorial .step .step-content .step-code pre,
+.case-studies .tutorial .step .step-content .step-code code {
+  border: 0;
+  display: block;
+  background: #fff;
+  border-radius: 0;
+  height: 270px;
+  overflow: auto;
+  box-shadow: 4px 4px 0 #a9d3e0;
+}
 .case-studies .join-collaborate .text {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -756,6 +766,18 @@ html.showfooter #footer-gradient {
   font-weight: bold;
   font-size: 18px;
   margin-top: 0;
+}
+.case-studies .useful-links .useful-link-cols .useful-link-col ul {
+  padding: 0;
+}
+.case-studies .useful-links .useful-link-cols .useful-link-col ul li {
+  list-style: none;
+  font-size: 18px;
+  color: #e05c48;
+}
+.case-studies .useful-links .useful-link-cols .useful-link-col ul li a {
+  color: #e05c48;
+  text-decoration: underline;
 }
 .howto-template .case-studies-column h2,
 .howto-template .how-tos-column h2 {
