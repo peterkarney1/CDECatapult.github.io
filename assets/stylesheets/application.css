@@ -472,26 +472,26 @@ html.showfooter #footer-gradient {
   font-size: 35px;
   color: #3e9e89;
 }
-.case-studies .row {
+.case-studies .intro-text {
   padding: 25px 0 60px 0;
 }
-.case-studies .row .intro-column h3 {
+.case-studies .intro-text .intro-column h3 {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
   text-transform: uppercase;
 }
-.case-studies .row .intro-column.the-challenge h3 {
+.case-studies .intro-text .intro-column.the-challenge h3 {
   color: #df5c48;
 }
-.case-studies .row .intro-column.the-challenge p {
+.case-studies .intro-text .intro-column.the-challenge p {
   font-weight: bold;
   font-size: 22px;
 }
-.case-studies .row .intro-column.the-solution h3 {
+.case-studies .intro-text .intro-column.the-solution h3 {
   color: #3e9e89;
 }
-.case-studies .row .intro-column.the-solution p {
+.case-studies .intro-text .intro-column.the-solution p {
   font-size: 18px;
 }
 .case-studies .tutorial {
@@ -513,6 +513,56 @@ html.showfooter #footer-gradient {
   color: #ecfdff;
   padding: 0 0 30px 30px;
   font-weight: bold;
+}
+.case-studies .tutorial .howto-links {
+  padding: 0;
+}
+.case-studies .tutorial .howto-links li {
+  list-style: none;
+  padding: 10px;
+}
+.case-studies .tutorial .howto-links li a {
+  display: block;
+  min-height: 42px;
+  border-bottom: 2px solid #2b6e60;
+  background-color: #e05c48;
+  /* Old browsers */
+  background-color: -moz-linear-gradient(top, #e05c48 0%, #d6503e 100%);
+  /* FF3.6+ */
+  background-color: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e05c48), color-stop(100%, #d6503e));
+  /* Chrome,Safari4+ */
+  background-color: -webkit-linear-gradient(top, #e05c48 0%, #d6503e 100%);
+  /* Chrome10+,Safari5.1+ */
+  background-color: -o-linear-gradient(top, #e05c48 0%, #d6503e 100%);
+  /* Opera 11.10+ */
+  background-color: -ms-linear-gradient(top, #e05c48 0%, #d6503e 100%);
+  /* IE10+ */
+  background-color: linear-gradient(to bottom, #e05c48 0%, #d6503e 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e05c48', endColorstr='#d6503e', GradientType=0);
+  /* IE6-9 */
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  color: #fff;
+  padding: 8px 5px 5px 50px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.case-studies .tutorial .howto-links li.gethelp a {
+  background-image: url('/assets/images/globe.png');
+}
+.case-studies .tutorial .howto-links li.tutorial-files a {
+  background-image: url('/assets/images/package.png');
+}
+.case-studies .tutorial .howto-links li.live-example a {
+  background-image: url('/assets/images/magnifying-glass.png');
+}
+.case-studies .tutorial .howto-links li.github a {
+  background-color: transparent;
+  border-bottom: 0;
+  background-image: url('/assets/images/github-download.png');
+  background-position: center left;
 }
 .case-studies .tutorial .step {
   background: #fff;
