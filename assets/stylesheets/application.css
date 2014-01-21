@@ -541,6 +541,7 @@ html.showfooter #footer-gradient {
 }
 .case-studies .tutorial .step .step-content .step-text {
   font-size: 18px;
+  padding: 0 40px;
 }
 .case-studies .tutorial .step .step-content .step-text h4 {
   font-family: 'Montserrat', sans-serif;
