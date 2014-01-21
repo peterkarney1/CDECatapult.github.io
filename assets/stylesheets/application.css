@@ -850,6 +850,9 @@ html.showfooter #footer-gradient {
     font-size: 65px;
     line-height: 135%;
   }
+  .block.homepage-challenge-block .container h1 span.highlight .inner {
+    padding: 2px 15px 2px 10px !important;
+  }
   .block.homepage-challenge-block .container h2 {
     font-size: 30px;
     width: 65%;
@@ -859,6 +862,9 @@ html.showfooter #footer-gradient {
 @media (min-width: 1200px) {
   .block.homepage-challenge-block .container h1 {
     font-size: 65px;
+  }
+  .block.homepage-challenge-block .container h1 span.highlight .inner {
+    padding: 2px 15px 2px 10px !important;
   }
 }
 .block.homepage-whowhathow-block {
