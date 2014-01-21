@@ -245,7 +245,7 @@ html.showfooter #footer-gradient {
 }
 .subpage-layout .subpage-boxes .box .inner p.resource-text {
   width: 95%;
-  font-size: 14px;
+  font-size: 16px;
 }
 .subpage-layout .subpage-boxes .box .inner a.btn.btn-default {
   border: 0;
@@ -424,6 +424,34 @@ html.showfooter #footer-gradient {
   .subpage-layout .contact-the-team p.email {
     font-size: 22px;
   }
+}
+.about-template h2 {
+  font-family: 'Dosis', sans-serif;
+  color: #3e9e89;
+  text-align: left;
+  font-size: 42px;
+  margin-top: 0px;
+}
+.about-template h3 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 40px 0 10px 0;
+  color: #076d7c;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.about-template p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.about-template p a {
+  color: #e05c48;
+  text-decoration: underline;
+}
+.about-template p.lead {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 22px;
 }
 .tutorial-template h2 {
   font-family: 'Dosis', sans-serif;
