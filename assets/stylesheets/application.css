@@ -942,12 +942,13 @@ html.showfooter #footer-gradient {
   color: #fff;
   text-shadow: 4px 4px 0 #32917e;
   margin: 40px 0 0 0;
+  font-size: 40px;
 }
 .block.homepage-whowhathow-block h3 {
   font-family: 'Dosis', sans-serif;
   color: #fff;
   font-weight: 200;
-  font-size: 30px;
+  font-size: 36px;
   margin-top: 50px;
   padding-left: 120px;
 }
@@ -955,7 +956,7 @@ html.showfooter #footer-gradient {
   padding-left: 120px;
   min-height: 128px;
   color: #0b3129;
-  font-size: 14px;
+  font-size: 16px;
 }
 .block.homepage-whowhathow-block .column {
   margin-bottom: 50px;
@@ -981,10 +982,11 @@ html.showfooter #footer-gradient {
   color: #e05c48;
   text-shadow: 4px 4px 0 #f4cd8e;
   margin: 40px 0 0 0;
+  font-size: 40px;
 }
 .block.homepage-latest-block h3 {
   font-family: 'Dosis', sans-serif;
-  font-size: 35px;
+  font-size: 36px;
   font-weight: 200;
 }
 .block.homepage-latest-block .twitter-inner,
