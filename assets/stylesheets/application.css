@@ -767,7 +767,7 @@ html.showfooter #footer-gradient {
 }
 .homepage-boxes a.homepage-box .inner {
   background: #ecfdff;
-  min-height: 200px;
+  min-height: 220px;
   box-shadow: 5px 5px #58acbe;
   text-decoration: none;
 }
@@ -803,7 +803,7 @@ html.showfooter #footer-gradient {
   color: #272727;
   padding: 10px 20px;
   text-align: center;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 300;
 }
 .block.homepage-challenge-block {
