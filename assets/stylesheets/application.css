@@ -166,7 +166,7 @@ html.showfooter #footer-gradient {
 }
 .useful-links {
   background: #f8e29f;
-  padding: 20px 0;
+  padding: 20px 0 40px 0;
 }
 .useful-links h2 {
   font-family: 'Montserrat', sans-serif;
@@ -176,12 +176,14 @@ html.showfooter #footer-gradient {
   text-transform: uppercase;
   color: #e05c48;
   text-shadow: 4px 4px #f0c98b;
+  margin-bottom: 20px;
+  font-size: 45px;
 }
 .useful-links .useful-link-cols .useful-link-col h3 {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 22px;
   margin-top: 0;
 }
 .useful-links .useful-link-cols .useful-link-col ul {
@@ -474,6 +476,9 @@ html.showfooter #footer-gradient {
 }
 .case-studies .intro-text {
   padding: 25px 0 60px 0;
+}
+.case-studies .intro-text .intro-column {
+  padding-bottom: 30px;
 }
 .case-studies .intro-text .intro-column h3 {
   font-family: 'Montserrat', sans-serif;
