@@ -1,0 +1,309 @@
+---
+layout: howto
+title: How Tos and Case Studies - Open Health Data Platform
+page_title: Case Studies &amp; Tutorials
+icon: circle-lightbulb.png
+---
+
+<div class="container">
+  <div class="title clearfix">
+    <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
+    
+    <h1>{{ page.page_title }}</h1>
+  </div>
+  
+  <div class="case-studies">
+    <h2>Data Science Basics</h2>
+    
+    <div class="row">
+      <div class="col-sm-12 intro-column the-challenge">
+        <p>
+          Looking for prescribing variation outliers can identify important
+          behaviours or changes in individual doctors or in areas of the
+          country. This tutorial walks through how to visualise this variation,
+          and how to make sure what you do is statistically sensible.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tutorial">
+  <div class="container">
+    <h2>Tutorial</h2>
+    <h3>Data Science Basics</h3>
+    
+    <div class="step zebra1">
+      <div class="step-circle">1</div>
+      
+      <div class="row step-content">
+        <div class="col-sm-7 step-map">
+          <div id="step-1-map" style="width: 100%; height: 300px;"></div>
+          
+          <script>
+            $(function() {
+              var map;
+              function initialize() {
+                var mapOptions = {
+                  zoom: 8,
+                  center: new google.maps.LatLng(-34.397, 150.644)
+                };
+                
+                map = new google.maps.Map(document.getElementById('step-1-map'), mapOptions);
+              }
+
+              google.maps.event.addDomListener(window, 'load', initialize);
+            });
+          </script>
+        </div>
+        <div class="col-sm-5 step-text">
+          <h4>Step one - what variation are you looking for?</h4>
+          
+          <p>
+            In this tutorial, we show how to look at variation in diabetes
+            prescriptions across the country. We have data down to GP surgery
+            level, so we could look at this at surgery or CCG (area) level.
+          </p>
+          
+          <p>
+            In this example, we want to see what impact a charity has had by
+            running local roadshows trying to persuade people to get diagnosed, so
+            we'll want to look for localised changes over time.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="step zebra2">
+      <div class="step-circle">2</div>
+      
+      <div class="row step-content">
+        <div class="col-sm-6 step-text">
+          <h4>Step two - get the data</h4>
+          
+          <p>
+            In order to look at variation in diabetes prescribing, we'll need:
+          </p>
+          
+          <p>
+            A list of which prescribing items are used for diabetes
+          </p>
+          
+          <ul>
+            <li>
+              The monthly prescribing files which show all items prescribed
+              by all GP surgeries
+            </li>
+            
+            <li>
+              The diabetes prevalence in each area
+            </li>
+            
+            <li>
+              Map files showing where those surgeries are, so that we can
+              locate them in relation to where the roadshows happened
+            </li>
+          </ul>
+          
+          <p>
+            We asked the charity what drugs were relevant, and they gave us the
+            following list:
+          </p>
+          
+          [ADD LIST HERE] [EXPLAIN HOW WE GET THE DATA USING OHDP]
+          
+          <a href="#" class="btn btn-default">
+            <span class="subtext">HOW TO</span>
+            <span class="text">Get data from HSCIC</span>
+          </a>
+        </div>
+        
+        <div class="col-sm-6 step-code">
+          <pre>
+module ActiveRecord
+  class Migration
+    module JoinTable #:nodoc:
+      private
+
+      def find_join_table_name(table_1, table_2, options = {})
+        options.delete(:table_name)
+      end
+
+      def join_table_name(table_1, table_2)
+        [table_1.to_s, table_2.to_s].sort.join("_").to_sym
+      end
+    end
+  end
+end
+          </pre>
+        </div>
+      </div>
+    </div>
+    
+    <div class="step zebra1">
+      <div class="step-circle">3</div>
+      
+      <div class="row step-content">
+        <div class="col-sm-6 step-text">
+          <h4>Step three - sense-check the data</h4>
+          
+          <p>
+            It's extremely common for data to contain errors or faults. Therefore
+            we always try and check for anything obviously strange, using
+            histograms, averages, counts, and any other simple statistical
+            measures of the data that might confuse us later. 
+          </p>
+          
+          <p>In this case, we might check:</p>
+          
+          <ul>
+            <li>how many GP surgeries are in our dataset?</li>
+            <li>what's their total drugs spend (does it sound sensible?)</li>
+            <li>what's the total spend on diabetes drugs?</li>
+            <li>what's the highest and lowest spend?</li>
+            <li>
+              have we missed any obvious drugs? (e.g. search for "insulin"
+              in the file to see if that picks up any new drugs names)
+            </li>
+          </ul>
+          
+          <a href="#" class="btn btn-default">
+            <span class="subtext">HOW TO</span>
+            <span class="text">Total Data per GP</span>
+          </a>
+        </div>
+        
+        <div class="col-sm-6 step-code">
+          <pre>
+module ActiveRecord
+  class Migration
+    module JoinTable #:nodoc:
+      private
+
+      def find_join_table_name(table_1, table_2, options = {})
+        options.delete(:table_name)
+      end
+
+      def join_table_name(table_1, table_2)
+        [table_1.to_s, table_2.to_s].sort.join("_").to_sym
+      end
+    end
+  end
+end
+          </pre>
+        </div>
+      </div>
+    </div>
+    
+    <div class="step zebra2">
+      <div class="step-circle">4</div>
+      
+      <div class="row step-content">
+        <div class="col-sm-7 step-map">
+          <div id="step-4-map" style="width: 100%; height: 300px;"></div>
+          
+          <script>
+            $(function() {
+              var map;
+              function initialize() {
+                var mapOptions = {
+                  zoom: 3,
+                  center: new google.maps.LatLng(60.397, 50.644)
+                };
+                
+                map = new google.maps.Map(document.getElementById('step-4-map'), mapOptions);
+              }
+
+              google.maps.event.addDomListener(window, 'load', initialize);
+            });
+          </script>
+        </div>
+        
+        <div class="col-sm-5 step-text">
+          <h4>Step four - decide what we want to look at</h4>
+          
+          <h5>Simple visualisation</h5>
+          
+          <p>
+            Initially, it's probably useful to just visualise variation in
+            diabetes prevalence by CCG area.
+          </p>
+          
+          <p>
+            EXPLAIN HOW TO DO THIS VIZ
+          </p>
+          
+          <h5>Getting cleverer</h5>
+          
+          <p>
+            We might also want to add the ability to 'drill down' into an area and
+            see areas of high prevalence, so that users can see where the biggest
+            problems are to address.
+          </p>
+          
+          <p>
+            EXPLAIN HOW TO DO THIS VIZ WITH BAR CHARTS
+          </p>
+          
+          <h5>Thinking about spending</h5>
+          
+          <p>
+            We now want to start to bring in the prescribing data. We can start
+            out keeping it really simple, and looking at total spend per area.
+          </p>
+          
+          <p>
+            But we know that some areas have more people than others; and also,
+            some populations have a higher incidence of diabetes than others. So
+            we really need to look at spending or prescribing _per diabetic_ to
+            make sure we're showing something useful.
+          </p>
+          
+          <p>
+            add code to calculate per head amounts
+          </p>
+            
+          <h5>Visualise spending per head</h5>
+          
+          <p>
+            add code
+          </p>
+
+          <h5>Visualise changes over time</h5>
+          
+          <p>
+            We know that the thing that's really interesting to our end user is
+            changes over time. So we'll add charts of spending per head over time
+            that they can use to look at changes.
+          </p>
+          
+          <p>
+            We could go further and add statistical significance measures around
+            what changes are statistically meaningful, but that may get misleading
+            as there are so many variables here (what drugs we've chosen, what
+            influences selection of those drugs, how accurate the prevalence
+            measures are, and lots of other things) so in this case it makes sense
+            to leave the user to look at the charts and see whether they appear to
+            have made an impact.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row join-collaborate">
+      <div class="col-sm-6 text">
+        Want to create a similar project?
+        <br>
+        Not sure what to do next?
+        <br>
+        Got questions about this project?
+      </div>
+      
+      <div class="col-sm-6">
+        <a href="#" class="btn btn-default">
+          Join and Collaborate!
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

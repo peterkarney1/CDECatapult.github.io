@@ -25,9 +25,28 @@
       
       span.highlight {
         background: white;
-        padding: 2px;
         text-shadow: 3px 3px 0 #f8e5e2;
         color: #e2604d;
+        
+        span.topleft {
+          background: url(/assets/images/dot.png) top left no-repeat;
+          
+          span.topright {
+            background: url(/assets/images/dot.png) top right no-repeat;
+            
+            span.bottomleft {
+              background: url(/assets/images/dot.png) bottom left no-repeat;
+              
+              span.bottomright {
+                background: url(/assets/images/dot.png) bottom right no-repeat;
+                
+                span.inner {
+                  padding: 2px 5px;
+                }
+              }
+            }
+          }
+        }
       }
     }
     
@@ -53,9 +72,6 @@
         padding-top: 5px;
         font-size: 30px;
         line-height: 120%;
-        
-        span.highlight {
-        }
       }
       
       h2 {
@@ -77,7 +93,8 @@
         font-size: 37px;
         line-height: 120%;
         
-        span.highlight {
+        .inner {
+          padding: 2px 13px;
         }
       }
       
@@ -98,7 +115,7 @@
       h1 {
         font-size: 57px;
         
-        span.highlight {
+        span.highlight .inner {
           padding: 2px 10px
         }
       }
@@ -120,9 +137,6 @@
       h1 {
         font-size: 65px;
         line-height: 135%;
-        
-        span.highlight {
-        }
       }
       
       h2 {
@@ -139,9 +153,6 @@
     .container {
       h1 {
         font-size: 65px;
-        
-        span.highlight {
-        }
       }
     }
   }
