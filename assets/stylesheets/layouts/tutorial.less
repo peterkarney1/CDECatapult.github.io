@@ -1,209 +1,47 @@
-.case-studies {
+.tutorial-template {
   h2 {
     .font-dosis();
-    text-align: left;
-    font-size: 35px;
     color: @teal_green;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 30px;
   }
   
-  .row {
-    padding: 25px 0 60px 0;
-    
-    .intro-column {
-      h3 {
-        .font-montserrat();
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      
-      &.the-challenge {
-        h3 {
-          color: #df5c48;
-        }
-        
-        p {
-          font-weight: bold;
-          font-size: 22px;
-        }
-      }
-      
-      &.the-solution {
-        h3 {
-          color: @teal_green;
-        }
-        
-        p {
-          font-size: 18px;
-        }
-      }
-    }
-  }
-  
-  .tutorial {
+  .content-wrapper {
     background: @teal_green;
-    min-height: 400px;
-    padding: 20px 0 50px 0;
     
-    h2 {
-      .font-montserrat();
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #ecfdff;
-      text-shadow: 4px 4px 0 #51a58c;
-      padding: 0 0 0 30px;
-    }
-    
-    h3 {
-      .font-dosis();
-      color: #ecfdff;
-      padding: 0 0 30px 30px;
-      font-weight: bold;
-    }
-    
-    .step {
-      background: #fff;
-      min-height: 300px;
-      padding: 30px;
+    .container {
+      padding: 30px 15px;
       
-      &.zebra1 {
-        background: #ecfdff;
-      }
-      
-      &.zebra2 {
-        background: #c3e6ec;
-      }
-      
-      .step-circle {
-        border-radius: 100%;
-        background: #e05c49;
-        height: 80px;
-        width: 80px;
-        text-align: center;
-        padding: 5px 0 0 0;
-        font-size: 50px;
-        color: #fff;
+      h2, h3, h4, h5 {
         .font-montserrat();
-        font-weight: bold;
-        margin: -50px 0 0 0;
+        color: #fff !important;
+        text-align: left;
       }
       
-      .step-content {
-        .step-text {
-          h4 {
-            .font-montserrat();
-            font-weight: bold;
-            color: @teal_green;
-            font-size: 20px;
-          }
-          
-          p {
-            font-size: 15px;
-            
-            &.lead {
-              font-weight: bold;
-            }
-          }
-          
-          a.btn.btn-default {
-            background: @teal_green;
-            .font-montserrat();
-            
-            .subtext {
-              color: #d4f3ec;
-              text-transform: uppercase;
-              display: block;
-              text-align: left;
-            }
-            
-            .text {
-              display: block;
-              text-align: left;
-              color: #fff;
-              font-weight: bold;
-              border-bottom: 2px solid #fff;
-            }
-          }
-        }
+      h2 {
+        text-align: left;
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+      
+      h3 {
+        font-size: 18px;
+      }
+      
+      p {
+        color: #fff;
+        font-size: 18px;
         
-        .step-code {
-          pre, code {
-            border: 0;
-            display: block;
-            background: #fff;
-            border-radius: 0;
-            height: 270px;
-            overflow: auto;
-            box-shadow: 4px 4px 0 #a9d3e0;
-          }
-        }
-        
-        .step-map {
-          
+        a {
+          color: #fff;
+          text-decoration: underline;
         }
       }
-    }
-  }
-  
-  .join-collaborate {
-    .text {
-      .font-montserrat();
-      font-size: 25px;
-      padding: 20px 0 0 50px;
-      font-weight: bold;
-      color: #fff;
-    }
-    
-    a.btn.btn-default {
-      .font-montserrat();
-      font-size: 20px;
-      color: #fff;
-      font-weight: bold;
-      border: 0;
-      border-radius: 0;
-      background: #dd5b48;
-      float: right;
-      margin: 30px auto;
-      padding: 20px 40px;
-      box-shadow: 4px 4px 0 #2b6e60;
-    }
-  }
-  
-  .useful-links {
-    background: #f8e29f;
-    padding: 20px 0;
-    
-    h2 {
-      .font-montserrat();
-      text-align: center;
-      font-weight: bold;
-      text-transform: uppercase;
-      color: @orange_red;
-      text-shadow: 4px 4px #f0c98b;
-    }
-    
-    .useful-link-cols {
-      .useful-link-col {
-        h3 {
-          .font-montserrat();
-          font-weight: bold;
-          font-size: 18px;
-          margin-top: 0;
-        }
-        
-        ul {
-          padding: 0;
-          
-          li {
-            list-style: none;
-            font-size: 18px;
-            color: @orange_red;
-            
-            a {
-              color: @orange_red;
-              text-decoration: underline;
-            }
-          }
-        }
+      
+      code, pre {
+        border: 0;
+        background: #fff;
       }
     }
   }
