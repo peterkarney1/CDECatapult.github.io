@@ -468,6 +468,13 @@ html.showfooter #footer-gradient {
   border: 0;
   background: #fff;
 }
+.case-studies .logo {
+  float: right;
+  margin-top: -100px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 4px 4px 0 #ddeaf2;
+}
 .case-studies h2 {
   font-family: 'Dosis', sans-serif;
   text-align: left;
