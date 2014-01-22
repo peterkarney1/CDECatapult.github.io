@@ -607,6 +607,10 @@ html.showfooter #footer-gradient {
   background: #3e9e89;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
+  border: 0;
+  border-radius: 0;
+  margin-top: 10px;
+  box-shadow: 4px 4px #307969;
 }
 .how-to .tutorial .step .step-content a.btn.btn-default .subtext {
   color: #d4f3ec;
