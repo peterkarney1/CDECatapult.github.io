@@ -1,14 +1,18 @@
 ---
-layout: about
+layout: text-page
+
+show_contact: true
+show_about: true
+
+title: About the Platform - Open Health Data Platform
+page_title: About the Platform
 
 github_repo: https://github.com/CDECatapult/
 public_issue_tracker: #
 contact_email: theteam@mastodonc.com
 
-cdec_url: #
-mastodon_c_url: #
-hscic_url: #
-
+cdec_url: https://cde.catapult.org.uk
+mastodon_c_url: http://www.mastodonc.com
 ---
 
 It is intended to demonstrate and enable SME innovators in

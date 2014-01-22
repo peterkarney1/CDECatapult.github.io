@@ -1,0 +1,38 @@
+---
+layout: subpage
+icon: circle-chat.png
+---
+
+<div class="text-page-template">
+  <div class="row">
+    <div class="col-sm-8">
+      {% if page.show_about %}
+        <p class="lead">
+          The <strong>CDEC Open Health Data Platform</strong>
+          has been developed by the
+          <a href="{{ page.cdec_url }}">Connected Digital Economy Catapult (CDEC)</a>
+          and <a href="{{ page.mastodon_c_url }}">Mastodon C</a>
+          to stimulate data science innovation.
+        </p>
+      {% endif %}
+      
+      {{ content }}
+    </div>
+    
+    <div class="col-sm-4">
+      {% if page.show_contact %}
+        <h2>Contact Us</h2>
+        
+        <p>
+          If you have suggestions for new data sets or tools
+          you would like us to develop for the beta launch, please email
+          <a href="mailto:{{ page.contact_email }}">{{ page.contact_email }}</a>
+          or raise an issue on our
+          <a href="{{ page.public_issue_tracker }}">public issue tracker</a>
+          or fork our <a href="{{ page.github_repo }}">github repo</a>
+          and send us a pull request.
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
