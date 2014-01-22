@@ -4,14 +4,49 @@
   ul#github-activity {
     background: #faecbf;
     margin-left: 30px;
-    padding: 0;
+    padding: 10px;
     height: 300px;
     overflow: auto;
     
+    a {
+      color: @orange;
+      font-weight: bold;
+    }
+    
     li {
-      .font-montserrat();
       list-style: none;
-      padding: 10px;
+      padding: 0 10px;
+      
+      ul.commits {
+        padding: 0 0 6px 0;
+        
+        li {
+          padding: 0 0 0 10px;
+          
+          span.commit {
+            display: block;
+            float: left;
+            
+            a {
+              color: #999;
+              font-weight: normal;
+            }
+          }
+          
+          span.message {
+            display: block;
+            margin-left: 50px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            padding: 0 10px 3px 0;
+            
+            a {
+              font-weight: normal;
+              color: #000;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -37,16 +37,27 @@
     
     {{#if PushEvent}}
       <li>
-        {{actor.login}}
+        <a href="https://github.com/{{actor.login}}">{{actor.login}}</a>
         pushed
         to
         <a href='https://github.com/{{repo.name}}'>
-          {{repo.name}}
+          {{replace repo.name "CDECatapult/" ""}}
         </a>
         
-        <ul>
+        <ul class="commits">
           {{#each payload.commits}}
-            <li>{{message}}</li>
+            <li>
+              <span class="commit">
+                <a href="https://github.com/{{ ../repo.name }}/commit/{{ sha }}">
+                  {{ truncate sha 6 }}
+                </a>
+              </span>
+              <span class="message">
+                <a href="https://github.com/{{ ../repo.name }}/commit/{{ sha }}">
+                  {{message}}
+                </a>
+              </span>
+            </li>
           {{/each}}
         </ul>
       </li>

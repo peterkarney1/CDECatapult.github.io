@@ -451,6 +451,9 @@ html.showfooter #footer-gradient {
   -webkit-font-smoothing: antialiased;
   font-size: 22px;
 }
+.text-page-template ul li {
+  font-size: 18px;
+}
 .how-to .logo {
   float: right;
   margin-top: -100px;
@@ -1094,15 +1097,42 @@ html.showfooter #footer-gradient {
 .github-activity ul#github-activity {
   background: #faecbf;
   margin-left: 30px;
-  padding: 0;
+  padding: 10px;
   height: 300px;
   overflow: auto;
 }
+.github-activity ul#github-activity a {
+  color: #e05c48;
+  font-weight: bold;
+}
 .github-activity ul#github-activity li {
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
   list-style: none;
-  padding: 10px;
+  padding: 0 10px;
+}
+.github-activity ul#github-activity li ul.commits {
+  padding: 0 0 6px 0;
+}
+.github-activity ul#github-activity li ul.commits li {
+  padding: 0 0 0 10px;
+}
+.github-activity ul#github-activity li ul.commits li span.commit {
+  display: block;
+  float: left;
+}
+.github-activity ul#github-activity li ul.commits li span.commit a {
+  color: #999;
+  font-weight: normal;
+}
+.github-activity ul#github-activity li ul.commits li span.message {
+  display: block;
+  margin-left: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 0 10px 3px 0;
+}
+.github-activity ul#github-activity li ul.commits li span.message a {
+  font-weight: normal;
+  color: #000;
 }
 .block {
   min-height: 400px;
