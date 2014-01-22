@@ -1,0 +1,77 @@
+---
+layout: subpage
+title: Raw Data Access - Open Health Data Platform
+page_title: Raw Data Access
+icon: circle-script.png
+---
+
+<div class="raw-data-template">
+  <p class="lead">
+    {{ page.intro }}
+  </p>
+  
+  <h2>How to data</h2>
+  <table class="downloads">
+    <thead>
+      <tr>
+        <th class="name">Name</td>
+        <th class="format">Format</td>
+        <th class="size">Size</td>
+        <th class="download"></td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in page.how_to_data %}
+        <tr>
+          <td class="name">{{ item.name }}</td>
+          <td class="format">{{ item.format }}</td>
+          <td class="size">{{ item.size }}</td>
+          <td class="download">
+            <img src="/assets/images/package.png" alt="">
+            <a href="{{ item.url }}">Download</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  <h2>Specific Datasets</h2>
+  {% for dataset in page.specific_datasets %}
+    <div class="dataset">
+      <h3>{{ dataset.name }}</h3>
+      
+      <table class="downloads">
+        <thead>
+          <tr>
+            <th class="name">Name</td>
+            <th class="format">Format</td>
+            <th class="size">Size</td>
+            <th class="download"></td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in dataset.items %}
+            <tr>
+              <td class="name">{{ item.name }}</td>
+              <td class="format">{{ item.format }}</td>
+              <td class="size">{{ item.size }}</td>
+              <td class="download">
+                <img src="/assets/images/package.png" alt="">
+                <a href="{{ item.url }}">Download</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endfor %}
+  
+  <div class="rights-statement">
+    <h4>Rights and reuse</h4>
+    <p>
+      When reusing these datasets, please see the
+      <a href="{{ page.rights_statement_url }}">rights statement</a>
+      for the terms of use.
+    </p>
+  </div>
+</div>

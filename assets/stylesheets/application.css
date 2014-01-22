@@ -743,6 +743,83 @@ html.showfooter #footer-gradient {
   background: #f2f2f2;
   padding: 20px 30px;
 }
+.raw-data-template p.lead {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.raw-data-template h2 {
+  font-family: 'Dosis', sans-serif;
+  color: #3e9e89;
+  text-align: left;
+  font-size: 42px;
+  margin-top: 60px;
+}
+.raw-data-template h3 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 20px;
+}
+.raw-data-template table.downloads {
+  width: 100%;
+}
+.raw-data-template table.downloads thead th {
+  font-size: 14px;
+}
+.raw-data-template table.downloads tr td,
+.raw-data-template table.downloads tr th {
+  min-height: 56px;
+  padding: 8px 15px;
+}
+.raw-data-template table.downloads tbody tr {
+  background: #c3e6ec;
+}
+.raw-data-template table.downloads tbody tr:nth-child(odd) {
+  background: #c3e6ec;
+}
+.raw-data-template table.downloads tbody tr:nth-child(even) {
+  background: #ecfdff;
+}
+.raw-data-template table.downloads tbody tr td {
+  font-size: 18px;
+}
+.raw-data-template table.downloads tbody tr td.name {
+  font-weight: bold;
+  width: 55%;
+}
+.raw-data-template table.downloads tbody tr td.format {
+  width: 15%;
+}
+.raw-data-template table.downloads tbody tr td.size {
+  width: 15%;
+}
+.raw-data-template table.downloads tbody tr td.download {
+  width: 15%;
+  padding-top: 10px;
+  text-align: right;
+}
+.raw-data-template table.downloads tbody tr td.download img {
+  width: 25px;
+  height: 26px;
+  margin-top: -2px;
+}
+.raw-data-template table.downloads tbody tr td.download a {
+  font-weight: bold;
+  color: #e05c48;
+  text-decoration: underline;
+  padding: 2px;
+  margin-left: 5px;
+}
+.raw-data-template .rights-statement {
+  margin: 60px 0 20px 0;
+}
+.raw-data-template .rights-statement h4 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.raw-data-template .rights-statement a {
+  color: #e05c48;
+  text-decoration: underline;
+}
 .homepage-boxes {
   margin-bottom: 30px;
   margin-top: 20px;
