@@ -478,10 +478,12 @@ html.showfooter #footer-gradient {
   font-weight: bold;
   text-transform: uppercase;
 }
-.how-to .intro-text .intro-column.the-challenge h3 {
+.how-to .intro-text .intro-column.the-challenge h3,
+.how-to .intro-text .intro-column.bold-intro-text h3 {
   color: #df5c48;
 }
-.how-to .intro-text .intro-column.the-challenge p {
+.how-to .intro-text .intro-column.the-challenge p,
+.how-to .intro-text .intro-column.bold-intro-text p {
   font-weight: bold;
   font-size: 22px;
 }
