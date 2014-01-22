@@ -824,6 +824,35 @@ html.showfooter #footer-gradient {
   color: #e05c48;
   text-decoration: underline;
 }
+.resources-template p.lead {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.resources-template h2 {
+  font-family: 'Dosis', sans-serif;
+  color: #3e9e89;
+  text-align: left;
+  font-size: 42px;
+  margin-top: 60px;
+}
+.resources-template h3 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 20px;
+}
+.resources-template ul.resources li {
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+.resources-template ul.resources li a {
+  color: #e05c48;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.resources-template ul.resources li p {
+  font-size: 18px;
+}
 .homepage-boxes {
   margin-bottom: 30px;
   margin-top: 20px;

@@ -1,0 +1,40 @@
+---
+layout: subpage
+title: Resources - Open Health Data Platform
+page_title: Resources
+icon: circle-graph.png
+---
+
+<div class="resources-template">
+  <p class="lead">
+    {{ page.intro }}
+  </p>
+  
+  <div class="row">
+    <div class="col-sm-8">
+      {% for resource in page.resources %}
+        <h2>{{ resource.name }}</h2>
+        
+        <ul class="resources">
+          {% for link in resource.links %}
+            <li>
+              <a href="{{ link.url }}">
+                {{ link.name }}
+              </a>
+              
+              {% if link.domain %}
+                - {{ link.domain }}
+              {% endif %}
+              
+              {% if link.description %}
+                <p>
+                  {{ link.description }}
+                </p>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+  </div>
+</div>
