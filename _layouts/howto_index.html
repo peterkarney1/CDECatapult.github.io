@@ -1,16 +1,14 @@
 ---
 layout: subpage
-title: How Tos and Case Studies - Open Health Data Platform
-page_title: How Tos &amp; Case Studies
+title: How To's - Open Health Data Platform
+page_title: How To's
 icon: circle-lightbulb.png
 ---
 
-<div class="row howto-template">
-  <div class="col-sm-9 case-studies-column">
-    <h2>Case studies</h2>
-    
+<div class="howto-template">
+  <div class="case-studies-column row">
     {% for casestudy in page.casestudies %}
-      <a class="case-study clearfix" href="{{ casestudy.url }}">
+      <a class="case-study col-sm-6 clearfix" href="{{ casestudy.url }}">
         <img src="{{ casestudy.image }}" alt="">
         
         <div class="article pull-right">
@@ -22,20 +20,5 @@ icon: circle-lightbulb.png
         </div>
       </a>
     {% endfor %}
-  </div>
-  
-  <div class="col-sm-3 how-tos-column">
-    <h2>How Tos</h2>
-    
-    <ul class="how-tos-list">
-      {% for howto in page.howtos %}
-        <li class="how-to-item">
-          <a href="{{ howto.url }}">
-            <span>How To</span>
-            <strong>{{ howto.title }}</strong>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
   </div>
 </div>

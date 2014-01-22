@@ -1049,6 +1049,9 @@ html.showfooter #footer-gradient {
   text-align: left;
   font-size: 40px;
 }
+.howto-template .case-studies-column {
+  padding-top: 30px;
+}
 .howto-template .case-studies-column h2 {
   color: #e05c48;
   margin-bottom: 50px;
