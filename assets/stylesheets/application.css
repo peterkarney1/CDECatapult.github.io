@@ -811,10 +811,12 @@ html.showfooter #footer-gradient {
 }
 .raw-data-template .rights-statement {
   margin: 60px 0 20px 0;
+  font-size: 18px;
 }
 .raw-data-template .rights-statement h4 {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
+  font-size: 20px;
 }
 .raw-data-template .rights-statement a {
   color: #e05c48;
