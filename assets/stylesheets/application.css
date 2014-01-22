@@ -19,6 +19,10 @@ html.showheader .page-content {
   background: url(/assets/images/grad-top.png) repeat-x #ffffff;
   min-height: 100px;
 }
+p.lead {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
 nav.navbar.navbar-default {
   margin: 0;
   background: #fff;
@@ -213,12 +217,6 @@ html.showfooter #footer-gradient {
   text-transform: uppercase;
   font-size: 25px;
   margin: 30px 0 -20px 0;
-}
-.subpage-layout h2 {
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 20px;
-  text-align: center;
 }
 .subpage-layout .subpage-boxes {
   padding-top: 30px;
@@ -745,10 +743,6 @@ html.showfooter #footer-gradient {
   background: #f2f2f2;
   padding: 20px 30px;
 }
-.raw-data-template p.lead {
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
 .raw-data-template h2 {
   font-family: 'Dosis', sans-serif;
   color: #3e9e89;
@@ -823,10 +817,6 @@ html.showfooter #footer-gradient {
 .raw-data-template .rights-statement a {
   color: #e05c48;
   text-decoration: underline;
-}
-.resources-template p.lead {
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
 }
 .resources-template h2 {
   font-family: 'Dosis', sans-serif;
