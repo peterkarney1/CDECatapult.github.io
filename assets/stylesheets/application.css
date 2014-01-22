@@ -453,93 +453,50 @@ html.showfooter #footer-gradient {
   -webkit-font-smoothing: antialiased;
   font-size: 22px;
 }
-.tutorial-template h2 {
-  font-family: 'Dosis', sans-serif;
-  color: #3e9e89;
-  font-size: 40px;
-  text-align: left;
-  margin-bottom: 30px;
-}
-.tutorial-template .content-wrapper {
-  background: #3e9e89;
-}
-.tutorial-template .content-wrapper .container {
-  padding: 30px 15px;
-}
-.tutorial-template .content-wrapper .container h2,
-.tutorial-template .content-wrapper .container h3,
-.tutorial-template .content-wrapper .container h4,
-.tutorial-template .content-wrapper .container h5 {
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  color: #fff !important;
-  text-align: left;
-}
-.tutorial-template .content-wrapper .container h2 {
-  text-align: left;
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-.tutorial-template .content-wrapper .container h3 {
-  font-size: 18px;
-}
-.tutorial-template .content-wrapper .container p {
-  color: #fff;
-  font-size: 18px;
-}
-.tutorial-template .content-wrapper .container p a {
-  color: #fff;
-  text-decoration: underline;
-}
-.tutorial-template .content-wrapper .container code,
-.tutorial-template .content-wrapper .container pre {
-  border: 0;
-  background: #fff;
-}
-.case-studies .logo {
+.how-to .logo {
   float: right;
   margin-top: -100px;
   background: #fff;
   padding: 10px;
   box-shadow: 4px 4px 0 #ddeaf2;
 }
-.case-studies h2 {
+.how-to h2 {
   font-family: 'Dosis', sans-serif;
   text-align: left;
   font-size: 35px;
   color: #3e9e89;
 }
-.case-studies .intro-text {
+.how-to .intro-text {
   padding: 25px 0 60px 0;
 }
-.case-studies .intro-text .intro-column {
+.how-to .intro-text .intro-column {
   padding-bottom: 30px;
 }
-.case-studies .intro-text .intro-column h3 {
+.how-to .intro-text .intro-column h3 {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
   text-transform: uppercase;
 }
-.case-studies .intro-text .intro-column.the-challenge h3 {
+.how-to .intro-text .intro-column.the-challenge h3 {
   color: #df5c48;
 }
-.case-studies .intro-text .intro-column.the-challenge p {
+.how-to .intro-text .intro-column.the-challenge p {
   font-weight: bold;
   font-size: 22px;
 }
-.case-studies .intro-text .intro-column.the-solution h3 {
+.how-to .intro-text .intro-column.the-solution h3 {
   color: #3e9e89;
 }
-.case-studies .intro-text .intro-column.the-solution p {
+.how-to .intro-text .intro-column.the-solution p {
   font-size: 18px;
 }
-.case-studies .tutorial {
+.how-to .tutorial {
   background: #3e9e89;
   min-height: 400px;
   padding: 20px 0 50px 0;
 }
-.case-studies .tutorial h2 {
+.how-to .tutorial h2 {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
@@ -548,20 +505,20 @@ html.showfooter #footer-gradient {
   text-shadow: 4px 4px 0 #51a58c;
   padding: 0 0 0 30px;
 }
-.case-studies .tutorial h3 {
+.how-to .tutorial h3 {
   font-family: 'Dosis', sans-serif;
   color: #ecfdff;
   padding: 0 0 30px 30px;
   font-weight: bold;
 }
-.case-studies .tutorial .howto-links {
+.how-to .tutorial .howto-links {
   padding: 0;
 }
-.case-studies .tutorial .howto-links li {
+.how-to .tutorial .howto-links li {
   list-style: none;
   padding: 10px;
 }
-.case-studies .tutorial .howto-links li a {
+.how-to .tutorial .howto-links li a {
   display: block;
   min-height: 42px;
   border-bottom: 2px solid #2b6e60;
@@ -589,33 +546,33 @@ html.showfooter #footer-gradient {
   font-weight: bold;
   text-decoration: underline;
 }
-.case-studies .tutorial .howto-links li.gethelp a {
+.how-to .tutorial .howto-links li.gethelp a {
   background-image: url('/assets/images/globe.png');
 }
-.case-studies .tutorial .howto-links li.tutorial-files a {
+.how-to .tutorial .howto-links li.tutorial-files a {
   background-image: url('/assets/images/package.png');
 }
-.case-studies .tutorial .howto-links li.live-example a {
+.how-to .tutorial .howto-links li.live-example a {
   background-image: url('/assets/images/magnifying-glass.png');
 }
-.case-studies .tutorial .howto-links li.github a {
+.how-to .tutorial .howto-links li.github a {
   background-color: transparent;
   border-bottom: 0;
   background-image: url('/assets/images/github-download.png');
   background-position: center left;
 }
-.case-studies .tutorial .step {
+.how-to .tutorial .step {
   background: #fff;
   min-height: 300px;
   padding: 30px;
 }
-.case-studies .tutorial .step.zebra1 {
-  background: #ecfdff;
+.how-to .tutorial .step:nth-child(even) {
+  background: #ecfdff !important;
 }
-.case-studies .tutorial .step.zebra2 {
-  background: #c3e6ec;
+.how-to .tutorial .step:nth-child(odd) {
+  background: #c3e6ec !important;
 }
-.case-studies .tutorial .step .step-circle {
+.how-to .tutorial .step .step-circle {
   border-radius: 100%;
   background: #e05c49;
   height: 80px;
@@ -627,42 +584,45 @@ html.showfooter #footer-gradient {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  margin: -50px 0 0 0;
+  position: relative;
+  top: -50px;
+  z-index: 100;
 }
-.case-studies .tutorial .step .step-content .step-text {
+.how-to .tutorial .step .step-content {
   font-size: 18px;
-  padding: 0 40px;
+  padding: 0 40px 30px 40px;
+  margin-top: -40px;
 }
-.case-studies .tutorial .step .step-content .step-text h4 {
+.how-to .tutorial .step .step-content h4 {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
   color: #3e9e89;
   font-size: 20px;
 }
-.case-studies .tutorial .step .step-content .step-text p.lead {
+.how-to .tutorial .step .step-content p.lead {
   font-weight: bold;
 }
-.case-studies .tutorial .step .step-content .step-text a.btn.btn-default {
+.how-to .tutorial .step .step-content a.btn.btn-default {
   background: #3e9e89;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-.case-studies .tutorial .step .step-content .step-text a.btn.btn-default .subtext {
+.how-to .tutorial .step .step-content a.btn.btn-default .subtext {
   color: #d4f3ec;
   text-transform: uppercase;
   display: block;
   text-align: left;
 }
-.case-studies .tutorial .step .step-content .step-text a.btn.btn-default .text {
+.how-to .tutorial .step .step-content a.btn.btn-default .text {
   display: block;
   text-align: left;
   color: #fff;
   font-weight: bold;
   text-decoration: underline;
 }
-.case-studies .tutorial .step .step-content .step-code pre,
-.case-studies .tutorial .step .step-content .step-code code {
+.how-to .tutorial .step .step-content pre,
+.how-to .tutorial .step .step-content code {
   border: 0;
   display: block;
   background: #fff;
@@ -671,7 +631,7 @@ html.showfooter #footer-gradient {
   overflow: auto;
   box-shadow: 4px 4px 0 #a9d3e0;
 }
-.case-studies .join-collaborate .text {
+.how-to .join-collaborate .text {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 25px;
@@ -679,7 +639,7 @@ html.showfooter #footer-gradient {
   font-weight: bold;
   color: #fff;
 }
-.case-studies .join-collaborate a.btn.btn-default {
+.how-to .join-collaborate a.btn.btn-default {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 20px;
