@@ -149,64 +149,8 @@
           </div>
         </div>
       </div>
-
-
-      {% raw %}
-      <script type="text/x-handlebars-template" id="github-activity-template">
-        {{#each data}}
-          {{#if WatchEvent}}
-            <li>
-              {{actor.login}}
-              starred
-              <a href='{{repo.url}}'>
-                {{repo.name}}
-              </a>
-            </li>
-          {{/if}}
-          
-          {{#if CreateEvent}}
-            <li>
-              {{actor.login}}
-              created a new repository:
-              <a href='{{repo.url}}'>
-                {{repo.name}}
-              </a>
-            </li>
-          {{/if}}
-          
-          {{#if ForkEvent}}
-            <li>
-              {{actor.login}}
-              forked
-              <a href="{{repo.url}}">
-                {{repo.name}}
-              </a>
-              to
-              <a href='{{payload.forkee.html_url}}'>
-                {{payload.forkee.full_name}}
-              </a>
-            </li>
-          {{/if}}
-          
-          {{#if PushEvent}}
-            <li>
-              {{actor.login}}
-              pushed
-              to
-              <a href='{{repo.url}}'>
-                {{repo.name}}
-              </a>
-              
-              <ul>
-                {{#each payload.commits}}
-                  <li>{{message}}</li>
-                {{/each}}
-              </ul>
-            </li>
-          {{/if}}
-        {{/each}}
-      </script>
-      {% endraw %}
+      
+      {% include github_handlebars.hbs %}
       </div>
     </div>
     
