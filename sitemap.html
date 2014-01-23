@@ -14,14 +14,12 @@ page_title: Sitemap
         
         {% if page.url == "/howto/index.html" %}
           <ul>
-            {% for howto in site.pages %}
-              {% if howto.howto == true and howto.url != "/howto/template.html" %}
-                <li>
-                  <a href="{{ howto.url }}">
-                    {{ howto.page_title }}
-                  </a>
-                </li>
-              {% endif %}
+            {% for howto in page.casestudies %}
+              <li>
+                <a href="{{ howto.url }}">
+                  {{ howto.title }}
+                </a>
+              </li>
             {% endfor %}
           </ul>
         {% endif %}
