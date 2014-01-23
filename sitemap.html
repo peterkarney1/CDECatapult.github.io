@@ -1,0 +1,17 @@
+---
+layout: text-page
+show_about: false
+show_contact: false
+title: Sitemap - Open Health Data Platform
+page_title: Sitemap
+---
+
+<ul>
+  {% for page in site.pages %}
+    {% if page.url != "/howto/template.html" %}
+      <li>
+        <a href="{{ page.url }}">{{ page.page_title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
