@@ -786,6 +786,7 @@ html.showfooter #footer-gradient {
 .raw-data-template table.downloads tr th {
   min-height: 56px;
   padding: 8px 15px;
+  border-bottom: 0;
 }
 .raw-data-template table.downloads tbody tr {
   background: #c3e6ec;
@@ -798,6 +799,7 @@ html.showfooter #footer-gradient {
 }
 .raw-data-template table.downloads tbody tr td {
   font-size: 18px;
+  border-top: 0;
 }
 .raw-data-template table.downloads tbody tr td.name {
   font-weight: bold;
