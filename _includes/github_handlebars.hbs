@@ -3,10 +3,10 @@
   {{#each data}}
     {{#if WatchEvent}}
       <li>
-        {{actor.login}}
+        <a href="https://github.com/{{actor.login}}">{{actor.login}}</a>
         starred
-        <a href='{{repo.url}}'>
-          {{repo.name}}
+        <a href='https://github.com/{{repo.name}}'>
+          {{replace repo.name "CDECatapult/" ""}}
         </a>
       </li>
     {{/if}}

@@ -21,7 +21,7 @@ $(function() {
         item[item.type] = true;
       });
       
-      data = data.splice(0, 5);
+      data = data.splice(0, 15);
       
       // Render template:
       $('#github-activity').html(template({ data: data }));
