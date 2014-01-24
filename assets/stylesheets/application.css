@@ -135,6 +135,11 @@ html.showfooter #footer-gradient {
   font-size: 16px;
 }
 @media (min-width: 0px) {
+  #footer {
+    height: auto;
+    width: 100%;
+    overflow-x: hidden;
+  }
   #footer .social-links {
     text-align: center;
   }
@@ -152,6 +157,9 @@ html.showfooter #footer-gradient {
   }
 }
 @media (min-width: 768px) {
+  #footer {
+    height: 100px;
+  }
   #footer .social-links {
     text-align: left;
   }
