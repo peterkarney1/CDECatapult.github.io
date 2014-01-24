@@ -1101,9 +1101,11 @@ html.showfooter #footer-gradient {
 }
 .block.homepage-whowhathow-block .column.what p {
   background: url(/assets/images/graph-icon.png) no-repeat 0px 10px;
+  background-size: 106px 92px;
 }
 .block.homepage-whowhathow-block .column.how p {
   background: url(/assets/images/arrows.png) no-repeat 0px 0px;
+  background-size: 89px 102px;
 }
 .block.homepage-latest-block {
   background: #f8e29f;
@@ -1131,8 +1133,27 @@ html.showfooter #footer-gradient {
   overflow: auto;
   padding: 10px;
 }
+.block.homepage-latest-block .latest-social-icon.twitter {
+  width: 30px;
+  height: 24px;
+}
+.block.homepage-latest-block .latest-social-icon.lanyrd {
+  width: 29px;
+  height: 29px;
+}
+.block.homepage-latest-block .latest-social-icon.github {
+  width: 38px;
+  height: 31px;
+}
+@media (max-width: 700px) {
+  .latest-social-icon {
+    float: right;
+    margin-top: 9px;
+  }
+}
 .github-activity {
   background: url(/assets/images/fork.png) no-repeat 15px 85px;
+  background-size: 22px 25px;
 }
 .github-activity ul#github-activity {
   background: #faecbf;
