@@ -584,12 +584,15 @@ html.showfooter #footer-gradient {
 }
 .how-to .tutorial .howto-links li.gethelp a {
   background-image: url('/assets/images/globe.png');
+  background-size: 26px 34px;
 }
 .how-to .tutorial .howto-links li.tutorial-files a {
   background-image: url('/assets/images/package.png');
+  background-size: 32px 34px;
 }
 .how-to .tutorial .howto-links li.live-example a {
   background-image: url('/assets/images/magnifying-glass.png');
+  background-size: 32px 32px;
 }
 .how-to .tutorial .howto-links li.github a {
   background-color: transparent;
