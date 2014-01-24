@@ -487,13 +487,6 @@ html.showfooter #footer-gradient {
 .text-page-template ul li {
   font-size: 18px;
 }
-.how-to .logo {
-  float: right;
-  margin-top: -100px;
-  background: #fff;
-  padding: 10px;
-  box-shadow: 4px 4px 0 #ddeaf2;
-}
 .how-to h2 {
   font-family: 'Dosis', sans-serif;
   text-align: left;
@@ -696,6 +689,24 @@ html.showfooter #footer-gradient {
   margin: 30px auto;
   padding: 20px 40px;
   box-shadow: 4px 4px 0 #2b6e60;
+}
+@media (max-width: 700px) {
+  .how-to .logo {
+    text-align: center;
+  }
+  .how-to h2 {
+    text-align: center;
+    font-size: 27px;
+  }
+}
+@media (min-width: 701px) {
+  .how-to .logo {
+    float: right;
+    margin-top: -100px;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 4px 4px 0 #ddeaf2;
+  }
 }
 .the-api h2 {
   font-family: 'Dosis', sans-serif;
