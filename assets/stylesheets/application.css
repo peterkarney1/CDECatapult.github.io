@@ -874,6 +874,7 @@ html.showfooter #footer-gradient {
   min-height: 220px;
   box-shadow: 5px 5px #58acbe;
   text-decoration: none;
+  margin: 0 10px 30px 10px;
 }
 .homepage-boxes a.homepage-box .inner .icon {
   width: 83px;
@@ -909,6 +910,9 @@ html.showfooter #footer-gradient {
   text-align: center;
   font-size: 19px;
   font-weight: 300;
+}
+.homepage-boxes a.homepage-box:last-child .inner {
+  margin-bottom: -30px;
 }
 .block.homepage-challenge-block {
   background: url(/assets/images/graph.png) center 55px no-repeat #65bbc8;
