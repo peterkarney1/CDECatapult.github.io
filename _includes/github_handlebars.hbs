@@ -13,20 +13,20 @@
     
     {{#if CreateEvent}}
       <li>
-        {{actor.login}}
+        <a href="https://github.com/{{actor.login}}">{{actor.login}}</a>
         created a new repository:
-        <a href='{{repo.url}}'>
-          {{repo.name}}
+        <a href='https://github.com/{{repo.name}}'>
+          {{replace repo.name "CDECatapult/" ""}}
         </a>
       </li>
     {{/if}}
     
     {{#if ForkEvent}}
       <li>
-        {{actor.login}}
+        <a href="https://github.com/{{actor.login}}">{{actor.login}}</a>
         forked
         <a href="{{repo.url}}">
-          {{repo.name}}
+          {{replace repo.name "CDECatapult/" ""}}
         </a>
         to
         <a href='{{payload.forkee.html_url}}'>
