@@ -9,58 +9,62 @@ icon: circle-script.png
   </p>
   
   <h2>How to data</h2>
-  <table class="downloads">
-    <thead>
-      <tr>
-        <th class="name">Name</td>
-        <th class="format">Format</td>
-        <th class="size">Size</td>
-        <th class="download"></td>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in page.how_to_data %}
+  <div class="table-responsive">
+    <table class="table downloads">
+      <thead>
         <tr>
-          <td class="name">{{ item.name }}</td>
-          <td class="format">{{ item.format }}</td>
-          <td class="size">{{ item.size }}</td>
-          <td class="download">
-            <img src="/assets/images/package.png" alt="">
-            <a href="{{ item.url }}">Download</a>
-          </td>
+          <th class="name">Name</th>
+          <th class="format">Format</th>
+          <th class="size">Size</th>
+          <th class="download"></th>
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {% for item in page.how_to_data %}
+          <tr>
+            <td class="name">{{ item.name }}</td>
+            <td class="format">{{ item.format }}</td>
+            <td class="size">{{ item.size }}</td>
+            <td class="download">
+              <img src="/assets/images/package.png" alt="">
+              <a href="{{ item.url }}">Download</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
   
   <h2>Specific datasets</h2>
   {% for dataset in page.specific_datasets %}
     <div class="dataset">
       <h3>{{ dataset.name }}</h3>
       
-      <table class="downloads">
-        <thead>
-          <tr>
-            <th class="name">Name</td>
-            <th class="format">Format</td>
-            <th class="size">Size</td>
-            <th class="download"></td>
-          </tr>
-        </thead>
-        <tbody>
-          {% for item in dataset.items %}
+      <div class="table-responsive">
+        <table class="downloads">
+          <thead>
             <tr>
-              <td class="name">{{ item.name }}</td>
-              <td class="format">{{ item.format }}</td>
-              <td class="size">{{ item.size }}</td>
-              <td class="download">
-                <img src="/assets/images/package.png" alt="">
-                <a href="{{ item.url }}">Download</a>
-              </td>
+              <th class="name">Name</th>
+              <th class="format">Format</th>
+              <th class="size">Size</th>
+              <th class="download"></th>
             </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {% for item in dataset.items %}
+              <tr>
+                <td class="name">{{ item.name }}</td>
+                <td class="format">{{ item.format }}</td>
+                <td class="size">{{ item.size }}</td>
+                <td class="download">
+                  <img src="/assets/images/package.png" alt="">
+                  <a href="{{ item.url }}">Download</a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
   {% endfor %}
   
