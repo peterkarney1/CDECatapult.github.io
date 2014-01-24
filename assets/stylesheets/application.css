@@ -642,7 +642,7 @@ html.showfooter #footer-gradient {
   -webkit-font-smoothing: antialiased;
   border: 0;
   border-radius: 0;
-  margin-top: 10px;
+  margin: 20px 0;
   box-shadow: 4px 4px #307969;
 }
 .how-to .tutorial .step .step-content a.btn.btn-default .subtext {
@@ -697,6 +697,10 @@ html.showfooter #footer-gradient {
   .how-to h2 {
     text-align: center;
     font-size: 27px;
+  }
+  .how-to .tutorial .step .step-content {
+    padding: 0 0 10px 0;
+    margin-top: -30px;
   }
 }
 @media (min-width: 701px) {

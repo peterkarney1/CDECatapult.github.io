@@ -164,7 +164,7 @@
           .font-montserrat();
           border: 0;
           border-radius: 0;
-          margin-top: 10px;
+          margin: 20px 0;
           box-shadow: 4px 4px darken(@teal_green, 10%);
           
           .subtext {
@@ -222,13 +222,20 @@
 }
 
 @media (max-width: 700px) {
-  .how-to .logo {
-    text-align: center;
-  }
-  
-  .how-to h2 {
-    text-align: center;
-    font-size: 27px;
+  .how-to {
+    .logo {
+      text-align: center;
+    }
+    
+    h2 {
+      text-align: center;
+      font-size: 27px;
+    }
+    
+    .tutorial .step .step-content {
+      padding: 0 0 10px 0;
+      margin-top: -30px;
+    }
   }
 }
 @media (min-width: 701px) {
