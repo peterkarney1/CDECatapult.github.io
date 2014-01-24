@@ -75,16 +75,22 @@ html.showfooter {
 
 @media (min-width: 0px) {
   #footer {
-    height: auto;
-    width: 100%;
-    overflow-x: hidden;
-    
     .social-links {
       text-align: center;
     }
     
+    .row, .col-sm-7 {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+    
     .footer-nav {
       margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
       
       li {
         width: 100%;
@@ -102,8 +108,6 @@ html.showfooter {
 
 @media (min-width: 768px) {
   #footer {
-    height: 100px;
-    
     .social-links {
       text-align: left;
     }

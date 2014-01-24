@@ -135,16 +135,20 @@ html.showfooter #footer-gradient {
   font-size: 16px;
 }
 @media (min-width: 0px) {
-  #footer {
-    height: auto;
-    width: 100%;
-    overflow-x: hidden;
-  }
   #footer .social-links {
     text-align: center;
   }
+  #footer .row,
+  #footer .col-sm-7 {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
   #footer .footer-nav {
     margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
   #footer .footer-nav li {
     width: 100%;
@@ -157,9 +161,6 @@ html.showfooter #footer-gradient {
   }
 }
 @media (min-width: 768px) {
-  #footer {
-    height: 100px;
-  }
   #footer .social-links {
     text-align: left;
   }
