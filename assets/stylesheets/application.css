@@ -223,6 +223,10 @@ html.showfooter #footer-gradient {
   text-align: center;
   padding: 50px 0 20px 0;
 }
+.subpage-layout .title .icon {
+  width: 82px;
+  height: 82px;
+}
 .subpage-layout .title h1 {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -333,7 +337,6 @@ html.showfooter #footer-gradient {
 }
 .subpage-layout .subpage-boxes .box.resources .inner .image {
   background: url(/assets/images/circle-graph.png) center center no-repeat;
-  height: 90px;
   position: relative;
   top: -20px;
 }
@@ -404,6 +407,14 @@ html.showfooter #footer-gradient {
   background: #308592;
   color: #fff;
   box-shadow: 5px 5px 0 #5bb1be;
+}
+.subpage-layout .subpage-boxes .box.resources .image,
+.subpage-layout .subpage-boxes .box.raw-data .image,
+.subpage-layout .subpage-boxes .box.api .image {
+  background-size: 100% 100% !important;
+  height: 90px;
+  width: 90px;
+  margin: auto;
 }
 .subpage-layout .contact-the-team h2 {
   font-family: 'Dosis', sans-serif;
@@ -886,10 +897,10 @@ html.showfooter #footer-gradient {
 .homepage-boxes a.homepage-box .inner .icon {
   width: 83px;
   height: 83px;
-  background: red;
   margin: 0 auto 0 auto;
   position: relative;
   top: -30px;
+  background-size: 100% 100% !important;
 }
 .homepage-boxes a.homepage-box .inner .icon.chat {
   background: url(/assets/images/circle-chat.png) no-repeat center center;

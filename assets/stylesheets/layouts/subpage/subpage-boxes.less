@@ -114,7 +114,6 @@
       
       .image {
         background: url(/assets/images/circle-graph.png) center center no-repeat;
-        height: 90px;
         position: relative;
         top: -20px;
       }
@@ -193,6 +192,15 @@
         color: #fff;
         box-shadow: 5px 5px 0 #5bb1be;
       }
+    }
+    
+    &.resources .image,
+    &.raw-data .image,
+    &.api .image {
+      background-size: 100% 100% !important;
+      height: 90px;
+      width: 90px;
+      margin: auto;
     }
   }
 }
