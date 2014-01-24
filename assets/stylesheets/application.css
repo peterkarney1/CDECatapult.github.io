@@ -135,6 +135,14 @@ html.showfooter #footer-gradient {
   background: url(/assets/images/grad-bottom.png) bottom center repeat-x;
   height: 74px;
 }
+#footer .social-links img.circle {
+  width: 47px;
+  height: 47px;
+}
+#footer .social-links img.catapult {
+  height: 25px;
+  margin-left: 10px;
+}
 #footer ul.nav.navbar-nav.navbar-right li a {
   color: #e05c48;
   font-size: 16px;
@@ -587,6 +595,7 @@ html.showfooter #footer-gradient {
   background-color: transparent;
   border-bottom: 0;
   background-image: url('/assets/images/github-download.png');
+  background-size: 32px 32px;
   background-position: center left;
 }
 .how-to .tutorial .step {
