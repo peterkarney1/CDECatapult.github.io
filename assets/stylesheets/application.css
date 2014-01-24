@@ -224,6 +224,17 @@ html.showfooter #footer-gradient {
   color: #e05c48;
   text-decoration: underline;
 }
+@media (max-width: 700px) {
+  .useful-links .useful-link-cols .useful-link-col {
+    text-align: center;
+  }
+  .useful-links ul li {
+    text-align: center;
+  }
+  .useful-links ul li .plus {
+    display: none;
+  }
+}
 .subpage-layout {
   min-height: 148px;
 }
