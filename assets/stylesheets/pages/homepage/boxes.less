@@ -22,7 +22,7 @@
         margin: 0 auto 0 auto;
         position: relative;
         top: -30px;
-        background-size: 100% 100% !important;
+        background-size: cover !important;
         
         &.chat {
           background: url(/assets/images/circle-chat.png) no-repeat center center;
@@ -60,5 +60,19 @@
     &:last-child .inner {
       margin-bottom: -30px;
     }
+  }
+}
+
+
+// Non-retina fixes for IE7/8:
+html.lt-ie9 .homepage-boxes a.homepage-box .inner {
+  .icon.chat {
+    background: url(/assets/images/non-retina/circle-chat.png) no-repeat center center;
+  }
+  .icon.lightbulb {
+    background: url(/assets/images/non-retina/circle-lightbulb.png) no-repeat center center;
+  }
+  .icon.chart {
+    background: url(/assets/images/non-retina/circle-graph.png) no-repeat center center;
   }
 }

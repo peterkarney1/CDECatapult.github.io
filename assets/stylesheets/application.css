@@ -7004,7 +7004,7 @@ html.showfooter #footer-gradient {
   margin: 0 auto 0 auto;
   position: relative;
   top: -30px;
-  background-size: 100% 100% !important;
+  background-size: cover !important;
 }
 .homepage-boxes a.homepage-box .inner .icon.chat {
   background: url(/assets/images/circle-chat.png) no-repeat center center;
@@ -7035,6 +7035,15 @@ html.showfooter #footer-gradient {
 }
 .homepage-boxes a.homepage-box:last-child .inner {
   margin-bottom: -30px;
+}
+html.lt-ie9 .homepage-boxes a.homepage-box .inner .icon.chat {
+  background: url(/assets/images/non-retina/circle-chat.png) no-repeat center center;
+}
+html.lt-ie9 .homepage-boxes a.homepage-box .inner .icon.lightbulb {
+  background: url(/assets/images/non-retina/circle-lightbulb.png) no-repeat center center;
+}
+html.lt-ie9 .homepage-boxes a.homepage-box .inner .icon.chart {
+  background: url(/assets/images/non-retina/circle-graph.png) no-repeat center center;
 }
 .block.homepage-challenge-block {
   background: url(/assets/images/graph.png) center 55px no-repeat #65bbc8;
@@ -7202,6 +7211,15 @@ html.showfooter #footer-gradient {
   background: url(/assets/images/arrows.png) no-repeat 0px 0px;
   background-size: 89px 102px;
 }
+html.lt-ie9 .block.homepage-whowhathow-block .column.who p {
+  background: url(/assets/images/non-retina/uk.png) no-repeat 0px 0px;
+}
+html.lt-ie9 .block.homepage-whowhathow-block .column.what p {
+  background: url(/assets/images/non-retina/graph-icon.png) no-repeat 0px 10px;
+}
+html.lt-ie9 .block.homepage-whowhathow-block .column.how p {
+  background: url(/assets/images/non-retina/arrows.png) no-repeat 0px 0px;
+}
 .block.homepage-latest-block {
   background: #f8e29f;
   padding-bottom: 40px;
@@ -7290,6 +7308,9 @@ html.showfooter #footer-gradient {
 .github-activity ul#github-activity > li ul.commits li span.message a {
   font-weight: normal;
   color: #000;
+}
+html.lt-ie9 .github-activity {
+  background: url(/assets/images/non-retina/fork.png) no-repeat 15px 85px;
 }
 .block {
   min-height: 400px;
