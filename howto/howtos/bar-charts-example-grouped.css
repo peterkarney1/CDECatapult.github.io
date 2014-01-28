@@ -1,0 +1,28 @@
+
+.svg-holder-grouped {
+	font: 10px sans-serif;
+	background:white;
+}
+
+.svg-holder-grouped .axis path,
+.svg-holder-grouped .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.svg-holder-grouped .bar {
+	fill: #79c36a;
+}
+
+.svg-holder-grouped .axis path {
+	stroke: #ccc;
+}
+
+.svg-holder-grouped .tick line {
+	stroke: #ccc;
+}
+
+.svg-holder-grouped .x.axis .tick line {
+	display:none;
+}
