@@ -24,6 +24,20 @@
   @import "subpage/contact-team";
 }
 
+html.lt-ie9 .subpage-boxes .box {
+  &.resources a .image {
+    background: url(/assets/images/non-retina/circle-graph.png) center center no-repeat !important;
+  }
+  
+  &.raw-data a .image {
+    background: url(/assets/images/non-retina/circle-script.png) center center no-repeat !important;
+  }
+  
+  &.api a .image {
+    background: url(/assets/images/non-retina/circle-browser.png) center center no-repeat !important;
+  }
+}
+
 @media (min-width: 700px) {
   .subpage-layout {
     .title {
