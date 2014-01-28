@@ -1,5 +1,4 @@
 .block.homepage-challenge-block {
-  // border-left: 9px solid #5eaeba;
   background: url(/assets/images/graph.png) center 55px no-repeat #65bbc8;
   padding-top: 50px;
   background-size: 300px;
@@ -17,34 +16,14 @@
       font-size: 23px;
       line-height: 120%;
       
-      span.dotted-line {
-        display: block;
-      }
-      
       span.highlight {
         background: white;
         text-shadow: 3px 3px 0 #f8e5e2;
         color: #e2604d;
-        
-        span.topleft {
-          background: url(/assets/images/dot.png) top left no-repeat;
-          
-          span.topright {
-            background: url(/assets/images/dot.png) top right no-repeat;
-            
-            span.bottomleft {
-              background: url(/assets/images/dot.png) bottom left no-repeat;
-              
-              span.bottomright {
-                background: url(/assets/images/dot.png) bottom right no-repeat;
-                
-                span.inner {
-                  padding: 2px 5px;
-                }
-              }
-            }
-          }
-        }
+      }
+      
+      span.dotted-line {
+        display: block;
       }
     }
     
@@ -59,7 +38,6 @@
     }
   }
 }
-
 
 @media (min-width: 400px) {
   .block.homepage-challenge-block {
@@ -90,10 +68,6 @@
         padding-top: 5px;
         font-size: 37px;
         line-height: 120%;
-        
-        .inner {
-          padding: 2px 13px;
-        }
       }
       
       h2 {
@@ -105,7 +79,37 @@
   }
 }
 
+@media (max-width: 768px) {
+  span.highlight {
+    span.inner {
+      padding: 2px 5px;
+    }
+  }
+}
+
 @media (min-width: 768px) {
+  span.highlight {
+    span.topleft {
+      background: url(/assets/images/dot.png) top left no-repeat;
+      
+      span.topright {
+        background: url(/assets/images/dot.png) top right no-repeat;
+        
+        span.bottomleft {
+          background: url(/assets/images/dot.png) bottom left no-repeat;
+          
+          span.bottomright {
+            background: url(/assets/images/dot.png) bottom right no-repeat;
+            
+            span.inner {
+              padding: 2px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
   .block.homepage-challenge-block {
     background-size: 768px;
     

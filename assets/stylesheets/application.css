@@ -7072,28 +7072,13 @@ html.lt-ie9 .homepage-boxes a.homepage-box .inner .icon.chart {
   font-size: 23px;
   line-height: 120%;
 }
-.block.homepage-challenge-block .container h1 span.dotted-line {
-  display: block;
-}
 .block.homepage-challenge-block .container h1 span.highlight {
   background: white;
   text-shadow: 3px 3px 0 #f8e5e2;
   color: #e2604d;
 }
-.block.homepage-challenge-block .container h1 span.highlight span.topleft {
-  background: url(/assets/images/dot.png) top left no-repeat;
-}
-.block.homepage-challenge-block .container h1 span.highlight span.topleft span.topright {
-  background: url(/assets/images/dot.png) top right no-repeat;
-}
-.block.homepage-challenge-block .container h1 span.highlight span.topleft span.topright span.bottomleft {
-  background: url(/assets/images/dot.png) bottom left no-repeat;
-}
-.block.homepage-challenge-block .container h1 span.highlight span.topleft span.topright span.bottomleft span.bottomright {
-  background: url(/assets/images/dot.png) bottom right no-repeat;
-}
-.block.homepage-challenge-block .container h1 span.highlight span.topleft span.topright span.bottomleft span.bottomright span.inner {
-  padding: 2px 5px;
+.block.homepage-challenge-block .container h1 span.dotted-line {
+  display: block;
 }
 .block.homepage-challenge-block .container h2 {
   font-family: 'Dosis', sans-serif;
@@ -7128,16 +7113,33 @@ html.lt-ie9 .homepage-boxes a.homepage-box .inner .icon.chart {
     font-size: 37px;
     line-height: 120%;
   }
-  .block.homepage-challenge-block .container h1 .inner {
-    padding: 2px 13px;
-  }
   .block.homepage-challenge-block .container h2 {
     font-size: 26px;
     width: 80%;
     margin: 40px auto;
   }
 }
+@media (max-width: 768px) {
+  span.highlight span.inner {
+    padding: 2px 5px;
+  }
+}
 @media (min-width: 768px) {
+  span.highlight span.topleft {
+    background: url(/assets/images/dot.png) top left no-repeat;
+  }
+  span.highlight span.topleft span.topright {
+    background: url(/assets/images/dot.png) top right no-repeat;
+  }
+  span.highlight span.topleft span.topright span.bottomleft {
+    background: url(/assets/images/dot.png) bottom left no-repeat;
+  }
+  span.highlight span.topleft span.topright span.bottomleft span.bottomright {
+    background: url(/assets/images/dot.png) bottom right no-repeat;
+  }
+  span.highlight span.topleft span.topright span.bottomleft span.bottomright span.inner {
+    padding: 2px 5px;
+  }
   .block.homepage-challenge-block {
     background-size: 768px;
   }
