@@ -7362,8 +7362,8 @@ html.lt-ie9 .github-activity {
 }
 .howto-template .case-studies-column a.case-study img {
   float: left;
-  max-width: 160px;
-  max-height: 160px;
+  width: 141px;
+  max-height: 141px;
   box-shadow: 5px 5px 0 #ddeaf2;
 }
 .howto-template .case-studies-column a.case-study .article {
