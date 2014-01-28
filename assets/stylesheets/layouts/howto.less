@@ -69,10 +69,9 @@
         list-style: none;
         padding: 10px;
         
-        a {
-          display: block;
-          min-height: 42px;
-          border-bottom: 2px solid #2b6e60;
+        &.gethelp a,
+        &.tutorial-files a,
+        &.live-example a {
           background-color: @orange; /* Old browsers */
           background-color: -moz-linear-gradient(top, #e05c48 0%, #d6503e 100%); /* FF3.6+ */
           background-color: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e05c48), color-stop(100%,#d6503e)); /* Chrome,Safari4+ */
@@ -80,9 +79,14 @@
           background-color: -o-linear-gradient(top, #e05c48 0%,#d6503e 100%); /* Opera 11.10+ */
           background-color: -ms-linear-gradient(top, #e05c48 0%,#d6503e 100%); /* IE10+ */
           background-color: linear-gradient(to bottom, #e05c48 0%,#d6503e 100%); /* W3C */
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05c48', endColorstr='#d6503e',GradientType=0 ); /* IE6-9 */
           background-repeat: no-repeat;
           background-position: 5px center;
+        }
+        
+        a {
+          display: block;
+          min-height: 42px;
+          border-bottom: 2px solid #2b6e60;
           color: #fff;
           padding: 8px 5px 5px 50px;
           font-size: 15px;
@@ -103,9 +107,8 @@
           background-size: 32px 32px;
         }
         &.github a {
-          background-color: transparent;
           border-bottom: 0;
-          background-image: url('/assets/images/github-download.png');
+          background: url('/assets/images/github-download.png') no-repeat;
           background-size: 32px 32px;
           background-position: center left;
         }
@@ -257,4 +260,27 @@
     padding: 10px;
     box-shadow: 4px 4px 0 #ddeaf2;
   }
+}
+
+html.lt-ie9 .how-to .tutorial .howto-links {
+  li.gethelp a {
+    background: url('/assets/images/non-retina/globe.png') 10px center no-repeat @orange !important;
+  }
+  
+  li.tutorial-files a {
+    background: url('/assets/images/non-retina/package.png') 10px center no-repeat @orange !important;
+  }
+  
+  li.live-example a {
+    background: url('/assets/images/non-retina/magnifying-glass.png') 10px center no-repeat @orange !important;
+  }
+  
+  li.github a {
+    border-bottom: 0;
+    background: url('/assets/images/non-retina/github-download.png') 10px center no-repeat !important;
+  }
+}
+
+html.lt-ie9 .step .step-circle {
+  background: url(/assets/images/non-retina/step-circle.png) no-repeat !important;
 }
