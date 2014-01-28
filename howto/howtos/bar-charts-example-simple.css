@@ -1,0 +1,35 @@
+
+.svg-holder-simple {
+	background:white;
+}
+
+.svg-holder-simple .bar {
+	fill: #79c36a;
+}
+
+.svg-holder-simple .bar:hover {
+	fill: #008c47;
+}
+
+.svg-holder-simple .axis {
+	font: 10px sans-serif;
+}
+
+.svg-holder-simple .axis path,
+.svg-holder-simple .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.svg-holder-simple .axis path {
+	stroke: #ccc;
+}
+
+.svg-holder-simple .tick line {
+	stroke: #ccc;
+}
+
+.svg-holder-simple .x.axis .tick line {
+	display:none;
+}
