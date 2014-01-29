@@ -7013,6 +7013,14 @@ html.lt-ie9 .subpage-boxes .box.api a .image {
 .how-to .try-colouring p {
   color: #fff !important;
 }
+.how-to .try-colouring button {
+  height: 30px;
+  border: 0;
+  background: #fff;
+  float: right;
+  font-size: 15px;
+  width: 100%;
+}
 .how-to .join-collaborate .text {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
