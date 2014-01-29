@@ -47,10 +47,9 @@ var DiabetesChoropleth = {
   style: function(feature) {
     return {
       fillColor: DiabetesChoropleth.color(feature.properties.per_capita_spend),
-      weight: 2,
+      weight: 0.5,
       opacity: 0.5,
       color: 'white',
-      dashArray: '3',
       fillOpacity: 0.8
     }
   },

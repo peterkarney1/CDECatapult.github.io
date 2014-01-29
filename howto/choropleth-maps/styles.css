@@ -108,7 +108,7 @@ line#drop {
   fill: none;
   stroke: #41B6C4;
   stroke-width: 2;
-  stroke-dasharray: 3, 3;
+  /*stroke-dasharray: 3, 3;*/
 }
 
 #spendmap {
