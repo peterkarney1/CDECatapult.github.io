@@ -109,12 +109,12 @@ d3.tsv("line-graphs-example-multi-data.tsv", function(error, data) {
       .attr("d", function(d) { return line(d.values); })
       .style("stroke", function(d) { return color(d.name); });
 
-  vehicle.append("text")
+ /* vehicle.append("text")
       .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
       .attr("transform", function(d) { return "translate(" + x(d.value.timeinsec) + "," + y(d.value.speed) + ")"; })
       .attr("x", 3)
       .attr("dy", ".35em")
-      .text(function(d) { return d.name; });
+      .text(function(d) { return d.name; });*/
 /*
 
   console.log(vehicles);

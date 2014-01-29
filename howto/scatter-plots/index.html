@@ -1,15 +1,15 @@
 ---
 layout: howto
 howto: true
-title: Scatter Graphs - Open Health Data Platform
-page_title: Scatter Graphs
+title: Scatter Plots - Open Health Data Platform
+page_title: How To's
 icon: circle-lightbulb.png
 ---
 
 <div class="how-to">
   <div class="container">
     <div class="title clearfix">
-      <!-- <img src="/assets/images/{{ page.icon }}" class="icon" alt=""> -->
+      <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
       
       <!-- The title of the site section "How To's", you shouldn't change this. -->
       <h1>{{ page.page_title }}</h1>
@@ -20,12 +20,12 @@ icon: circle-lightbulb.png
     </div> -->
     
     <!-- The title of your How To -->
-    <h2>Scatter graphs</h2>
+    <h2>Scatter plots</h2>
     
     <div class="row intro-text">
       
       <div class="col-sm-12 intro-column bold-intro-text">
-        <p>Scatter graphs (or scatter plots) allow us to show the relationship between two related values, in a similar way to a <a href="/howto/line-graphs">line&nbsp;graph</a>. They are useful to visually display a relationship between these values, and can demonstrate (or disprove) a&nbsp;trend.</p>
+        <p>Scatter plots allow us to show the relationship between two related values, in a similar way to a <a href="/howto/line-graphs">line&nbsp;graph</a>. They are useful to visually display a relationship between these values, and can demonstrate (or disprove) a&nbsp;trend.</p>
       </div>
 
     </div>
@@ -56,7 +56,8 @@ icon: circle-lightbulb.png
         </div>
       </div>
       
-      
+      <!-- Load in D3 for all examples -->
+      <script src="http://d3js.org/d3.v3.min.js"></script>
       
       <div class="step">
         <div class="step-circle">1</div>
@@ -107,8 +108,8 @@ icon: circle-lightbulb.png
 
             </div>
             
-            <link rel="stylesheet" href="bar-charts-example-simple-bad.css" />
-            <script type="text/javascript" src="bar-charts-example-simple-bad.js"></script>
+            <!--<link rel="stylesheet" href="bar-charts-example-simple-bad.css" />
+            <script type="text/javascript" src="bar-charts-example-simple-bad.js"></script>-->
 
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
@@ -143,8 +144,8 @@ icon: circle-lightbulb.png
 
             </div>
             
-            <!--<link rel="stylesheet" href="bar-charts-example-simple.css" />
-            <script type="text/javascript" src="bar-charts-example-simple.js"></script>-->
+            <link rel="stylesheet" href="scatter-plot-example-simple.css" />
+            <script type="text/javascript" src="scatter-plot-example-simple.js"></script>
 
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->

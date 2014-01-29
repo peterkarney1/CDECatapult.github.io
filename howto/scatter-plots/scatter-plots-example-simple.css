@@ -1,0 +1,25 @@
+
+.svg-holder-simple {
+  font: 10px sans-serif;
+  background:white;
+}
+
+.svg-holder-simple .axis path,
+.svg-holder-simple .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.svg-holder-simple .dot {
+  stroke: none;
+  fill:orange;
+}
+
+.svg-holder-simple .axis path {
+	stroke: #ccc;
+}
+
+.svg-holder-simple .tick line {
+	stroke: #ccc;
+}
