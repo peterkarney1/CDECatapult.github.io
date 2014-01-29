@@ -5,6 +5,22 @@ title: How To's - Open Health Data Platform
 page_title: How To's
 icon: circle-lightbulb.png
 ---
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+
+<script src="http://dimplejs.org/dist/dimple.v1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+
+<!-- leaflet -->
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+<script src="mapProcessing.js"></script>
+
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script src="diabetes-per-head-per-ccg-per-month.js"></script>
 
 <div class="how-to">
   <div class="container">
@@ -20,43 +36,9 @@ icon: circle-lightbulb.png
     </div>
     
     <!-- The title of your How To -->
-    <h2>Identifying diabetes prevalence and GP prescription trends</h2>
+    <h2>Choropleth Maps</h2>
     
     <div class="row intro-text">
-      <!-- The introduction to your How To: Case Study. We recommend deleting this section on non-case study guides.  -->
-      
-      <div class="col-sm-6 intro-column the-challenge">
-        <h3>The Challenge</h3>
-        
-        <p>
-          Over 2.4 million people in England or about 5.5% have diabetes.
-          On average &pound;24.45 is spent per diabetes patient per month on
-          prescriptions to treat their condition.
-        </p>
-      </div>
-      
-      <div class="col-sm-6 intro-column the-solution">
-        <h3>The Solution</h3>
-        
-        <p>
-          This site takes data from sources like the Health and
-          Social Care Information Centre (HSCIC) and shows how it
-          can be turned into visualisations and analysis to answer
-          specific questions for your organisation.
-        </p>
-        
-        <p>
-          This is the
-          ALPHA version of the site, which shows how to take a small
-          number of datasets including data about GP prescriptions
-          and diabetes prevalence to show the extent of diabetes
-          treatment in the UK.
-        </p>
-      </div>
-      
-      <!-- The introduction for non-case-studies (delete if a case study): -->
-      
-      <!--
       <div class="col-sm-12 intro-column bold-intro-text">
         <p>
           Pellentesque habitant morbi tristique senectus et netus
@@ -66,7 +48,6 @@ icon: circle-lightbulb.png
           cursus vel. Proin congue, metus a hendrerit suscipit.
         </p>
       </div>
-      -->
     </div>
   </div>
   
@@ -78,7 +59,7 @@ icon: circle-lightbulb.png
           <h2>Tutorial</h2>
 
           <!-- The title your guide -->
-          <h3>Spend per diabetes patient</h3>
+          <h3>Choropleth Maps</h3>
         </div>
         
         <div class="col-sm-6">
@@ -103,47 +84,34 @@ icon: circle-lightbulb.png
         </div>
       </div>
       
-      <!-- You'll need a <div class="step"> block for each step. This template has four but use as many as you need. -->
       <div class="step">
         <div class="step-circle">1</div>
         
         <div class="row step-content">
           <div class="col-sm-6">
-
-            <!-- Step left column content. -->
-            <div id="step-1-map" style="width: 100%; height: 300px;"></div>
-            
-            <script>
-              $(function() {
-                var map;
-                function initialize() {
-                  var mapOptions = {
-                    zoom: 8,
-                    center: new google.maps.LatLng(-34.397, 150.644)
-                  };
-                  
-                  map = new google.maps.Map(document.getElementById('step-1-map'), mapOptions);
-                }
-
-                google.maps.event.addDomListener(window, 'load', initialize);
-              });
-            </script>
           </div><!-- /.col-sm-6 -->
           
           <div class="col-sm-6">
             <!-- Step right column content. -->
-            <h4>Step one - Setting up</h4>
+            <h4>Step one - Introduction</h4>
             
             <p>
-              This chart shows how much money is spent on prescriptions
-              for diabetes patients per month. The data is at the Clinical
-              Commissioning Group (CCG) level, which is the way GP
-              Surgeries have organised in England since 1 April 2013.
+              Nulla facilisi. Sed commodo ultrices erat, ac
+              imperdiet mauris tincidunt a. Sed in tellus id
+              est accumsan egestas. Duis a purus ac turpis
+              vehicula sollicitudin. Duis ac dolor a dui porta
+              faucibus. Interdum et malesuada fames ac ante
+              ipsum primis in faucibus.
             </p>
             
             <p>
-              The amount spent per diabetes patient ranges
-              from roughly &pound;18 to &pound;31 per month.
+              Nullam sed aliquam nisl. Sed placerat euismod mi
+              sed blandit. Suspendisse id ipsum vitae est cursus
+              pharetra. Sed velit ligula, hendrerit ac leo quis,
+              ultricies sodales est. Phasellus sed metus
+              pellentesque nisi fermentum ullamcorper. Cras
+              vitae malesuada libero. Nulla dictum malesuada
+              consequat.
             </p>
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
@@ -156,47 +124,37 @@ icon: circle-lightbulb.png
           <div class="col-sm-6">
 
             <!-- Step left column example content. -->
-            <h4>Step two - Plugging into the API</h4>
-            
-            <p class="lead">
-              Integer nisi velit, placerat vel aliquet at, pretium ut
-              lacus. In sed quam quis sem imperdiet rutrum.
-            </p>
+            <h4>Step two - Setting up the HTML</h4>
             
             <p>
-              Cras vitae diam quis magna commodo faucibus vitae id ipsum. 
-              auris ut diam ut elit dictum porttitor. Pellentesque sodales
-              pharetra nisi. Nam non elit risus. Etiam bibendum diam ut
-              tellus sollicitudin porttitor. 
+              To build a choropleth map with D3 and Leaflet, you need 
+              to include a number of Javascript libraries. In the
+              code snippet on the right, we include them and set up
+              an empty div where the choropleth map will be rendered to.
             </p>
-            
-            <a href="#" class="btn btn-default">
-              <span class="subtext">HOW TO</span>
-              <span class="text">Get data from HSCIC</span>
-            </a>
           </div>
           
           <div class="col-sm-6">
-
-            <!-- Step right column example content. -->
-            <pre>
-  module ActiveRecord
-    class Migration
-      module JoinTable #:nodoc:
-        private
-
-        def find_join_table_name(table_1, table_2, options = {})
-          options.delete(:table_name)
-        end
-
-        def join_table_name(table_1, table_2)
-          [table_1.to_s, table_2.to_s].sort.join("_").to_sym
-        end
-      end
-    end
-  end
-            </pre>
-
+            {% highlight html %}
+<!doctype html>
+<html>
+  <head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="mapProcessing.js"></script>
+    <script src="diabetes-per-head-per-ccg-per-month.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link href="styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="choroplethmap"></div>
+  </body>
+</html>
+            {% endhighlight %}
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -206,48 +164,70 @@ icon: circle-lightbulb.png
         
         <div class="row step-content">
           <div class="col-sm-6">
-
-            <!-- Step left column example content. -->
-            <h4>Step three - Pull the data</h4>
+            <h4>Step three - Creating the choropleth map</h4>
             
-            <p class="lead">
-              Integer nisi velit, placerat vel aliquet at, pretium ut
-              lacus. In sed quam quis sem imperdiet rutrum.
+            <p>
+              The Javascript on the right will, once called, render the
+              choropleth map into the div we created earlier.
             </p>
             
             <p>
-              Cras vitae diam quis magna commodo faucibus vitae id ipsum. 
-              auris ut diam ut elit dictum porttitor. Pellentesque sodales
-              pharetra nisi. Nam non elit risus. Etiam bibendum diam ut
-              tellus sollicitudin porttitor. 
+              We call the function like this:
             </p>
             
-            <a href="#" class="btn btn-default">
-              <span class="subtext">HOW TO</span>
-              <span class="text">Total Data per GP</span>
-            </a>
+            <div class="small-snippet">
+              {% highlight javascript %}diabetes_per_head_per_ccg_per_month('choroplethmap');{% endhighlight %}
+            </div>
           </div>
           
           <div class="col-sm-6">
-
-          <!-- Step right column example content. -->
-            <pre>
-  module ActiveRecord
-    class Migration
-      module JoinTable #:nodoc:
-        private
-
-        def find_join_table_name(table_1, table_2, options = {})
-          options.delete(:table_name)
-        end
-
-        def join_table_name(table_1, table_2)
-          [table_1.to_s, table_2.to_s].sort.join("_").to_sym
-        end
-      end
-    end
-  end
-            </pre>
+            {% highlight javascript %}
+var diabetes_per_head_per_ccg_per_month = function(div) {
+  var map = L.map(div).setView([53.0, -1.5], 6);
+  
+  var color = function(d) {
+    return  d == 'NA' ? '#333' :
+            d == 'undefined' ? '#333' :
+            d > 30 ? '#0C2C84' :
+            d > 28 ? '#225EA8' :
+            d > 26 ? '#1D91C0' :
+            d > 24 ? '#41B6C4' :
+            d > 22 ? '#7FCDBB' :
+            d > 20 ? '#C7E9B4' :
+            '#FFFFCC';
+  };
+  
+  var style = function(feature) {
+    return {
+      fillColor: color(feature.properties.per_capita_spend),
+      weight: 2,
+      opacity: 0.5,
+      color: 'white',
+      dashArray: '3',
+      fillOpacity: 0.8
+    }
+  };
+  
+  var defaultStyle = function(feature) {
+    return {
+      outlineColor: "#000000",
+      outlineWidth: 0.5,
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0
+    };
+  };
+  
+  L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2012 CloudMade',
+    key: 'BC9A493B41014CAABB98F0471D759707'
+  }).addTo(map);
+  
+  mergedFeatureLayer(map, "data/diabetes_per_head_per_ccg_per_month.csv", "data/ccg-boundaries.json", "ccg_code", style, null, null, "ccg_boundaries");
+  
+  addLegend([0, 20, 22, 24, 26, 28, 30, 34], map, color);
+}
+            {% endhighlight %}
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -257,45 +237,50 @@ icon: circle-lightbulb.png
         
         <div class="row step-content">
           <div class="col-sm-6">
-
-            <!-- Step left column example content. -->
-            <div id="step-4-map" style="width: 100%; height: 300px;"></div>
+            <h4>Step four - Styling the map</h4>
             
-            <script>
-              $(function() {
-                var map;
-                function initialize() {
-                  var mapOptions = {
-                    zoom: 3,
-                    center: new google.maps.LatLng(60.397, 50.644)
-                  };
-                  
-                  map = new google.maps.Map(document.getElementById('step-4-map'), mapOptions);
-                }
-
-                google.maps.event.addDomListener(window, 'load', initialize);
-              });
-            </script>
+            <p>
+              When choosing the colours for your choropleth map, it's important
+              to make sure you don't pick colours that are too close together -
+              and therefore hard to distinguish - or too many colours, which
+              the viewer may find overwhelming.
+            </p>
+            
+            <p>
+              It's also important to pay attention to how
+              strong the colours you use are. A darker
+              colour is likely to be viewed by the user
+              as a higher value, so, for example, displaying
+              low population density with a dark grey might
+              be confusing.
+            </p>
+            
+            <p>
+              Finally, it's important that your choropleth map
+              is accessible. Make sure that you don't pick colours
+              that could be misinterpreted by colour-blind viewers.
+            </p>
+            
+            <p>
+              Colour can greatly enhance the communication between
+              the cartographer and their audience but poor colour
+              choice can result in a map that is neither effective
+              nor appealing to the map user; sometimes simpler
+              is better.
+            </p>
+            
+            <p>
+              The colour choices in the example above can be altered
+              in the <em>color()</em> function.
+            </p>
           </div>
           
           <div class="col-sm-6">
-
-            <!-- Step right column example content. -->
-            <h4>Step four - Output</h4>
+            <div id="spendmap" class="spendmap"></div>
             
-            <p>
-              This chart shows how much money is spent on
-              prescriptions for diabetes patients per month.
-              The data is at the Clinical Commissioning Group
-              (CCG) level, which is the way GP Surgeries have
-              organised in England since 1 April 2013.
-            </p>
-            
-            <p>
-              The amount spent per diabetes patient ranges from
-              roughly &pound;18 to &pound;31 per month.
-            </p>
-
+            <script>
+              diabetes_per_head_per_ccg_per_month('spendmap');
+            </script>
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
