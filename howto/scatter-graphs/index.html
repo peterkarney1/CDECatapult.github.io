@@ -1,0 +1,196 @@
+---
+layout: howto
+howto: true
+title: Scatter Graphs - Open Health Data Platform
+page_title: Scatter Graphs
+icon: circle-lightbulb.png
+---
+
+<div class="how-to">
+  <div class="container">
+    <div class="title clearfix">
+      <!-- <img src="/assets/images/{{ page.icon }}" class="icon" alt=""> -->
+      
+      <!-- The title of the site section "How To's", you shouldn't change this. -->
+      <h1>{{ page.page_title }}</h1>
+    </div>
+    
+    <div class="logo">
+      <img src="/assets/images/casestudies/diabetes-logo.png" alt="">
+    </div>
+    
+    <!-- The title of your How To -->
+    <h2>Scatter graphs</h2>
+    
+    <div class="row intro-text">
+      
+      <div class="col-sm-12 intro-column bold-intro-text">
+        <p>Scatter graphs (or scatter plots) allow us to show the relationship between two related values, in a similar way to a <a href="/howto/line-graphs">line&nbsp;graph</a>.</p>
+        <p>They are useful to visually display a relationship between these values, and can demonstrate (or disprove) a&nbsp;trend.</p>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="tutorial">
+    <div class="container">
+      <div class="row howto-top">
+        <div class="col-sm-6">
+          <!-- The title to the tutorial section of the page, don't change this. -->
+          <h2>Tutorial</h2>
+
+          <!-- The title your guide -->
+          <h3>Making an attractive scatter plot</h3>
+        </div>
+        
+        <div class="col-sm-6">
+          <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
+          <ul class="howto-links row">
+            <li class="col-sm-6 tutorial-files">
+              <a href="#">Download tutorial files (.zip)</a>
+            </li>
+            
+            <li class="col-sm-6 github">
+              <a href="#">Get the files on Github</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      
+      
+      <div class="step">
+        <div class="step-circle">1</div>
+        
+        <div class="row step-content">
+            <div class="col-sm-6">
+
+              <h4>Some example data + coding up</h4>
+              
+              <p class="lead">We're creating these examples using HTML, CSS and a JavaScript data visualisation library called <a href="http://d3js.org/">D3.js</a>.</p>
+              
+              <p>You can use these examples as a base for your own visualisations - the code is fully commented up and you can download them as a zip below. If you want to explore D3.js further you can find many <a href="https://github.com/mbostock/d3/wiki/Gallery">examples</a> online.</p>
+              
+              <!--<a href="#" class="btn btn-default">
+                <span class="subtext">HOW TO</span>
+                <span class="text">Get data from HSCIC</span>
+              </a>-->
+
+          </div>
+          <div class="col-sm-6">
+
+            <pre>
+            
+            </pre>
+
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+      
+            <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+
+            <!-- Step left column example content. -->
+            <h4>A visually bad example</h4>
+                        
+            <p>Here's an example of an ugly chart. A graphic like this may be produced by software that doesn't appreciate the importance of aesthetics in the communication of the underlying information - or by someone who doesn't understand that a few simple changes could make their data more accessible.</p>
+
+          </div>
+          
+          <div class="col-sm-6">
+
+          <!-- Step right column example content. -->
+            <div class="svg-holder-simple-bad">
+
+            </div>
+            
+            <link rel="stylesheet" href="bar-charts-example-simple-bad.css" />
+            <script type="text/javascript" src="bar-charts-example-simple-bad.js"></script>
+
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">3</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+
+            <!-- Step left column example content. -->
+            <h4>That's better!</h4>
+            
+            <p class="lead">
+              Here is the same chart with some visual improvements. And here's what they are:
+            </p>
+            
+            <ul>
+              <li><strong>Remove Chartjunk</strong> - chart borders, grid lines and unnecessary tick mark have gone, leaving the chart feeling less cluttered.</li>
+              <li><strong>Use softer lines for the axes</strong> - strong black can look too harsh on white, by softening it a touch the axes look more considered and also allow your data to stand out.</li>
+              <li><strong>Make sure your scale is appropriate.</strong> - using D3 means that your scale will probably be set sensibly for your dataset, but use your common-sense. There is no point in having loads of axis with no data.</li>
+             
+            </ul>
+
+          </div>
+          
+          <div class="col-sm-6">
+
+          <!-- Step right column example content. -->
+            <div class="svg-holder-simple">
+
+            </div>
+            
+            <!--<link rel="stylesheet" href="bar-charts-example-simple.css" />
+            <script type="text/javascript" src="bar-charts-example-simple.js"></script>-->
+
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+      
+      <div class="step">
+        <div class="step-circle">4</div>
+
+        <div class="row step-content">
+          <div class="col-sm-6 col-sm-offset-6">
+
+            <h4>Add a line of best-fit</h4>
+            
+            <p>If your scatter plot tells an obvious story of correlation between the two axes of data, you can draw a line of best-fit through the points, using the following d3 function: <div class="small-snippet"> {% highlight javascript %}.interpolate();{% endhighlight %}</div></p>
+          </div>
+        </div><!-- /.row.step-content -->
+        
+       
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">5</div>
+
+        <div class="row step-content">
+          <div class="col-sm-6 col-sm-offset-6">
+
+            <h4>Other ideas and suggestions</h4>
+            
+            <p>
+              Here's are some more points to note when dealing with scatter plots:
+              <ul>
+                <li>Don't mix numerical and non-numerical information. For example, plotting distance away from work (numerical) against perceived happiness will be difficult to make use of. Better to plot distance as 'near' and 'far' in this case.</li>
+                <li>You can add a third dimension to a scatter plot to make it a <a href="http://nvd3.org/ghpages/scatter.html">bubble chart.</a> In this example, the third dimension is the size of the circle at each point. <em>(Note that this uses the <a href="http://nvd3.org" title="">nvd3</a>  library)</em></li>
+
+              </ul>
+            </p>
+
+          </div>
+        </div><!-- /.row.step-content -->
+        
+       
+      </div><!-- /.step -->
+
+      
+      
+      {% include howto-collaborate.html %}
+    </div><!-- /.container -->
+  </div><!-- /.tutorial -->
+</div><!-- /.how-to -->

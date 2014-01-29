@@ -20,18 +20,14 @@ icon: circle-lightbulb.png
     </div>
     
     <!-- The title of your How To -->
-    <h2>Bar charts</h2>
+    <h2>Line graphs</h2>
     
     <div class="row intro-text">
-
+      
       <div class="col-sm-12 intro-column bold-intro-text">
-        <p>
-          Pellentesque habitant morbi tristique senectus et netus
-          et malesuada fames ac turpis egestas. Etiam placerat
-          risus mattis, suscipit tortor eu, pulvinar metus.
-          Cras vehicula gravida urna, vel sollicitudin risus
-          cursus vel. Proin congue, metus a hendrerit suscipit.
-        </p>
+        <p>Line graphs are like analog bar charts. Like bar charts they work when you have two variables - but rather than discrete values, the data is continuous like the progression through time, or a temperature rising and falling.</p>
+        <p>As well as displaying known points, a line graph allows us to look at the values between - and beyond - the points.</p>
+        <p>This tutorial will give you a few pointers on making line graphs work and how to keep them looking smart.</p>
       </div>
 
     </div>
@@ -45,7 +41,7 @@ icon: circle-lightbulb.png
           <h2>Tutorial</h2>
 
           <!-- The title your guide -->
-          <h3>Creating an elegant bar chart</h3>
+          <h3>Making an attractive line graph</h3>
         </div>
         
         <div class="col-sm-6">
@@ -69,11 +65,7 @@ icon: circle-lightbulb.png
           </ul>
         </div>
       </div>
-
-      <!-- Load in D3 for all examples -->
-      <script src="http://d3js.org/d3.v3.min.js"></script>
       
-      <!-- You'll need a <div class="step"> block for each step. This template has four but use as many as you need. -->
       <div class="step">
         <div class="step-circle">1</div>
         
@@ -81,20 +73,19 @@ icon: circle-lightbulb.png
           <div class="col-sm-6">
 
             <!-- Step left column content. -->
-            <div id="step-1-map" style="width: 100%; height: 300px;"></div>
-
+          
           </div><!-- /.col-sm-6 -->
+          
           <div class="col-sm-6">
-
             <!-- Step right column content. -->
             <h4>When to use</h4>
-
-            <p class="lead">The humble bar chart is the classic chart. Bar charts easily display two variables, one on the horizontal axis and one on the vertical. They allowing different items of data to be easily compared visually, the eye can easily scan left to right and understand the difference between two values.</p>
-
-            <p>They're also very versatile. They can be flipped onto their side, multiple items can be compared next to each other, colour can be used to 'stack' the bars - and they can be augmented with all sorts of extra elements to further convey information.</p>
-
-            <p>When each bar is properly labelled, it is also possible to reorder the values without losing information - bar charts can be ordered from lowest to highest, alphabetically or any other way - as long as it best tells the story.</p>
             
+            <p class="lead">The value of a line graph is in seeing the change of one continuous variable relative to another. For example, plotting the velocity of an object over time.</p>
+
+            <p>We can only measure the velocity at specific points in time, but we know that velocity is a continuous variable so we can connect the dots and reliably demonstrate what happens in the gaps - this is called interpolation.</p>
+
+            <p>As well as showing us what lies in the gaps, line graphs can also be used to project trends into the past or future. After the data points have been collected, a best fit line is created and extended in both directions. The validity of any projection is in no way guaranteed by the use of a line chart, but the chart can be used as a visual aid.</p>
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -103,20 +94,20 @@ icon: circle-lightbulb.png
         <div class="step-circle">2</div>
         
         <div class="row step-content">
-          <div class="col-sm-6">
-            <h4>Some example data + coding up</h4>
-            
-            <p class="lead">We're creating these examples using HTML, CSS and a JavaScript data visualisation library called <a href="http://d3js.org/">D3.js</a>.</p>
-            
-            <p>You can use these examples as a base for your own visualisations - the code is fully commented up and you can download them as a zip below. If you want to explore D3.js further you can find many <a href="https://github.com/mbostock/d3/wiki/Gallery">examples</a> online.</p>
-            
-            <!--<a href="#" class="btn btn-default">
-              <span class="subtext">HOW TO</span>
-              <span class="text">Get data from HSCIC</span>
-            </a>-->
+            <div class="col-sm-6">
+
+              <h4>Some example data + coding up</h4>
+              
+              <p class="lead">We're creating these examples using HTML, CSS and a JavaScript data visualisation library called <a href="http://d3js.org/">D3.js</a>.</p>
+              
+              <p>You can use these examples as a base for your own visualisations - the code is fully commented up and you can download them as a zip below. If you want to explore D3.js further you can find many <a href="https://github.com/mbostock/d3/wiki/Gallery">examples</a> online.</p>
+              
+              <!--<a href="#" class="btn btn-default">
+                <span class="subtext">HOW TO</span>
+                <span class="text">Get data from HSCIC</span>
+              </a>-->
 
           </div>
-          
           <div class="col-sm-6">
 
             <pre>
@@ -126,8 +117,8 @@ icon: circle-lightbulb.png
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-
-      <div class="step">
+      
+            <div class="step">
         <div class="step-circle">3</div>
         
         <div class="row step-content">
@@ -153,7 +144,7 @@ icon: circle-lightbulb.png
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       <div class="step">
         <div class="step-circle">3</div>
         
@@ -168,10 +159,10 @@ icon: circle-lightbulb.png
             </p>
             
             <ul>
-            <li><strong>Remove Chartjunk</strong> - chart borders, grid lines and unnecessary tick mark have gone, leaving the chart feeling less cluttered.</li>
-            <li><strong>Use softer lines for the axes</strong> - strong black can look too harsh on white, by softening it a touch the axes look more considered and also allow your data to stand out.</li>
-            <li><strong>Consider the width of the bars</strong> - in this example, some space between the bars makes them easier to read and compare - sometimes you may want them closer together.</li>
-            <li><strong>Sort your bars appropriately</strong> - consider whether your data can be sorted differently to better tell its story.</li>
+              <li><strong>Remove Chartjunk</strong> - chart borders, grid lines and unnecessary tick mark have gone, leaving the chart feeling less cluttered.</li>
+              <li><strong>Use softer lines for the axes</strong> - strong black can look too harsh on white, by softening it a touch the axes look more considered and also allow your data to stand out.</li>
+             <!--  <li><strong>Consider the width of the bars</strong> - in this example, some space between the bars makes them easier to read and compare - sometimes you may want them closer together.</li>
+              <li><strong>Sort your bars appropriately</strong> - consider whether your data can be sorted differently to better tell its story.</li> -->
             </ul>
 
           </div>
@@ -179,12 +170,12 @@ icon: circle-lightbulb.png
           <div class="col-sm-6">
 
           <!-- Step right column example content. -->
-          	<div class="svg-holder-simple">
+            <div class="svg-holder-simple">
 
-          	</div>
-          	
-          	<link rel="stylesheet" href="bar-charts-example-simple.css" />
-      			<script type="text/javascript" src="bar-charts-example-simple.js"></script>
+            </div>
+            
+            <!--<link rel="stylesheet" href="bar-charts-example-simple.css" />
+            <script type="text/javascript" src="bar-charts-example-simple.js"></script>-->
 
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
@@ -199,34 +190,32 @@ icon: circle-lightbulb.png
             <h4>Other ideas</h4>
             
             <p>
-              Here's a couple of other bar chart examples.
+              Here's a couple of other line graph examples.
             </p>
-
-            <p>You'd use a stacked bar chart, when each bar can be split into multiple categories. You could display the same data differently by using a grouped bar chart. Both examples can be downloaded at the end of this article.</p>
 
           </div>
         </div><!-- /.row.step-content -->
         
         <div class="row step-content">
-        	<div class="col-sm-6">
+          <div class="col-sm-6">
 
-            <h4>Stacked bar chart</h4>
+            <h4>Something</h4>
 
-        		<div class="svg-holder-stacked"></div>
+            <div class="svg-holder-stacked"></div>
 
-        		<link rel="stylesheet" href="bar-charts-example-stacked.css" />
-        		<script type="text/javascript" src="bar-charts-example-stacked.js"></script>
+            <!--<link rel="stylesheet" href="bar-charts-example-stacked.css" />
+            <script type="text/javascript" src="bar-charts-example-stacked.js"></script>-->
 
-        	</div>
+          </div>
           
           <div class="col-sm-6">
 
-            <h4>Grouped bar chart</h4>
+            <h4>Something else</h4>
 
             <div class="svg-holder-grouped"></div>
 
-            <link rel="stylesheet" href="bar-charts-example-grouped.css" />
-            <script type="text/javascript" src="bar-charts-example-grouped.js"></script>
+            <!--<link rel="stylesheet" href="bar-charts-example-grouped.css" />
+            <script type="text/javascript" src="bar-charts-example-grouped.js"></script>-->
 
           </div>
         </div><!-- /.row.step-content -->
