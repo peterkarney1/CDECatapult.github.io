@@ -37,11 +37,18 @@ icon: circle-lightbulb.png
     <div class="row intro-text">
       <div class="col-sm-12 intro-column bold-intro-text">
         <p>
-          Pellentesque habitant morbi tristique senectus et netus
-          et malesuada fames ac turpis egestas. Etiam placerat
-          risus mattis, suscipit tortor eu, pulvinar metus.
-          Cras vehicula gravida urna, vel sollicitudin risus
-          cursus vel. Proin congue, metus a hendrerit suscipit.
+          A choropleth map is a thematic map in which areas
+          are shaded or patterned in proportion to the
+          measurement of the statistical variable being
+          displayed on the map, such as population density
+          or per-capita income.
+        </p>
+        
+        <p>
+          The choropleth map provides an easy way to
+          visualize how a measurement varies across a
+          geographic area or it shows the level of
+          variability within a region.
         </p>
       </div>
     </div>
@@ -89,25 +96,36 @@ icon: circle-lightbulb.png
           
           <div class="col-sm-6">
             <!-- Step right column content. -->
-            <h4>Step one - Introduction</h4>
+            <h4>Introduction</h4>
             
             <p>
-              Nulla facilisi. Sed commodo ultrices erat, ac
-              imperdiet mauris tincidunt a. Sed in tellus id
-              est accumsan egestas. Duis a purus ac turpis
-              vehicula sollicitudin. Duis ac dolor a dui porta
-              faucibus. Interdum et malesuada fames ac ante
-              ipsum primis in faucibus.
+              Choropleth maps are a great way to visualise a
+              dataset over a geographical area. Data that may
+              take a while to understand in a table or a chart
+              can instantly make sense when displayed as a
+              choropleth map.
             </p>
             
             <p>
-              Nullam sed aliquam nisl. Sed placerat euismod mi
-              sed blandit. Suspendisse id ipsum vitae est cursus
-              pharetra. Sed velit ligula, hendrerit ac leo quis,
-              ultricies sodales est. Phasellus sed metus
-              pellentesque nisi fermentum ullamcorper. Cras
-              vitae malesuada libero. Nulla dictum malesuada
-              consequat.
+              Choropleth maps have a number of advantages over
+              other ways of displaying the same data:
+            </p>
+            
+            <ul>
+              <li>
+                Easy to understand and very visual.
+              </li>
+              
+              <li>
+                Helpful for finding hot spots and anomalies that might
+                otherwise be missed.
+              </li>
+            </ul>
+            
+            <p>
+              Choropleth maps are often favoured by geographers for displaying
+              the variations of a statistic, such as population density or
+              land usage, over a geographical region.
             </p>
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
@@ -118,15 +136,26 @@ icon: circle-lightbulb.png
         
         <div class="row step-content">
           <div class="col-sm-6">
-
-            <!-- Step left column example content. -->
             <h4>Step two - Setting up the HTML</h4>
+            
+            <p class="lead">
+              We're creating these examples using HTML, CSS, a JavaScript
+              data visualisation library called
+              <a href="http://d3js.org/">D3.js</a>
+              and <a href="http://leafletjs.com/">Leaflet.js</a>, a
+              Javascript library for creating interactive maps.
+            </p>
             
             <p>
               To build a choropleth map with D3 and Leaflet, you need 
               to include a number of Javascript libraries. In the
               code snippet on the right, we include them and set up
-              an empty div where the choropleth map will be rendered to.
+              an empty div where the choropleth map will be rendered.
+            </p>
+            
+            <p>
+              We also include some styles - for Leaflet, the Javascript
+              map library, and for styling the choropleth overlay.
             </p>
           </div>
           
@@ -257,6 +286,66 @@ var diabetes_per_head_per_ccg_per_month = function(div) {
               that could be misinterpreted by colour-blind viewers.
             </p>
             
+            <div class="try-colouring">
+              <h4>Try changing the choropleth colour scheme</h4>
+              
+              <p>
+                Which colour scheme do you think is best?
+              </p>
+              
+              <div class="row" style="margin: 10px 0">
+                <div class="col-xs-1 colour_1" style="height: 30px; background: #0C2C84;"></div>
+                <div class="col-xs-1 colour_2" style="height: 30px; background: #225EA8;"></div>
+                <div class="col-xs-1 colour_3" style="height: 30px; background: #1D91C0;"></div>
+                <div class="col-xs-1 colour_4" style="height: 30px; background: #41B6C4;"></div>
+                <div class="col-xs-1 colour_5" style="height: 30px; background: #7FCDBB;"></div>
+                <div class="col-xs-1 colour_6" style="height: 30px; background: #C7E9B4;"></div>
+                <div class="col-xs-1 colour_7" style="height: 30px; background: #FFFFCC;"></div>
+                <div class="col-xs-5">
+                  <button class="colour-scheme-change">Change to this</button>
+                </div>
+              </div>
+              
+              <div class="row" style="margin: 10px 0">
+                <div class="col-xs-1 colour_1" style="height: 30px; background: #0000FF;"></div>
+                <div class="col-xs-1 colour_2" style="height: 30px; background: #6666FF;"></div>
+                <div class="col-xs-1 colour_3" style="height: 30px; background: #B3B3FF;"></div>
+                <div class="col-xs-1 colour_4" style="height: 30px; background: #FFFFFF;"></div>
+                <div class="col-xs-1 colour_5" style="height: 30px; background: #FFB3B3;"></div>
+                <div class="col-xs-1 colour_6" style="height: 30px; background: #FF6666;"></div>
+                <div class="col-xs-1 colour_7" style="height: 30px; background: #FF0000;"></div>
+                <div class="col-xs-5">
+                  <button class="colour-scheme-change">Change to this</button>
+                </div>
+              </div>
+              
+              <div class="row" style="margin: 10px 0">
+                <div class="col-xs-1 colour_1" style="height: 30px; background: #C2523C;"></div>
+                <div class="col-xs-1 colour_2" style="height: 30px; background: #E68E1C;"></div>
+                <div class="col-xs-1 colour_3" style="height: 30px; background: #F7D707;"></div>
+                <div class="col-xs-1 colour_4" style="height: 30px; background: #7BED00;"></div>
+                <div class="col-xs-1 colour_5" style="height: 30px; background: #0EC441;"></div>
+                <div class="col-xs-1 colour_6" style="height: 30px; background: #1E9094;"></div>
+                <div class="col-xs-1 colour_7" style="height: 30px; background: #0B2C7A;"></div>
+                <div class="col-xs-5">
+                  <button class="colour-scheme-change">Change to this</button>
+                </div>
+              </div>
+              
+              <div class="row" style="margin: 10px 0">
+                <div class="col-xs-1 colour_1" style="height: 30px; background: #000;"></div>
+                <div class="col-xs-1 colour_2" style="height: 30px; background: #222;"></div>
+                <div class="col-xs-1 colour_3" style="height: 30px; background: #444;"></div>
+                <div class="col-xs-1 colour_4" style="height: 30px; background: #666;"></div>
+                <div class="col-xs-1 colour_5" style="height: 30px; background: #888;"></div>
+                <div class="col-xs-1 colour_6" style="height: 30px; background: #AAA;"></div>
+                <div class="col-xs-1 colour_7" style="height: 30px; background: #CCC;"></div>
+                <div class="col-xs-5">
+                  <button class="colour-scheme-change">Change to this</button>
+                </div>
+              </div>
+            </div>
+            
             <p>
               Colour can greatly enhance the communication between
               the cartographer and their audience but poor colour
@@ -275,7 +364,7 @@ var diabetes_per_head_per_ccg_per_month = function(div) {
             <div id="spendmap" class="spendmap"></div>
             
             <script>
-              diabetes_per_head_per_ccg_per_month('spendmap');
+              DiabetesChoropleth.init('spendmap');
             </script>
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->

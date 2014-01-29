@@ -7004,6 +7004,15 @@ html.lt-ie9 .subpage-boxes .box.api a .image {
 .how-to .tutorial .step .step-content div.small-snippet pre {
   height: auto;
 }
+.how-to .try-colouring {
+  background: #3e9e89;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+.how-to .try-colouring h4,
+.how-to .try-colouring p {
+  color: #fff !important;
+}
 .how-to .join-collaborate .text {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
