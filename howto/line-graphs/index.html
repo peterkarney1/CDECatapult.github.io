@@ -65,6 +65,9 @@ icon: circle-lightbulb.png
           </ul>
         </div>
       </div>
+
+      <!-- Load in D3 for all examples -->
+      <script src="http://d3js.org/d3.v3.min.js"></script>
       
       <div class="step">
         <div class="step-circle">1</div>
@@ -127,7 +130,7 @@ icon: circle-lightbulb.png
             <!-- Step left column example content. -->
             <h4>A bad example</h4>
                         
-            <p>Here's an example of an ugly chart. A graphic like this may be produced by software that doesn't appreciate the importance of aesthetics in the communication of the underlying information - or by someone who doesn't understand that a few simple changes could make their data more accessible.</p>
+            <p>Here's an example of an ugly graph. A graphic like this may be produced by software that doesn't appreciate the importance of aesthetics in the communication of the underlying information - or by someone who doesn't understand that a few simple changes could make their data more accessible.</p>
 
           </div>
           
@@ -138,8 +141,8 @@ icon: circle-lightbulb.png
 
             </div>
             
-            <link rel="stylesheet" href="bar-charts-example-simple-bad.css" />
-            <script type="text/javascript" src="bar-charts-example-simple-bad.js"></script>
+            <link rel="stylesheet" href="line-graphs-example-simple-bad.css" />
+            <script type="text/javascript" src="line-graphs-example-simple-bad.js"></script>
 
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
@@ -155,14 +158,14 @@ icon: circle-lightbulb.png
             <h4>That's better!</h4>
             
             <p class="lead">
-              Here is the same chart with some visual improvements. And here's what they are:
+              Here is the same graph with some visual improvements. And here's what they are:
             </p>
             
             <ul>
               <li><strong>Remove Chartjunk</strong> - chart borders, grid lines and unnecessary tick mark have gone, leaving the chart feeling less cluttered.</li>
               <li><strong>Use softer lines for the axes</strong> - strong black can look too harsh on white, by softening it a touch the axes look more considered and also allow your data to stand out.</li>
-             <!--  <li><strong>Consider the width of the bars</strong> - in this example, some space between the bars makes them easier to read and compare - sometimes you may want them closer together.</li>
-              <li><strong>Sort your bars appropriately</strong> - consider whether your data can be sorted differently to better tell its story.</li> -->
+              <li><strong>Consider font sizes</strong> - a smaller font size for the axis text is more subtle and allows your data to stand out.</li>
+              <li><strong>Consider line weight</strong> - make your line weight thin enough to be precise and wide enough to stand out.</li>
             </ul>
 
           </div>
@@ -174,48 +177,58 @@ icon: circle-lightbulb.png
 
             </div>
             
-            <!--<link rel="stylesheet" href="bar-charts-example-simple.css" />
-            <script type="text/javascript" src="bar-charts-example-simple.js"></script>-->
+            <link rel="stylesheet" href="line-graphs-example-simple.css" />
+            <script type="text/javascript" src="line-graphs-example-simple.js"></script>
 
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
       
       <div class="step">
-        <div class="step-circle">4</div>
-
-        <div class="row step-content">
-          <div class="col-sm-6 col-sm-offset-6">
-
-            <h4>Other ideas</h4>
-            
-            <p>
-              Here's a couple of other line graph examples.
-            </p>
-
-          </div>
-        </div><!-- /.row.step-content -->
-        
+        <div class="step-circle">4</div>        
         <div class="row step-content">
           <div class="col-sm-6">
 
-            <h4>Something</h4>
-
-            <div class="svg-holder-stacked"></div>
-
-            <!--<link rel="stylesheet" href="bar-charts-example-stacked.css" />
-            <script type="text/javascript" src="bar-charts-example-stacked.js"></script>-->
+            <div class="svg-holder-multi"></div>
+            
+            <link rel="stylesheet" href="line-graphs-example-multi.css" />
+            <script type="text/javascript" src="line-graphs-example-multi.js"></script>
 
           </div>
           
           <div class="col-sm-6">
 
-            <h4>Something else</h4>
+            <!-- Step left column example content. -->
+            <h4>Multi line graph</h4>
+                        
+            <p>Cras vitae diam quis magna commodo faucibus vitae id ipsum. 
+              auris ut diam ut elit dictum porttitor. Pellentesque sodales
+              pharetra nisi. Nam non elit risus.</p>
 
-            <div class="svg-holder-grouped"></div>
+          </div>
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
 
-            <!--<link rel="stylesheet" href="bar-charts-example-grouped.css" />
-            <script type="text/javascript" src="bar-charts-example-grouped.js"></script>-->
+      <div class="step">
+        <div class="step-circle">4</div>        
+        <div class="row step-content">
+          <div class="col-sm-6">
+
+            <!--<div class="svg-holder-multi"></div>
+            
+            <link rel="stylesheet" href="line-graphs-example-multi.css" />
+            <script type="text/javascript" src="line-graphs-example-multi.js"></script>-->
+
+          </div>
+          
+          <div class="col-sm-6">
+
+            <!-- Step left column example content. -->
+            <h4>Context highlighting</h4>
+                        
+            <p>Cras vitae diam quis magna commodo faucibus vitae id ipsum. 
+              auris ut diam ut elit dictum porttitor. Pellentesque sodales
+              pharetra nisi. Nam non elit risus.</p>
 
           </div>
         </div><!-- /.row.step-content -->

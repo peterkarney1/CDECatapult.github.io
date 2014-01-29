@@ -1,0 +1,35 @@
+
+.svg-holder-multi {
+  font: 10px sans-serif;
+  background:white;
+}
+
+.svg-holder-multi .axis {
+	font: 10px sans-serif;
+}
+
+.svg-holder-multi .axis path,
+.svg-holder-multi .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.svg-holder-multi .axis path {
+	stroke: #ccc;
+}
+
+.svg-holder-multi .tick line {
+	stroke: #ccc;
+}
+
+
+/*.x.axis path {
+  display: none;
+}*/
+
+.svg-holder-multi .line {
+  fill: none;
+  stroke: orange;
+  stroke-width: 1.5px;
+}
