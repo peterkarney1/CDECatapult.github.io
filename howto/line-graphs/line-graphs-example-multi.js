@@ -125,17 +125,21 @@ d3.tsv("line-graphs-example-multi-data.tsv", function(error, data) {
     .attr("stroke", d);
 */
 console.log(vehicle);
-
+  
+  function setCircleAttributes(point, colour) {
+    point.enter()
+         .append("circle")
+         .style("stroke", function(d) { return colour; })
+         .style("fill", function(d) { return colour; })
+         .attr("cx", function(d, i) { return x(d.timeinsec) })
+         .attr("cy", function(d, i) { return y(d.speed) })
+         .attr("r", function(d, i) { return 3 });
+  }
+  
   // Draw the points
-  vehicle.selectAll(".point")
-      .data(vehicles[2].values)
-    .enter().append("circle")
-      .attr("stroke", "orange")
-      .attr("fill", function(d, i) { return "orange" })
-      .attr("cx", function(d, i) { return x(d.timeinsec) })
-      .attr("cy", function(d, i) { return y(d.speed) })
-      .attr("r", function(d, i) { return 3 });
-      
+  setCircleAttributes(vehicle.selectAll(".point").data(vehicles[0].values), "#1f77b4");
+  setCircleAttributes(vehicle.selectAll(".point").data(vehicles[1].values), "#ff7f0e");
+  setCircleAttributes(vehicle.selectAll(".point").data(vehicles[2].values), "#2ca02c");
 });
 
 }
