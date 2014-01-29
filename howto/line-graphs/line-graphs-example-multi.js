@@ -115,6 +115,26 @@ d3.tsv("line-graphs-example-multi-data.tsv", function(error, data) {
       .attr("x", 3)
       .attr("dy", ".35em")
       .text(function(d) { return d.name; });
+/*
+
+  console.log(vehicles);
+
+  vehicle.append("g").attr("stroke", "orange");
+
+  vehicle.append("g")
+    .attr("stroke", d);
+*/
+console.log(vehicle);
+
+  // Draw the points
+  vehicle.selectAll(".point")
+      .data(vehicles[2].values)
+    .enter().append("circle")
+      .attr("stroke", "orange")
+      .attr("fill", function(d, i) { return "orange" })
+      .attr("cx", function(d, i) { return x(d.timeinsec) })
+      .attr("cy", function(d, i) { return y(d.speed) })
+      .attr("r", function(d, i) { return 3 });
       
 });
 

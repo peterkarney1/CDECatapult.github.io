@@ -66,7 +66,7 @@ d3.tsv("line-graphs-example-simple-data.tsv", function(error, data) {
       .style("text-anchor", "end")
       .text("Speed (m/s)");
 
-  // Draw the point
+  // Draw the points
   svg.selectAll(".point")
       .data(data)
     .enter().append("circle")
@@ -81,7 +81,7 @@ d3.tsv("line-graphs-example-simple-data.tsv", function(error, data) {
       .datum(data)
       .attr("class", "line")
       .attr("d", line);
-      
+
 });
 
 }
