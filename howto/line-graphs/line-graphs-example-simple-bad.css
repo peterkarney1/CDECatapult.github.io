@@ -1,0 +1,32 @@
+
+
+.svg-holder-simple-bad {
+	border:1px solid black;
+	background:white;
+}
+
+.svg-holder-simple-bad .axis path,
+.svg-holder-simple-bad .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/*.x.axis path {
+  display: none;
+}*/
+
+.svg-holder-simple-bad .line {
+  fill: none;
+  stroke: blue;
+  stroke-width: 3px;
+}
+
+
+.svg-holder-simple-bad .grid .tick {
+	stroke: lightgrey;
+	
+}
+.svg-holder-simple-bad .grid path {
+	stroke-width: 0;
+}
