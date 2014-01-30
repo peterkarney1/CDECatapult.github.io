@@ -11,22 +11,19 @@ icon: circle-lightbulb.png
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
       
-      <!-- The title of the site section "How To's", you shouldn't change this. -->
       <h1>{{ page.page_title }}</h1>
     </div>
     
-    
-    <!-- The title of your How To -->
     <h2>Bar charts</h2>
     
     <div class="row intro-text">
 
       <div class="col-sm-8 intro-column bold-intro-text">
-        <p>The humble bar chart is the classic chart. Bar charts easily display two variables, one on the horizontal axis and one on the vertical. They allowing different items of data to be easily compared visually, the eye can easily scan left to right and understand the difference between two values.</p>
+        <p class="lead"><strong>Bar charts easily display two variables, one on the horizontal axis and one on the vertical. They allowing different items of data to be easily compared visually, the eye can easily scan left to right and understand the difference between two values.</strong></p>
 
         <p>They're also very versatile. They can be flipped onto their side, multiple items can be compared next to each other, colour can be used to 'stack' the bars - and they can be augmented with all sorts of extra elements to further convey information.</p>
 
-        <p>When each bar is properly labelled, it is also possible to reorder the values without losing information - bar charts can be ordered from lowest to highest, alphabetically or any other way - as long as it best tells the story.</p>
+        <p>When each bar is properly labelled, it is also possible to reorder the values without losing information - bar charts can be ordered from lowest to highest, alphabetically or any other way - in order to best tell the story.</p>
       </div>
 
     </div>
@@ -36,15 +33,14 @@ icon: circle-lightbulb.png
     <div class="container">
       <div class="row howto-top">
         <div class="col-sm-6">
-          <!-- The title to the tutorial section of the page, don't change this. -->
+
           <h2>Tutorial</h2>
 
-          <!-- The title your guide -->
           <h3>Creating an elegant bar chart</h3>
+
         </div>
-        
         <div class="col-sm-6">
-          <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
+
           <ul class="howto-links row">
             <li class="col-sm-6 gethelp">
               <a href="#">Get help</a>
@@ -62,6 +58,7 @@ icon: circle-lightbulb.png
               <a href="#">Get the files on Github</a>
             </li>
           </ul>
+
         </div>
       </div>
 
@@ -70,26 +67,20 @@ icon: circle-lightbulb.png
       
       <div class="step">
         <div class="step-circle">1</div>
-        
         <div class="row step-content">
           <div class="col-sm-6">
+
             <h4>Some example data + coding up</h4>
             
             <p class="lead">We're creating these examples using HTML, CSS and a JavaScript data visualisation library called <a href="http://d3js.org/">D3.js</a>.</p>
             
             <p>You can use these examples as a base for your own visualisations - the code is fully commented up and you can download them as a zip below. If you want to explore D3.js further you can find many <a href="https://github.com/mbostock/d3/wiki/Gallery">examples</a> online.</p>
-            
-            <!--<a href="#" class="btn btn-default">
-              <span class="subtext">HOW TO</span>
-              <span class="text">Get data from HSCIC</span>
-            </a>-->
 
           </div>
-          
           <div class="col-sm-6">
 
             <pre>
-            <br/>&lt;!DOCTYPE html&gt;<br/>&lt;meta charset=&quot;utf-8&quot;&gt;<br/>&lt;style&gt;<br/><br/>.bar {<br/>  fill: steelblue;<br/>}<br/><br/>.bar:hover {<br/>  fill: brown;<br/>}<br/><br/>.axis {<br/>  font: 10px sans-serif;<br/>}<br/><br/>.axis path,<br/>.axis line {<br/>  fill: none;<br/>  stroke: #000;<br/>  shape-rendering: crispEdges;<br/>}<br/><br/>.x.axis path {<br/>  display: none;<br/>}<br/><br/>&lt;/style&gt;<br/>&lt;body&gt;<br/>&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot;&gt;&lt;/script&gt;<br/>&lt;script&gt;<br/><br/>var margin = {top: 20, right: 20, bottom: 30, left: 40},<br/>    width = 960 - margin.left - margin.right,<br/>    height = 500 - margin.top - margin.bottom;<br/><br/>var x = d3.scale.ordinal()<br/>    .rangeRoundBands([0, width], .1);<br/><br/>var y = d3.scale.linear()<br/>    .range([height, 0]);<br/><br/>var xAxis = d3.svg.axis()<br/>    .scale(x)<br/>    .orient(&quot;bottom&quot;);<br/><br/>var yAxis = d3.svg.axis()<br/>    .scale(y)<br/>    .orient(&quot;left&quot;)<br/>    .ticks(10, &quot;%&quot;);<br/><br/>var svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;)<br/>    .attr(&quot;width&quot;, width + margin.left + margin.right)<br/>    .attr(&quot;height&quot;, height + margin.top + margin.bottom)<br/>  .append(&quot;g&quot;)<br/>    .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);<br/><br/>d3.tsv(&quot;data.tsv&quot;, type, function(error, data) {<br/>  x.domain(data.map(function(d) { return d.letter; }));<br/>  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;x axis&quot;)<br/>      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)<br/>      .call(xAxis);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;y axis&quot;)<br/>      .call(yAxis)<br/>    .append(&quot;text&quot;)<br/>      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)<br/>      .attr(&quot;y&quot;, 6)<br/>      .attr(&quot;dy&quot;, &quot;.71em&quot;)<br/>      .style(&quot;text-anchor&quot;, &quot;end&quot;)<br/>      .text(&quot;Frequency&quot;);<br/><br/>  svg.selectAll(&quot;.bar&quot;)<br/>      .data(data)<br/>    .enter().append(&quot;rect&quot;)<br/>      .attr(&quot;class&quot;, &quot;bar&quot;)<br/>      .attr(&quot;x&quot;, function(d) { return x(d.letter); })<br/>      .attr(&quot;width&quot;, x.rangeBand())<br/>      .attr(&quot;y&quot;, function(d) { return y(d.frequency); })<br/>      .attr(&quot;height&quot;, function(d) { return height - y(d.frequency); });<br/><br/>});<br/><br/>function type(d) {<br/>  d.frequency = +d.frequency;<br/>  return d;<br/>}<br/><br/>&lt;/script&gt;
+              <br/>&lt;!DOCTYPE html&gt;<br/>&lt;meta charset=&quot;utf-8&quot;&gt;<br/>&lt;style&gt;<br/><br/>.bar {<br/>  fill: steelblue;<br/>}<br/><br/>.bar:hover {<br/>  fill: brown;<br/>}<br/><br/>.axis {<br/>  font: 10px sans-serif;<br/>}<br/><br/>.axis path,<br/>.axis line {<br/>  fill: none;<br/>  stroke: #000;<br/>  shape-rendering: crispEdges;<br/>}<br/><br/>.x.axis path {<br/>  display: none;<br/>}<br/><br/>&lt;/style&gt;<br/>&lt;body&gt;<br/>&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot;&gt;&lt;/script&gt;<br/>&lt;script&gt;<br/><br/>var margin = {top: 20, right: 20, bottom: 30, left: 40},<br/>    width = 960 - margin.left - margin.right,<br/>    height = 500 - margin.top - margin.bottom;<br/><br/>var x = d3.scale.ordinal()<br/>    .rangeRoundBands([0, width], .1);<br/><br/>var y = d3.scale.linear()<br/>    .range([height, 0]);<br/><br/>var xAxis = d3.svg.axis()<br/>    .scale(x)<br/>    .orient(&quot;bottom&quot;);<br/><br/>var yAxis = d3.svg.axis()<br/>    .scale(y)<br/>    .orient(&quot;left&quot;)<br/>    .ticks(10, &quot;%&quot;);<br/><br/>var svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;)<br/>    .attr(&quot;width&quot;, width + margin.left + margin.right)<br/>    .attr(&quot;height&quot;, height + margin.top + margin.bottom)<br/>  .append(&quot;g&quot;)<br/>    .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);<br/><br/>d3.tsv(&quot;data.tsv&quot;, type, function(error, data) {<br/>  x.domain(data.map(function(d) { return d.letter; }));<br/>  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;x axis&quot;)<br/>      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)<br/>      .call(xAxis);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;y axis&quot;)<br/>      .call(yAxis)<br/>    .append(&quot;text&quot;)<br/>      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)<br/>      .attr(&quot;y&quot;, 6)<br/>      .attr(&quot;dy&quot;, &quot;.71em&quot;)<br/>      .style(&quot;text-anchor&quot;, &quot;end&quot;)<br/>      .text(&quot;Frequency&quot;);<br/><br/>  svg.selectAll(&quot;.bar&quot;)<br/>      .data(data)<br/>    .enter().append(&quot;rect&quot;)<br/>      .attr(&quot;class&quot;, &quot;bar&quot;)<br/>      .attr(&quot;x&quot;, function(d) { return x(d.letter); })<br/>      .attr(&quot;width&quot;, x.rangeBand())<br/>      .attr(&quot;y&quot;, function(d) { return y(d.frequency); })<br/>      .attr(&quot;height&quot;, function(d) { return height - y(d.frequency); });<br/><br/>});<br/><br/>function type(d) {<br/>  d.frequency = +d.frequency;<br/>  return d;<br/>}<br/><br/>&lt;/script&gt;
             </pre>
 
           </div><!-- /.col-sm-6 -->
@@ -102,7 +93,6 @@ icon: circle-lightbulb.png
         <div class="row step-content">
           <div class="col-sm-6">
 
-            <!-- Step left column example content. -->
             <h4>A bad example</h4>
                         
             <p>Here's an example of an ugly chart. A graphic like this may be produced by software that doesn't appreciate the importance of aesthetics in the communication of the underlying information - or by someone who doesn't understand that a few simple changes could make their data more accessible.</p>
@@ -111,10 +101,7 @@ icon: circle-lightbulb.png
           
           <div class="col-sm-6">
 
-          <!-- Step right column example content. -->
-            <div class="svg-holder-simple-bad">
-
-            </div>
+            <div class="svg-holder-simple-bad"></div>
             
             <link rel="stylesheet" href="bar-charts-example-simple-bad.css" />
             <script type="text/javascript" src="bar-charts-example-simple-bad.js"></script>
@@ -129,28 +116,24 @@ icon: circle-lightbulb.png
         <div class="row step-content">
           <div class="col-sm-6">
 
-            <!-- Step left column example content. -->
             <h4>That's better!</h4>
             
             <p class="lead">
-              Here is the same chart with some visual improvements. And here's what they are:
+              Here is the same chart after some visual improvements have been made:
             </p>
             
             <ul>
-            <li><strong>Remove Chartjunk</strong> - chart borders, grid lines and unnecessary tick mark have gone, leaving the chart feeling less cluttered.</li>
-            <li><strong>Use softer lines for the axes</strong> - strong black can look too harsh on white, by softening it a touch the axes look more considered and also allow your data to stand out.</li>
-            <li><strong>Consider the width of the bars</strong> - in this example, some space between the bars makes them easier to read and compare - sometimes you may want them closer together.</li>
-            <li><strong>Sort your bars appropriately</strong> - consider whether your data can be sorted differently to better tell its story.</li>
+              <li><strong>Remove Chartjunk</strong> - chart borders, grid lines and unnecessary tick mark have gone, leaving the chart feeling less cluttered.</li>
+              <li><strong>Use softer lines for the axes</strong> - strong black can look too harsh on white, by softening it a touch the axes look more considered and also allow your data to stand out.</li>
+              <li><strong>Consider the width of the bars</strong> - in this example, some space between the bars makes them easier to read and compare - sometimes you may want them closer together.</li>
+              <li><strong>Sort your bars appropriately</strong> - consider whether your data can be sorted differently to better tell its story.</li>
             </ul>
 
           </div>
           
           <div class="col-sm-6">
 
-          <!-- Step right column example content. -->
-          	<div class="svg-holder-simple">
-
-          	</div>
+          	<div class="svg-holder-simple"></div>
           	
           	<link rel="stylesheet" href="bar-charts-example-simple.css" />
       			<script type="text/javascript" src="bar-charts-example-simple.js"></script>
@@ -161,7 +144,6 @@ icon: circle-lightbulb.png
       
       <div class="step">
         <div class="step-circle">4</div>
-
         <div class="row step-content">
           <div class="col-sm-6 col-sm-offset-6">
 
@@ -171,15 +153,15 @@ icon: circle-lightbulb.png
               Here's a couple of other bar chart examples.
             </p>
 
-            <p>You'd use a stacked bar chart, when each bar can be split into multiple categories. You could display the same data differently by using a grouped bar chart. Both examples can be downloaded at the end of this article.</p>
+            <p>You'd use a <strong>stacked</strong> bar chart when each bar can be split into multiple categories. A <strong>grouped</strong> bar chart would display the same data in a different way.</p>
 
           </div>
         </div><!-- /.row.step-content -->
         
-        <div class="row step-content">
+        <div class="row step-content" style="margin-top:1em">
         	<div class="col-sm-6">
 
-            <h4>Stacked bar chart</h4>
+            <p class="lead"><strong>Stacked bar chart</strong></p>
 
         		<div class="svg-holder-stacked"></div>
 
@@ -187,10 +169,9 @@ icon: circle-lightbulb.png
         		<script type="text/javascript" src="bar-charts-example-stacked.js"></script>
 
         	</div>
-          
           <div class="col-sm-6">
 
-            <h4>Grouped bar chart</h4>
+            <p class="lead"><strong>Grouped bar chart</strong></p>
 
             <div class="svg-holder-grouped"></div>
 
@@ -201,7 +182,20 @@ icon: circle-lightbulb.png
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
 
-      
+      <div class="step">
+        <div class="step-circle">5</div>
+        <div class="row step-content">
+          <div class="col-sm-8">
+
+            <h4>Thanks &amp; graph well!</h4>
+            
+            <p class="lead">You can download <a href="#">all the examples</a> from this how-to - feel free to use them as a base for your our work.</p>
+
+            <p>Check out more of <a href="/howto">our how-tos</a>, or for tools, examples and further reading see the useful links section below.</p>
+
+          </div>
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
       
       {% include howto-collaborate.html %}
     </div><!-- /.container -->

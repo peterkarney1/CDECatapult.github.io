@@ -6506,7 +6506,7 @@ html.showfooter #footer-gradient {
   text-transform: uppercase;
   color: #e05c48;
   text-shadow: 4px 4px #f0c98b;
-  margin-bottom: 20px;
+  margin-bottom: 34px;
   font-size: 45px;
 }
 .useful-links .useful-link-cols .useful-link-col h3 {
@@ -6523,6 +6523,11 @@ html.showfooter #footer-gradient {
   list-style: none;
   font-size: 18px;
   color: #e05c48;
+  margin-bottom: .3em;
+}
+.useful-links .useful-link-cols .useful-link-col ul li .plus {
+  float: left;
+  margin-left: -20px;
 }
 .useful-links .useful-link-cols .useful-link-col ul li a {
   color: #e05c48;
@@ -6959,10 +6964,17 @@ html.lt-ie9 .subpage-boxes .box.api a .image {
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
   color: #3e9e89;
-  font-size: 20px;
+  font-size: 24px;
 }
 .how-to .tutorial .step .step-content p.lead {
   font-weight: bold;
+  font-size: 20px;
+}
+.how-to .tutorial .step .step-content ul {
+  padding-left: 24px;
+}
+.how-to .tutorial .step .step-content li {
+  margin-bottom: 0.6em;
 }
 .how-to .tutorial .step .step-content a.btn.btn-default {
   background: #3e9e89;
@@ -7001,7 +7013,7 @@ html.lt-ie9 .subpage-boxes .box.api a .image {
 .how-to .try-colouring {
   background: #3e9e89;
   padding: 10px 20px;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 .how-to .try-colouring h4,
 .how-to .try-colouring p {

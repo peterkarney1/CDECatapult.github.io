@@ -1,7 +1,7 @@
 
 /* Border & background */
 
-.svg-holder-simple {
+.svg-holder-interpolation {
   font: 10px sans-serif;
   background:white;
 }
@@ -9,12 +9,12 @@
 
 /* Axes */
 
-.svg-holder-simple .axis {
+.svg-holder-interpolation .axis {
   font: 10px sans-serif;
 }
 
-.svg-holder-simple .axis path,
-.svg-holder-simple .axis line {
+.svg-holder-interpolation .axis path,
+.svg-holder-interpolation .axis line {
   fill: none;
   stroke: #ccc;
   shape-rendering: crispEdges;
@@ -23,7 +23,7 @@
 
 /* Lines */
 
-.svg-holder-simple .line {
+.svg-holder-interpolation .line {
   fill: none;
   stroke:orange;
   stroke-width: 1.5px;
@@ -32,7 +32,7 @@
 
 /* Labels */
 
-.svg-holder-simple .label {
+.svg-holder-interpolation .label {
   font-size:14px;
   font-weight:normal;
   fill:#999;

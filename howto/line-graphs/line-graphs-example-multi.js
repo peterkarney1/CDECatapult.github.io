@@ -84,6 +84,7 @@ function multiLineGraph (colorRange) {
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
+        .attr("class", "label")
         .style("text-anchor", "end")
         .text("Speed (m/s)");
 

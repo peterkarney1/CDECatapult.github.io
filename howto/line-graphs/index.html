@@ -11,17 +11,15 @@ icon: circle-lightbulb.png
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
       
-      <!-- The title of the site section "How To's", you shouldn't change this. -->
       <h1>{{ page.page_title }}</h1>
     </div>
         
-    <!-- The title of your How To -->
     <h2>Line graphs</h2>
     
     <div class="row intro-text">
       
       <div class="col-sm-8 intro-column bold-intro-text">
-        <p><strong>Line graphs are like analog bar charts. Like bar charts they work when you have two variables - but rather than discrete values, the data is continuous like the progression through time, or a temperature rising and falling.</strong></p>
+        <p class="lead"><strong>Line graphs work when you have two variables - but rather than discrete values, the data is continuous like the velocity of an object, or a temperature rising and falling over time.</strong></p>
         <p>As well as displaying known points, a line graph allows us to look at the values between - and beyond - the points.</p>
         <p>This tutorial will give you a few pointers on making line graphs work and how to keep them looking smart.</p>
       </div>
@@ -33,15 +31,15 @@ icon: circle-lightbulb.png
     <div class="container">
       <div class="row howto-top">
         <div class="col-sm-6">
-          <!-- The title to the tutorial section of the page, don't change this. -->
+
           <h2>Tutorial</h2>
 
-          <!-- The title your guide -->
           <h3>Making an attractive line graph</h3>
+
         </div>
         
         <div class="col-sm-6">
-          <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
+
           <ul class="howto-links row">
             <li class="col-sm-6 gethelp">
               <a href="#">Get help</a>
@@ -59,6 +57,7 @@ icon: circle-lightbulb.png
               <a href="#">Get the files on Github</a>
             </li>
           </ul>
+
         </div>
       </div>
 
@@ -68,31 +67,6 @@ icon: circle-lightbulb.png
       
       <div class="step">
         <div class="step-circle">1</div>
-        
-        <div class="row step-content">
-          <div class="col-sm-6">
-
-            <!-- Step left column content. -->
-          
-          </div><!-- /.col-sm-6 -->
-          
-          <div class="col-sm-6">
-            <!-- Step right column content. -->
-            <h4>When to use</h4>
-            
-            <p class="lead">The value of a line graph is in seeing the change of one continuous variable relative to another. For example, plotting the velocity of an object over time.</p>
-
-            <p>We can only measure the velocity at specific points in time, but we know that velocity is a continuous variable so we can connect the dots and reliably demonstrate what happens in the gaps - this is called interpolation.</p>
-
-            <p>As well as showing us what lies in the gaps, line graphs can also be used to project trends into the past or future. After the data points have been collected, a best fit line is created and extended in both directions. The validity of any projection is in no way guaranteed by the use of a line chart, but the chart can be used as a visual aid.</p>
-
-          </div><!-- /.col-sm-6 -->
-        </div><!-- /.row.step-content -->
-      </div><!-- /.step -->
-      
-      <div class="step">
-        <div class="step-circle">2</div>
-        
         <div class="row step-content">
             <div class="col-sm-6">
 
@@ -101,42 +75,31 @@ icon: circle-lightbulb.png
               <p class="lead">We're creating these examples using HTML, CSS and a JavaScript data visualisation library called <a href="http://d3js.org/">D3.js</a>.</p>
               
               <p>You can use these examples as a base for your own visualisations - the code is fully commented up and you can download them as a zip below. If you want to explore D3.js further you can find many <a href="https://github.com/mbostock/d3/wiki/Gallery">examples</a> online.</p>
-              
-              <!--<a href="#" class="btn btn-default">
-                <span class="subtext">HOW TO</span>
-                <span class="text">Get data from HSCIC</span>
-              </a>-->
 
-          </div>
+          </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
 
             <pre>
-            <br/>&lt;!DOCTYPE html&gt;<br/>&lt;meta charset=&quot;utf-8&quot;&gt;<br/>&lt;style&gt;<br/><br/>.bar {<br/>  fill: steelblue;<br/>}<br/><br/>.bar:hover {<br/>  fill: brown;<br/>}<br/><br/>.axis {<br/>  font: 10px sans-serif;<br/>}<br/><br/>.axis path,<br/>.axis line {<br/>  fill: none;<br/>  stroke: #000;<br/>  shape-rendering: crispEdges;<br/>}<br/><br/>.x.axis path {<br/>  display: none;<br/>}<br/><br/>&lt;/style&gt;<br/>&lt;body&gt;<br/>&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot;&gt;&lt;/script&gt;<br/>&lt;script&gt;<br/><br/>var margin = {top: 20, right: 20, bottom: 30, left: 40},<br/>    width = 960 - margin.left - margin.right,<br/>    height = 500 - margin.top - margin.bottom;<br/><br/>var x = d3.scale.ordinal()<br/>    .rangeRoundBands([0, width], .1);<br/><br/>var y = d3.scale.linear()<br/>    .range([height, 0]);<br/><br/>var xAxis = d3.svg.axis()<br/>    .scale(x)<br/>    .orient(&quot;bottom&quot;);<br/><br/>var yAxis = d3.svg.axis()<br/>    .scale(y)<br/>    .orient(&quot;left&quot;)<br/>    .ticks(10, &quot;%&quot;);<br/><br/>var svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;)<br/>    .attr(&quot;width&quot;, width + margin.left + margin.right)<br/>    .attr(&quot;height&quot;, height + margin.top + margin.bottom)<br/>  .append(&quot;g&quot;)<br/>    .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);<br/><br/>d3.tsv(&quot;data.tsv&quot;, type, function(error, data) {<br/>  x.domain(data.map(function(d) { return d.letter; }));<br/>  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;x axis&quot;)<br/>      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)<br/>      .call(xAxis);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;y axis&quot;)<br/>      .call(yAxis)<br/>    .append(&quot;text&quot;)<br/>      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)<br/>      .attr(&quot;y&quot;, 6)<br/>      .attr(&quot;dy&quot;, &quot;.71em&quot;)<br/>      .style(&quot;text-anchor&quot;, &quot;end&quot;)<br/>      .text(&quot;Frequency&quot;);<br/><br/>  svg.selectAll(&quot;.bar&quot;)<br/>      .data(data)<br/>    .enter().append(&quot;rect&quot;)<br/>      .attr(&quot;class&quot;, &quot;bar&quot;)<br/>      .attr(&quot;x&quot;, function(d) { return x(d.letter); })<br/>      .attr(&quot;width&quot;, x.rangeBand())<br/>      .attr(&quot;y&quot;, function(d) { return y(d.frequency); })<br/>      .attr(&quot;height&quot;, function(d) { return height - y(d.frequency); });<br/><br/>});<br/><br/>function type(d) {<br/>  d.frequency = +d.frequency;<br/>  return d;<br/>}<br/><br/>&lt;/script&gt;
+              <br/>&lt;!DOCTYPE html&gt;<br/>&lt;meta charset=&quot;utf-8&quot;&gt;<br/>&lt;style&gt;<br/><br/>.bar {<br/>  fill: steelblue;<br/>}<br/><br/>.bar:hover {<br/>  fill: brown;<br/>}<br/><br/>.axis {<br/>  font: 10px sans-serif;<br/>}<br/><br/>.axis path,<br/>.axis line {<br/>  fill: none;<br/>  stroke: #000;<br/>  shape-rendering: crispEdges;<br/>}<br/><br/>.x.axis path {<br/>  display: none;<br/>}<br/><br/>&lt;/style&gt;<br/>&lt;body&gt;<br/>&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot;&gt;&lt;/script&gt;<br/>&lt;script&gt;<br/><br/>var margin = {top: 20, right: 20, bottom: 30, left: 40},<br/>    width = 960 - margin.left - margin.right,<br/>    height = 500 - margin.top - margin.bottom;<br/><br/>var x = d3.scale.ordinal()<br/>    .rangeRoundBands([0, width], .1);<br/><br/>var y = d3.scale.linear()<br/>    .range([height, 0]);<br/><br/>var xAxis = d3.svg.axis()<br/>    .scale(x)<br/>    .orient(&quot;bottom&quot;);<br/><br/>var yAxis = d3.svg.axis()<br/>    .scale(y)<br/>    .orient(&quot;left&quot;)<br/>    .ticks(10, &quot;%&quot;);<br/><br/>var svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;)<br/>    .attr(&quot;width&quot;, width + margin.left + margin.right)<br/>    .attr(&quot;height&quot;, height + margin.top + margin.bottom)<br/>  .append(&quot;g&quot;)<br/>    .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);<br/><br/>d3.tsv(&quot;data.tsv&quot;, type, function(error, data) {<br/>  x.domain(data.map(function(d) { return d.letter; }));<br/>  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;x axis&quot;)<br/>      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)<br/>      .call(xAxis);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;y axis&quot;)<br/>      .call(yAxis)<br/>    .append(&quot;text&quot;)<br/>      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)<br/>      .attr(&quot;y&quot;, 6)<br/>      .attr(&quot;dy&quot;, &quot;.71em&quot;)<br/>      .style(&quot;text-anchor&quot;, &quot;end&quot;)<br/>      .text(&quot;Frequency&quot;);<br/><br/>  svg.selectAll(&quot;.bar&quot;)<br/>      .data(data)<br/>    .enter().append(&quot;rect&quot;)<br/>      .attr(&quot;class&quot;, &quot;bar&quot;)<br/>      .attr(&quot;x&quot;, function(d) { return x(d.letter); })<br/>      .attr(&quot;width&quot;, x.rangeBand())<br/>      .attr(&quot;y&quot;, function(d) { return y(d.frequency); })<br/>      .attr(&quot;height&quot;, function(d) { return height - y(d.frequency); });<br/><br/>});<br/><br/>function type(d) {<br/>  d.frequency = +d.frequency;<br/>  return d;<br/>}<br/><br/>&lt;/script&gt;
             </pre>
 
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
       
-            <div class="step">
-        <div class="step-circle">3</div>
-        
+      <div class="step">
+        <div class="step-circle">2</div>
         <div class="row step-content">
           <div class="col-sm-6">
 
-            <!-- Step left column example content. -->
             <h4>A bad example</h4>
                         
             <p>Here's an example of an ugly graph. A graphic like this may be produced by software that doesn't appreciate the importance of aesthetics in the communication of the underlying information - or by someone who doesn't understand that a few simple changes could make their data more accessible.</p>
 
-          </div>
-          
+          </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
 
-          <!-- Step right column example content. -->
-            <div class="svg-holder-simple-bad">
-
-            </div>
+            <div class="svg-holder-simple-bad"></div>
             
             <link rel="stylesheet" href="line-graphs-example-simple-bad.css" />
             <script type="text/javascript" src="line-graphs-example-simple-bad.js"></script>
@@ -147,15 +110,13 @@ icon: circle-lightbulb.png
 
       <div class="step">
         <div class="step-circle">3</div>
-        
         <div class="row step-content">
           <div class="col-sm-6">
 
-            <!-- Step left column example content. -->
             <h4>That's better!</h4>
             
             <p class="lead">
-              Here is the same graph with some visual improvements. And here's what they are:
+              Here is the same graph after some visual improvements have been made:
             </p>
             
             <ul>
@@ -165,19 +126,42 @@ icon: circle-lightbulb.png
               <li><strong>Consider line weight</strong> - make your line weight thin enough to be precise and wide enough to stand out.</li>
             </ul>
 
-          </div>
-          
+          </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
 
-          <!-- Step right column example content. -->
-            <div class="svg-holder-simple">
-
-            </div>
+            <div class="svg-holder-simple"></div>
             
             <link rel="stylesheet" href="line-graphs-example-simple.css" />
             <script type="text/javascript" src="line-graphs-example-simple.js"></script>
 
           </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">3</div>
+        <div class="row step-content">          
+          <div class="col-sm-6">
+
+            <div class="svg-holder-interpolation">
+
+            </div>
+            
+            <link rel="stylesheet" href="line-graphs-example-simple-interpolation.css" />
+            <script type="text/javascript" src="line-graphs-example-simple-interpolation.js"></script>
+
+          </div><!-- /.col-sm-6 -->
+          <div class="col-sm-6">
+
+            <h4>Interpolation</h4>
+
+             <p>We can typically only measure a variable at specific points, but knowing we're working with continuous variable means we can connect the dots and reliably demonstrate what happens in the gaps - this is called interpolation.</p>
+
+             <p>There's different ways to interpolate between the data. For example when graphing experimental data, you'd tend to use a 'line of best fit', like the one shown here. This is because measurements are never perfectly accurate, and a line of best fit emphasizes the general trend.</p>
+
+            <p>As well as showing us what lies in the gaps, line graphs can also be used to project trends into the past or future. The validity of any projection is not guaranteed, but the chart is a great visual aid - and can give a much better sense of a trend than data alone.</p>
+
+          </div>
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
       
@@ -191,12 +175,10 @@ icon: circle-lightbulb.png
             <link rel="stylesheet" href="line-graphs-example-multi.css" />
             <script type="text/javascript" src="line-graphs-example-multi.js"></script>
 
-          </div>
-          
+          </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
 
-            <!-- Step left column example content. -->
-            <h4>Multi line graph</h4>
+            <h4>Multi line graphs</h4>
                         
             <p class="lead">If you're plotting a multi line graph, consider your colour choices.</p>
 
@@ -214,18 +196,14 @@ icon: circle-lightbulb.png
 
       <div class="step">
         <div class="step-circle">5</div>
-
         <div class="row step-content">
-          <div class="col-sm-12">
+          <div class="col-sm-8">
 
-            <h4>Thanks</h4>
+            <h4>Thanks &amp; graph well!</h4>
             
-            <p>
-              Cras vitae diam quis magna commodo faucibus vitae id ipsum. 
-              auris ut diam ut elit dictum porttitor. Pellentesque sodales
-              pharetra nisi. Nam non elit risus. Etiam bibendum diam ut
-              tellus sollicitudin porttitor. 
-            </p>
+            <p class="lead">You can download <a href="#">all the examples</a> from this how-to - feel free to use them as a base for your our work.</p>
+
+            <p>Check out more of <a href="/howto">our how-tos</a>, or for tools, examples and further reading see the useful links section below.</p>
 
           </div>
         </div><!-- /.row.step-content -->

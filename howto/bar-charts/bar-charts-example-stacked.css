@@ -1,28 +1,38 @@
 
+/* Border & background */
+
 .svg-holder-stacked {
 	font: 10px sans-serif;
 	background:white;
 }
 
+
+/* Axes */
+
 .svg-holder-stacked .axis path,
 .svg-holder-stacked .axis line {
 	fill: none;
-	stroke: #000;
+	stroke: #ccc;
 	shape-rendering: crispEdges;
 }
+
+.svg-holder-stacked .x.axis .tick line {
+	display:none;
+}
+
+
+/* Bars */
 
 .svg-holder-stacked .bar {
 	fill: #79c36a;
 }
 
-.svg-holder-stacked .axis path {
-	stroke: #ccc;
-}
 
-.svg-holder-stacked .tick line {
-	stroke: #ccc;
-}
+/* Labels */
 
-.svg-holder-stacked .x.axis .tick line {
-	display:none;
+.svg-holder-stacked .label {
+	font-size:14px;
+	font-weight:normal;
+	fill:#999;
+	stroke:none;
 }

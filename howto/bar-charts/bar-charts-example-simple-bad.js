@@ -48,7 +48,7 @@ function make_y_axis() {
 d3.tsv("bar-charts-example-simple-data.tsv", type, function(error, data) {
 
   x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+  y.domain([0, d3.max(data, function(d) { return d.population; })]);
 
       svg.append("g")
       // Draw vertical grid lines   
@@ -73,8 +73,8 @@ d3.tsv("bar-charts-example-simple-data.tsv", type, function(error, data) {
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.letter); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.frequency); })
-      .attr("height", function(d) { return height - y(d.frequency); });
+      .attr("y", function(d) { return y(d.population); })
+      .attr("height", function(d) { return height - y(d.population); });
 
   svg.append("g")
 	  // Draw the x axis
@@ -92,7 +92,7 @@ d3.tsv("bar-charts-example-simple-data.tsv", type, function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Frequency");
+      .text("Population");
 
 
 
@@ -104,7 +104,7 @@ d3.tsv("bar-charts-example-simple-data.tsv", type, function(error, data) {
 
 
 function type(d) {
-  d.frequency = +d.frequency;
+  d.population = +d.population;
   return d;
 }
 
