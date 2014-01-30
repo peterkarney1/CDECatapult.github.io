@@ -1,0 +1,26 @@
+
+.svg-holder-bad {
+	font: 10px sans-serif;
+	border:1px solid black;
+	background:white;
+}
+
+.svg-holder-bad .axis path,
+.svg-holder-bad .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.svg-holder-bad .dot {
+  stroke: none;
+  fill:blue;
+}
+
+.svg-holder-bad .axis path {
+	stroke: #000;
+}
+
+.svg-holder-bad .tick line {
+	stroke: #000;
+}

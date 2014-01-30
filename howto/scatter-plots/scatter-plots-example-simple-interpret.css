@@ -1,0 +1,25 @@
+
+.svg-holder-interpret {
+	font: 10px sans-serif;
+	background:white;
+}
+
+.svg-holder-interpret .axis path,
+.svg-holder-interpret .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.svg-holder-interpret .dot {
+  stroke: none;
+  fill:orange;
+}
+
+.svg-holder-interpret .axis path {
+	stroke: #ccc;
+}
+
+.svg-holder-interpret .tick line {
+	stroke: #ccc;
+}

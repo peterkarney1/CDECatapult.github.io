@@ -1,5 +1,5 @@
 
-function simpleScatterPlot () {
+function simpleScatterPlotInterpret  () {
 
 // Set margins and size
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -23,7 +23,7 @@ var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left");
 
-var svg = d3.select(".svg-holder-simple").append("svg")
+var svg = d3.select(".svg-holder-interpret").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -93,8 +93,18 @@ d3.csv("diabetes-spend.csv", function(error, data) {
       .style("text-anchor", "end")
       .text(function(d) { return d; });*/
 
+      svg.append("circle")
+      .attr("class", "indicator")
+      .style("stroke", "#d85b44")
+      .style("stroke-width", 3)
+      .style("fill", "none")
+      .attr("r", 9.5)
+      .attr("cx", "402px")
+      .attr("cy", "149px");
+      //.style("fill", function(d) { return color(d.species); });
+
 });
 
 }
 
-simpleScatterPlot();
+simpleScatterPlotInterpret();

@@ -1,7 +1,7 @@
 
 .svg-holder-simple {
-  font: 10px sans-serif;
-  background:white;
+	font: 10px sans-serif;
+	background:white;
 }
 
 .svg-holder-simple .axis path,
@@ -22,4 +22,10 @@
 
 .svg-holder-simple .tick line {
 	stroke: #ccc;
+}
+
+.svg-holder-simple .label {
+	font-size: 115%;
+	font-weight: normal;
+	fill:#555;
 }

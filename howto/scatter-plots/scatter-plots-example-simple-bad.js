@@ -1,5 +1,5 @@
 
-function simpleScatterPlot () {
+function simpleScatterPlotBad () {
 
 // Set margins and size
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -15,7 +15,6 @@ var y = d3.scale.linear()
 var color = d3.scale.category10();
 
 var xAxis = d3.svg.axis()
-    .ticks(8)
     .scale(x)
     .orient("bottom");
 
@@ -23,7 +22,7 @@ var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left");
 
-var svg = d3.select(".svg-holder-simple").append("svg")
+var svg = d3.select(".svg-holder-bad").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -68,7 +67,7 @@ d3.csv("diabetes-spend.csv", function(error, data) {
     .enter().append("circle")
       .attr("class", "dot")
       .attr("stroke", "none")
-      .attr("r", 1.5)
+      .attr("r", 5.5)
       .attr("cx", function(d) { return x(d.percentage_diabetes); })
       .attr("cy", function(d) { return y(d.per_capita_spend); });
       //.style("fill", function(d) { return color(d.species); });
@@ -93,8 +92,10 @@ d3.csv("diabetes-spend.csv", function(error, data) {
       .style("text-anchor", "end")
       .text(function(d) { return d; });*/
 
+
+
 });
 
 }
 
-simpleScatterPlot();
+simpleScatterPlotBad();
