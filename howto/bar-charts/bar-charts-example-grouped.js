@@ -31,13 +31,13 @@ var svg = d3.select(".svg-holder-grouped").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("bar-charts-example-grouped-data.csv", function(error, data) {
-  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "Area"; });
 
   data.forEach(function(d) {
     d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
   });
 
-  x0.domain(data.map(function(d) { return d.State; }));
+  x0.domain(data.map(function(d) { return d.Area; }));
   x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
   y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
 
@@ -57,13 +57,13 @@ d3.csv("bar-charts-example-grouped-data.csv", function(error, data) {
       .style("text-anchor", "end")
       .text("Population");
 
-  var state = svg.selectAll(".state")
+  var area = svg.selectAll(".area")
       .data(data)
     .enter().append("g")
       .attr("class", "g")
-      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+      .attr("transform", function(d) { return "translate(" + x0(d.Area) + ",0)"; });
 
-  state.selectAll("rect")
+  area.selectAll("rect")
       .data(function(d) { return d.ages; })
     .enter().append("rect")
       .attr("width", x1.rangeBand())

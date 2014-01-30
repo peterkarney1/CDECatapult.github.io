@@ -33,11 +33,11 @@ var svg = d3.select(".svg-holder-simple").append("svg")
 // Load in data and map values
 d3.tsv("bar-charts-example-simple-data.tsv", type, function(error, data) {
 
-    // Sort the data by frequency
-  data.sort(function(a, b) { return a.frequency - b.frequency; });
+    // Sort the data by population
+  data.sort(function(a, b) { return a.population - b.population; });
 
   x.domain(data.map(function(d) { return d.letter; }));
-  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+  y.domain([0, d3.max(data, function(d) { return d.population; })]);
 
   svg.append("g")
 	  // Draw the x axis
@@ -56,7 +56,7 @@ d3.tsv("bar-charts-example-simple-data.tsv", type, function(error, data) {
       .attr("dy", ".71em")
       .attr("class", "label")
       .style("text-anchor", "end")
-      .text("Frequency");
+      .text("Population");
 
   svg.selectAll(".bar")
       .data(data)
@@ -64,15 +64,15 @@ d3.tsv("bar-charts-example-simple-data.tsv", type, function(error, data) {
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.letter); })
       .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.frequency); })
-      .attr("height", function(d) { return height - y(d.frequency); });
+      .attr("y", function(d) { return y(d.population); })
+      .attr("height", function(d) { return height - y(d.population); });
 
 
 });
 
 
 function type(d) {
-  d.frequency = +d.frequency;
+  d.population = +d.population;
   return d;
 }
 

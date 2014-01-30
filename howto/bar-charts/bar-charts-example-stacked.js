@@ -29,7 +29,7 @@ var svg = d3.select(".svg-holder-stacked").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("bar-charts-example-stacked-data.csv", function(error, data) {
-  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "State"; }));
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Area"; }));
 
   data.forEach(function(d) {
     var y0 = 0;
@@ -40,7 +40,7 @@ d3.csv("bar-charts-example-stacked-data.csv", function(error, data) {
   // Sort the data by total number
   data.sort(function(a, b) { return b.total - a.total; });
 
-  x.domain(data.map(function(d) { return d.State; }));
+  x.domain(data.map(function(d) { return d.Area; }));
   y.domain([0, d3.max(data, function(d) { return d.total; })]);
 
   svg.append("g")
@@ -62,13 +62,13 @@ d3.csv("bar-charts-example-stacked-data.csv", function(error, data) {
       .style("text-anchor", "end")
       .text("Population");
 
-  var state = svg.selectAll(".state")
+  var area = svg.selectAll(".area")
       .data(data)
     .enter().append("g")
       .attr("class", "g")
-      .attr("transform", function(d) { return "translate(" + x(d.State) + ",0)"; });
+      .attr("transform", function(d) { return "translate(" + x(d.Area) + ",0)"; });
 
-  state.selectAll("rect")
+  area.selectAll("rect")
       .data(function(d) { return d.ages; })
     .enter().append("rect")
       .attr("width", x.rangeBand())
