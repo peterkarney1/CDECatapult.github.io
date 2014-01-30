@@ -11,15 +11,9 @@ icon: circle-lightbulb.png
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
       
-      <!-- The title of the site section "How To's", you shouldn't change this. -->
       <h1>{{ page.page_title }}</h1>
     </div>
     
-    <!-- <div class="logo">
-      <img src="/assets/images/casestudies/diabetes-logo.png" alt="">
-    </div> -->
-    
-    <!-- The title of your How To -->
     <h2>Scatter plots</h2>
     
     <div class="row intro-text">
@@ -36,24 +30,23 @@ icon: circle-lightbulb.png
     <div class="container">
       <div class="row howto-top">
         <div class="col-sm-6">
-          <!-- The title to the tutorial section of the page, don't change this. -->
+
           <h2>Tutorial</h2>
 
-          <!-- The title your guide -->
           <h3>Making an attractive scatter plot</h3>
+
         </div>
-        
         <div class="col-sm-6">
-          <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
+
           <ul class="howto-links row">
             <li class="col-sm-6 tutorial-files">
               <a href="#">Download tutorial files (.zip)</a>
             </li>
-            
             <li class="col-sm-6 github">
               <a href="#">Get the files on Github</a>
             </li>
           </ul>
+          
         </div>
       </div>
       
@@ -62,7 +55,6 @@ icon: circle-lightbulb.png
       
       <div class="step">
         <div class="step-circle">1</div>
-        
         <div class="row step-content">
             <div class="col-sm-6">
 
@@ -72,11 +64,6 @@ icon: circle-lightbulb.png
               
               <p>You can use these examples as a base for your own visualisations - the code is fully commented up and you can download them as a zip below. If you want to explore D3.js further you can find many <a href="https://github.com/mbostock/d3/wiki/Gallery">examples</a> online.</p>
               <p>Our example data is from the Diabetes data available on this site. We are graphing the percentage of each CCG with Diabetes, against that CCG's per-capita spend.</p>
-              
-              <!--<a href="#" class="btn btn-default">
-                <span class="subtext">HOW TO</span>
-                <span class="text">Get data from HSCIC</span>
-              </a>-->
 
           </div>
           <div class="col-sm-6">
@@ -89,13 +76,11 @@ icon: circle-lightbulb.png
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
       
-            <div class="step">
+      <div class="step">
         <div class="step-circle">2</div>
-        
         <div class="row step-content">
           <div class="col-sm-6">
 
-            <!-- Step left column example content. -->
             <h4>A visually bad example</h4>
                         
             <p>Here's an example of an ugly chart. A graphic like this may be produced by software that doesn't appreciate the importance of aesthetics in the communication of the underlying information - or by someone who doesn't understand that a few simple changes could make their data more accessible.</p>
@@ -115,11 +100,9 @@ icon: circle-lightbulb.png
 
       <div class="step">
         <div class="step-circle">3</div>
-        
         <div class="row step-content">
           <div class="col-sm-6">
 
-            <!-- Step left column example content. -->
             <h4>That's better!</h4>
             
             <p class="lead">
@@ -130,11 +113,9 @@ icon: circle-lightbulb.png
               <li><strong>Remove Chartjunk</strong> - chart borders, grid lines and unnecessary tick mark have gone, leaving the chart feeling less cluttered.</li>
               <li><strong>Use softer lines for the axes</strong> - strong black can look too harsh on white, by softening it a touch the axes look more considered and also allow your data to stand out.</li>
               <li><strong>Make sure your scale is appropriate.</strong> - using D3 means that your scale will probably be set sensibly for your dataset, but use your common-sense. There is no point in having loads of axis with no data, but it's also important to give perspective. Don't use a magnified y-axis to make difference appear out of context.</li>
-             
             </ul>
 
           </div>
-          
           <div class="col-sm-6">
 
             <div class="svg-holder-simple"></div>
@@ -148,7 +129,6 @@ icon: circle-lightbulb.png
       
       <div class="step">
         <div class="step-circle">4</div>
-
         <div class="row step-content">
           <div class="col-sm-6">
 
@@ -164,10 +144,9 @@ icon: circle-lightbulb.png
             
             <p>Obviously there's a lot to infer from your graph, and we can't explain the analysis in a short tutorial. Look for obvious outliers in your plot, and ask why they're there.</p>
             <p>In our example, there are several CCGs with a high number of diabetes patients, but they have relatively different per-capita spends. Is the CCG spending just over &pound;20 per head doing a better job spending their money? Or is the care worse for the patient?</p>
+
           </div>
         </div><!-- /.row.step-content -->
-        
-       
       </div><!-- /.step -->
 
       <div class="step">
@@ -180,6 +159,8 @@ icon: circle-lightbulb.png
             
             <p>
               Here's are some more points to note when dealing with scatter plots:
+            </p>
+
               <ul>
                 <li><strong>Don't mix numerical and non-numerical information.</strong> For example, plotting distance away from work (numerical) against perceived happiness will be difficult to make use of. Better to plot distance as 'near' and 'far' in this case.</li>
                 <li>You can <strong>add a third dimension</strong> to a scatter plot to make it a <a href="http://nvd3.org/ghpages/scatter.html">bubble chart.</a> In this example, the third dimension is the size of the circle at each point. <em>(Note that this uses the <a href="http://nvd3.org" title="">nvd3</a>  library)</em></li>
@@ -189,9 +170,7 @@ icon: circle-lightbulb.png
                     {% highlight javascript %}.interpolate();{% endhighlight %}
                   </div>
                 </li>
-
               </ul>
-            </p>
 
           </div>
         </div><!-- /.row.step-content -->
@@ -199,7 +178,6 @@ icon: circle-lightbulb.png
 
       <div class="step">
         <div class="step-circle">6</div>
-
         <div class="row step-content">
           <div class="col-sm-8">
 

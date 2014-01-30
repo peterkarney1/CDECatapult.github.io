@@ -27,11 +27,9 @@ icon: circle-lightbulb.png
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
       
-      <!-- The title of the site section "How To's", you shouldn't change this. -->
       <h1>{{ page.page_title }}</h1>
     </div>
     
-    <!-- The title of your How To -->
     <h2>Choropleth Maps</h2>
     
     <div class="row intro-text">
@@ -58,15 +56,14 @@ icon: circle-lightbulb.png
     <div class="container">
       <div class="row howto-top">
         <div class="col-sm-6">
-          <!-- The title to the tutorial section of the page, don't change this. -->
-          <h2>Tutorial</h2>
 
-          <!-- The title your guide -->
-          <h3>Choropleth Maps</h3>
+          <h2>Tutorial</h2>
+          <h3>Making an attractive choropleth map</h3>
+
         </div>
         
         <div class="col-sm-6">
-          <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
+
           <ul class="howto-links row">
             <li class="col-sm-6 gethelp">
               <a href="#">Get help</a>
@@ -84,6 +81,7 @@ icon: circle-lightbulb.png
               <a href="#">Get the files on Github</a>
             </li>
           </ul>
+
         </div>
       </div>
       
@@ -91,11 +89,12 @@ icon: circle-lightbulb.png
         <div class="step-circle">1</div>
         <div class="row step-content">
           <div class="col-sm-6">
+
             <img src="/assets/images/casestudies/map-large.jpg" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0;" alt="">
+
           </div><!-- /.col-sm-6 -->
-          
           <div class="col-sm-6">
-            <!-- Step right column content. -->
+
             <h4>Introduction</h4>
             
             <p>
@@ -127,15 +126,16 @@ icon: circle-lightbulb.png
               the variations of a statistic, such as population density or
               land usage, over a geographical region.
             </p>
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
       
       <div class="step">
         <div class="step-circle">2</div>
-        
         <div class="row step-content">
           <div class="col-sm-6">
+
             <h4>Setting up the HTML</h4>
             
             <p class="lead">
@@ -157,8 +157,8 @@ icon: circle-lightbulb.png
               We also include some styles - for Leaflet, the Javascript
               map library, and for styling the choropleth overlay.
             </p>
+
           </div>
-          
           <div class="col-sm-6">
             {% highlight html %}
 <!doctype html>
@@ -186,9 +186,9 @@ icon: circle-lightbulb.png
       
       <div class="step">
         <div class="step-circle">3</div>
-        
         <div class="row step-content">
           <div class="col-sm-6">
+
             <h4>Creating the choropleth map</h4>
             
             <p>
@@ -203,8 +203,8 @@ icon: circle-lightbulb.png
             <div class="small-snippet">
               {% highlight javascript %}diabetes_per_head_per_ccg_per_month('choroplethmap');{% endhighlight %}
             </div>
+
           </div>
-          
           <div class="col-sm-6">
             {% highlight javascript %}
 var diabetes_per_head_per_ccg_per_month = function(div) {
@@ -259,9 +259,9 @@ var diabetes_per_head_per_ccg_per_month = function(div) {
       
       <div class="step">
         <div class="step-circle">4</div>
-        
         <div class="row step-content">
           <div class="col-sm-6">
+
             <h4>Styling the map</h4>
             
             <p>
@@ -363,21 +363,22 @@ var diabetes_per_head_per_ccg_per_month = function(div) {
               The colour choices in the example above can be altered
               in the <em>color()</em> function. 
             </p>
+
           </div>
-          
           <div class="col-sm-6">
+
             <div id="spendmap" class="spendmap"></div>
             
             <script>
               DiabetesChoropleth.init('spendmap');
             </script>
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
 
       <div class="step">
         <div class="step-circle">5</div>
-
         <div class="row step-content">
           <div class="col-sm-8">
 
