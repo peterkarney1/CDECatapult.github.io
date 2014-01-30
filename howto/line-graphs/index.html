@@ -64,6 +64,7 @@ icon: circle-lightbulb.png
 
       <!-- Load in D3 for all examples -->
       <script src="http://d3js.org/d3.v3.min.js"></script>
+      <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
       
       <div class="step">
         <div class="step-circle">1</div>
@@ -202,12 +203,11 @@ icon: circle-lightbulb.png
             <p>Generally, it's best to avoid an excess of colour, but on a graph like this it's a useful way to clearly distinguish overlapping lines.</p>
 
             <p>To make the lines distinct from each other, but without making any stand out more than others, you can use colours that are very different but of similar intensity. Try these for example:</p>
-
-            <ul class="color-list">
-              <li>Red</li>
-              <li>Pink</li>
-            </ul>
-
+            
+            <div class="palette" id="palette1"></div>
+            <div class="palette" id="palette2"></div>
+            <div class="palette" id="palette3"></div>
+            <div class="palette" id="palette4"></div>
           </div>
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->

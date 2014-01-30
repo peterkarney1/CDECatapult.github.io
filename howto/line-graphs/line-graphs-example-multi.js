@@ -1,6 +1,12 @@
-
-function multiLineGraph () {
-
+function multiLineGraph (colorRange) {
+  $('.svg-holder-multi').html('');
+  
+  if (!colorRange) {
+    var colorRange = colorbrewer.RdBu[9];
+  }
+  
+  var color = d3.scale.ordinal().range(colorRange);
+  
   // Set margins and size
   var margin = {top: 20, right: 40, bottom: 30, left: 40},
       width = 485 - margin.left - margin.right,
@@ -15,9 +21,7 @@ function multiLineGraph () {
   // Set size of y axis
   var y = d3.scale.linear()
       .range([height, 0]);
-
-  var color = d3.scale.category10();
-
+  
   // Set position of x axis
   var xAxis = d3.svg.axis()
       .scale(x)
@@ -110,3 +114,20 @@ function multiLineGraph () {
 };
 
 multiLineGraph();
+
+function buildPalette(selector, palette) {
+  palette.forEach(function(colour) {
+    $(selector).append("<div class='colour' style='background-color: " + colour + "'></div>");
+  });
+  
+  $(selector).append('<button>Try</button>').find("button").click(function() {
+    multiLineGraph(palette);
+  });
+}
+
+$(function() {
+  buildPalette('#palette1', colorbrewer.Reds[5])
+  buildPalette('#palette2', colorbrewer.Greens[5])
+  buildPalette('#palette3', colorbrewer.Greys[5])
+  buildPalette('#palette4', colorbrewer.Spectral[5])
+});
