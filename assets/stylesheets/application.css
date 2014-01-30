@@ -7353,6 +7353,9 @@ html.lt-ie9 .step .step-circle {
 .homepage-boxes a.homepage-box:last-child .inner {
   margin-bottom: -30px;
 }
+.homepage-whowhathow-block a {
+  color: #fff;
+}
 html.lt-ie9 .homepage-boxes a.homepage-box .inner .icon.chat {
   background: url(/assets/images/non-retina/circle-chat.png) no-repeat center center;
 }
