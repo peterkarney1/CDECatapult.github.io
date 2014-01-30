@@ -173,7 +173,13 @@ icon: circle-lightbulb.png
         <div class="step-circle">5</div>
 
         <div class="row step-content">
-          <div class="col-sm-6 col-sm-offset-6">
+          <div class="col-sm-6">
+            <div class="svg-holder-bubble"></div>
+            <link rel="stylesheet" href="bubble-chart.css" />
+            <script type="text/javascript" src="bubble-chart.js"></script>
+          </div>
+          
+          <div class="col-sm-6">
 
             <h4>Other ideas and suggestions</h4>
             
@@ -181,24 +187,19 @@ icon: circle-lightbulb.png
               Here's are some more points to note when dealing with scatter plots:
               <ul>
                 <li><strong>Don't mix numerical and non-numerical information.</strong> For example, plotting distance away from work (numerical) against perceived happiness will be difficult to make use of. Better to plot distance as 'near' and 'far' in this case.</li>
-                <li>You can <strong>add a third dimension</strong> to a scatter plot to make it a <a href="http://nvd3.org/ghpages/scatter.html">bubble chart.</a> In this example, the third dimension is the size of the circle at each point. <em>(Note that this uses the <a href="http://nvd3.org" title="">nvd3</a>  library)</em></li>
+                <li>You can <strong>add a third dimension</strong> to a scatter plot to make it a <a href="http://nvd3.org/ghpages/scatter.html">bubble chart.</a> In this example we've graphed the total spend for each CCG as the size of the circle.</li>
                 <li>
                   <strong>Add a line of best-fit</strong> if you want to show a particular trend, using the following d3 function:
                   <div class="small-snippet">
                     {% highlight javascript %}.interpolate();{% endhighlight %}
                   </div>
                 </li>
-
               </ul>
             </p>
 
           </div>
         </div><!-- /.row.step-content -->
-        
-       
       </div><!-- /.step -->
-
-      
       
       {% include howto-collaborate.html %}
     </div><!-- /.container -->

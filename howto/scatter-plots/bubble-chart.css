@@ -1,0 +1,30 @@
+.svg-holder-bubble {
+  font: 10px sans-serif;
+  background:white;
+}
+
+.svg-holder-bubble .axis path,
+.svg-holder-bubble .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.svg-holder-bubble .dot {
+  stroke: none;
+  fill:orange;
+}
+
+.svg-holder-bubble .axis path {
+  stroke: #ccc;
+}
+
+.svg-holder-bubble .tick line {
+  stroke: #ccc;
+}
+
+.svg-holder-bubble .label {
+  font-size: 115%;
+  font-weight: normal;
+  fill:#555;
+}
