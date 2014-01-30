@@ -8,7 +8,7 @@ title: About the Platform - Open Health Data Platform
 page_title: About the Platform
 
 github_repo: https://github.com/CDECatapult/
-public_issue_tracker: #
+public_issue_tracker: https://github.com/CDECatapult/CDECatapult.github.io/issues
 contact_email: theteam@mastodonc.com
 
 cdec_url: https://cde.catapult.org.uk
