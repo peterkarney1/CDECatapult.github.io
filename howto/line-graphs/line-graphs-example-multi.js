@@ -91,12 +91,32 @@ function multiLineGraph (colorRange) {
     var vehicle = svg.selectAll(".vehicle")
         .data(vehicles)
       .enter().append("g")
-        .attr("class", "vehicle");
-
+        .attr("class", function(d) {
+          return "vehicle " + d.name;
+        })
+    
+    function shadeColor(color, percent) {   
+      var num = parseInt(color.slice(1),16), amt = Math.round(2.55 * percent), R = (num >> 16) + amt, G = (num >> 8 & 0x00FF) + amt, B = (num & 0x0000FF) + amt;
+      return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
+    }
+    
     vehicle.append("path")
         .attr("class", "line")
         .attr("d", function(d) { return line(d.values); })
-        .style("stroke", function(d) { return color(d.name); });
+        .style("stroke", function(d) {
+          if (d.name == "V1") {
+            return shadeColor(color(d.name), -30);
+          }
+          return color(d.name);
+        })
+        .style("stroke-width", function(d) {
+          if (d.name == "V1") {
+            return 4;
+          }
+          return 2;
+        });
+    
+    
 
     // Draw the points
     vehicle.selectAll("circle")
@@ -104,10 +124,20 @@ function multiLineGraph (colorRange) {
       .enter().append("circle")
         .attr("class", "pointy")
         .style("stroke", "none")
-        .style("fill", function(d) { return color(d3.select(this.parentNode).datum().name); })
+        .style("fill", function(d) {
+          if (d3.select(this.parentNode).datum().name == "V1") {
+            return shadeColor(color(d3.select(this.parentNode).datum().name), -30);
+          }
+          return color(d3.select(this.parentNode).datum().name);
+        })
         .attr("cx", function(d, i) { return x(d.timeinsec); })
         .attr("cy", function(d, i) { return y(d.speed); })
-        .attr("r", function(d, i) { return 3 });
+        .attr("r", function(d, i) {
+          if (d3.select(this.parentNode).datum().name == "V1") {
+            return 6;
+          }
+          return 3;
+        });
 
   });
 
