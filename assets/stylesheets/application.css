@@ -6825,6 +6825,19 @@ html.lt-ie9 .subpage-boxes .box.api a .image {
 .text-page-template ul li {
   font-size: 18px;
 }
+.text-page-template ul li ul {
+  padding: 0;
+}
+.text-page-template ul li ul li {
+  list-style: none;
+}
+.text-page-template ul li ul li:before {
+  margin-right: 10px;
+  color: #CC3333;
+  content: "\2022";
+  font-size: 25px;
+  top: 2px;
+}
 .how-to h2 {
   font-family: 'Dosis', sans-serif;
   text-align: left;

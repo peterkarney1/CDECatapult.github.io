@@ -33,6 +33,22 @@
   ul {
     li {
       font-size: 18px;
+      
+      ul {
+        padding: 0;
+        
+        li {
+          list-style:none;
+          
+          &:before {
+            margin-right: 10px;
+            color: #CC3333;
+            content:"\2022";
+            font-size: 25px;
+            top: 2px;
+          }
+        }
+      }
     }
   }
 }
