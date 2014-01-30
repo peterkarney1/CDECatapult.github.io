@@ -1,41 +1,39 @@
 
+/* Border & background */
+
 .svg-holder-multi {
   font: 10px sans-serif;
   background:white;
 }
 
+
+/* Axes */
+
 .svg-holder-multi .axis {
-	font: 10px sans-serif;
+  font: 10px sans-serif;
 }
 
 .svg-holder-multi .axis path,
 .svg-holder-multi .axis line {
   fill: none;
-  stroke: #000;
+  stroke: #ccc;
   shape-rendering: crispEdges;
 }
 
-.svg-holder-multi .axis path {
-	stroke: #ccc;
-}
 
-.svg-holder-multi .tick line {
-	stroke: #ccc;
-}
-
-
-/*.x.axis path {
-  display: none;
-}*/
+/* Lines */
 
 .svg-holder-multi .line {
   fill: none;
-  stroke: orange;
   stroke-width: 1.5px;
 }
 
-.svg-holder-multi .pointy {
-  fill: orange;
-  stroke: orange;
-  stroke-width: 3.5px;
+
+/* Labels */
+
+.svg-holder-multi .label {
+  font-size:14px;
+  font-weight:normal;
+  fill:#999;
+  stroke:none;
 }

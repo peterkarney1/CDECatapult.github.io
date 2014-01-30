@@ -1,5 +1,5 @@
 
-function simpleLineGraph () {
+function simpleLineGraphInterpolation () {
 
 // Set margins and size
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -27,12 +27,12 @@ var yAxis = d3.svg.axis()
     .orient("left");
 
 var line = d3.svg.line()
-  //.interpolate("basis")
+    .interpolate("basis")
     .x(function(d) { return x(d.timeinsec); })
     .y(function(d) { return y(d.speed); });
 
 // Create the SVG canvas
-var svg = d3.select(".svg-holder-simple").append("svg")
+var svg = d3.select(".svg-holder-interpolation").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -87,4 +87,4 @@ d3.tsv("line-graphs-example-simple-data.tsv", function(error, data) {
 
 }
 
-simpleLineGraph();
+simpleLineGraphInterpolation();

@@ -54,6 +54,7 @@ d3.tsv("bar-charts-example-simple-data.tsv", type, function(error, data) {
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
+      .attr("class", "label")
       .style("text-anchor", "end")
       .text("Frequency");
 

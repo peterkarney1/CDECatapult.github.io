@@ -53,6 +53,7 @@ d3.csv("bar-charts-example-grouped-data.csv", function(error, data) {
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
+      .attr("class", "label")
       .style("text-anchor", "end")
       .text("Population");
 

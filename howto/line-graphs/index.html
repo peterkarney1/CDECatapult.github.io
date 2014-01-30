@@ -21,7 +21,7 @@ icon: circle-lightbulb.png
     <div class="row intro-text">
       
       <div class="col-sm-8 intro-column bold-intro-text">
-        <p><strong>Line graphs are like analog bar charts. Like bar charts they work when you have two variables - but rather than discrete values, the data is continuous like the progression through time, or a temperature rising and falling.</strong></p>
+        <p><strong>Line graphs are like analog bar charts. Like bar charts they work when you have two variables - but rather than discrete values, the data is continuous like the velocity of an object, or a temperature rising and falling over time.</strong></p>
         <p>As well as displaying known points, a line graph allows us to look at the values between - and beyond - the points.</p>
         <p>This tutorial will give you a few pointers on making line graphs work and how to keep them looking smart.</p>
       </div>
@@ -69,30 +69,6 @@ icon: circle-lightbulb.png
         <div class="step-circle">1</div>
         
         <div class="row step-content">
-          <div class="col-sm-6">
-
-            <!-- Step left column content. -->
-          
-          </div><!-- /.col-sm-6 -->
-          
-          <div class="col-sm-6">
-            <!-- Step right column content. -->
-            <h4>When to use</h4>
-            
-            <p class="lead">The value of a line graph is in seeing the change of one continuous variable relative to another. For example, plotting the velocity of an object over time.</p>
-
-            <p>We can only measure the velocity at specific points in time, but we know that velocity is a continuous variable so we can connect the dots and reliably demonstrate what happens in the gaps - this is called interpolation.</p>
-
-            <p>As well as showing us what lies in the gaps, line graphs can also be used to project trends into the past or future. After the data points have been collected, a best fit line is created and extended in both directions. The validity of any projection is in no way guaranteed by the use of a line chart, but the chart can be used as a visual aid.</p>
-
-          </div><!-- /.col-sm-6 -->
-        </div><!-- /.row.step-content -->
-      </div><!-- /.step -->
-      
-      <div class="step">
-        <div class="step-circle">2</div>
-        
-        <div class="row step-content">
             <div class="col-sm-6">
 
               <h4>Some example data + coding up</h4>
@@ -118,7 +94,7 @@ icon: circle-lightbulb.png
       </div><!-- /.step -->
       
             <div class="step">
-        <div class="step-circle">3</div>
+        <div class="step-circle">2</div>
         
         <div class="row step-content">
           <div class="col-sm-6">
@@ -154,7 +130,7 @@ icon: circle-lightbulb.png
             <h4>That's better!</h4>
             
             <p class="lead">
-              Here is the same graph with some visual improvements. And here's what they are:
+              Here is the same graph after some visual improvements have been made:
             </p>
             
             <ul>
@@ -175,6 +151,37 @@ icon: circle-lightbulb.png
             
             <link rel="stylesheet" href="line-graphs-example-simple.css" />
             <script type="text/javascript" src="line-graphs-example-simple.js"></script>
+
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">3</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+
+            <!-- Step left column example content. -->
+            <h4>Interpolation</h4>
+
+             <p>We can typically only measure a variable at specific points, but knowing we're working with continuous variable means we can connect the dots and reliably demonstrate what happens in the gaps - this is called interpolation.</p>
+
+             <p>There's different ways to interpolate between the data. For example when graphing experimental data, you'd tend to use a 'line of best fit', like the one shown here. This is because measurements are never perfectly accurate, and a line of best fit emphasizes the general trend.</p>
+
+            <p>As well as showing us what lies in the gaps, line graphs can also be used to project trends into the past or future. The validity of any projection is not guaranteed, but the chart is a great visual aid - and can give a much better sense of a trend than data alone.</p>
+
+          </div>
+          
+          <div class="col-sm-6">
+
+          <!-- Step right column example content. -->
+            <div class="svg-holder-interpolation">
+
+            </div>
+            
+            <link rel="stylesheet" href="line-graphs-example-simple-interpolation.css" />
+            <script type="text/javascript" src="line-graphs-example-simple-interpolation.js"></script>
 
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
