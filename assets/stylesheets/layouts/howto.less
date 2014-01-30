@@ -69,9 +69,7 @@
         list-style: none;
         padding: 10px;
         
-        &.gethelp a,
-        &.tutorial-files a,
-        &.live-example a {
+        a {
           background-color: @orange; /* Old browsers */
           background-color: -moz-linear-gradient(top, #e05c48 0%, #d6503e 100%); /* FF3.6+ */
           background-color: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e05c48), color-stop(100%,#d6503e)); /* Chrome,Safari4+ */
@@ -81,9 +79,7 @@
           background-color: linear-gradient(to bottom, #e05c48 0%,#d6503e 100%); /* W3C */
           background-repeat: no-repeat;
           background-position: 5px center;
-        }
-        
-        a {
+          
           display: block;
           min-height: 42px;
           border-bottom: 2px solid #2b6e60;
@@ -107,10 +103,8 @@
           background-size: 32px 32px;
         }
         &.github a {
-          border-bottom: 0;
-          background: url('/assets/images/github-download.png') no-repeat;
+          background-image: url('/assets/images/github-download.png');
           background-size: 32px 32px;
-          background-position: center left;
         }
       }
     }
@@ -299,8 +293,7 @@ html.lt-ie9 .how-to .tutorial .howto-links {
   }
   
   li.github a {
-    border-bottom: 0;
-    background: url('/assets/images/non-retina/github-download.png') 10px center no-repeat !important;
+    background: url('/assets/images/non-retina/github-download.png') 10px center no-repeat @orange !important;
   }
 }
 
