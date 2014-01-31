@@ -74,19 +74,25 @@ function multiLineGraph (colorRange) {
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+        .call(xAxis)
+        .append("text")
+        .attr("x", "84%")
+        .attr("dy", "-0.6em")
+        .attr("class", "label")
+        .style("text-anchor", "end")
+        .text("Distance (m)");
 
     // Draw the y axis
     svg.append("g")
-        .attr("class", "y axis")
-        .call(yAxis)
+      .attr("class", "y axis")
+      .call(yAxis)
       .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .attr("class", "label")
-        .style("text-anchor", "end")
-        .text("Speed (m/s)");
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .attr("class", "label")
+      .style("text-anchor", "end")
+      .text("Speed (m/s)");
 
     // Draw the lines
     var vehicle = svg.selectAll(".vehicle")

@@ -53,7 +53,13 @@ d3.tsv("line-graphs-example-simple-data.tsv", function(error, data) {
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+      .call(xAxis)
+      .append("text")
+      .attr("x", "88%")
+      .attr("dy", "-0.6em")
+      .attr("class", "label")
+      .style("text-anchor", "end")
+      .text("Distance (m)");
 
   // Draw the y axis
   svg.append("g")

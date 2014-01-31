@@ -80,20 +80,25 @@ d3.tsv("line-graphs-example-simple-data.tsv", function(error, data) {
 
   // Draw the x axis
   svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis)
+    .append("text")
+    .attr("x", "88%")
+    .attr("dy", "-0.6em")
+    .style("text-anchor", "end")
+    .text("Distance (m)");
 
   // Draw the y axis
   svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
+    .attr("class", "y axis")
+    .call(yAxis)
     .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Speed (m/s)");
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+    .text("Speed (m/s)");
 
   // Draw the line
   svg.append("path")
