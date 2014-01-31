@@ -185,12 +185,15 @@ icon: circle-lightbulb.png
 
           </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
-
-            <div class="svg-holder svg-holder-simple-bad"></div>
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-simple-bad"></div>
+              <link rel="stylesheet" href="line-graphs-example-simple-bad.css" />
+              <script type="text/javascript" src="line-graphs-example-simple-bad.js"></script>
+            <!--<![endif]-->
             
-            <link rel="stylesheet" href="line-graphs-example-simple-bad.css" />
-            <script type="text/javascript" src="line-graphs-example-simple-bad.js"></script>
-
+            <!--[if lte IE 8]>
+              <img src="bad-linegraph-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -215,12 +218,15 @@ icon: circle-lightbulb.png
 
           </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
-
-            <div class="svg-holder svg-holder-simple"></div>
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-simple"></div>
+              <link rel="stylesheet" href="line-graphs-example-simple.css" />
+              <script type="text/javascript" src="line-graphs-example-simple.js"></script>
+            <!--<![endif]-->
             
-            <link rel="stylesheet" href="line-graphs-example-simple.css" />
-            <script type="text/javascript" src="line-graphs-example-simple.js"></script>
-
+            <!--[if lte IE 8]>
+              <img src="better-linegraph-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -229,14 +235,15 @@ icon: circle-lightbulb.png
         <div class="step-circle">3</div>
         <div class="row step-content">          
           <div class="col-sm-6">
-
-            <div class="svg-holder svg-holder-interpolation">
-
-            </div>
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-interpolation"></div>
+              <link rel="stylesheet" href="line-graphs-example-simple-interpolation.css" />
+              <script type="text/javascript" src="line-graphs-example-simple-interpolation.js"></script>
+            <!--<![endif]-->
             
-            <link rel="stylesheet" href="line-graphs-example-simple-interpolation.css" />
-            <script type="text/javascript" src="line-graphs-example-simple-interpolation.js"></script>
-
+            <!--[if lte IE 8]>
+              <img src="interpolation-linegraph-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
 
@@ -256,12 +263,15 @@ icon: circle-lightbulb.png
         <div class="step-circle">4</div>        
         <div class="row step-content">
           <div class="col-sm-6">
-
-            <div class="svg-holder svg-holder-multi"></div>
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-multi"></div>
+              <link rel="stylesheet" href="line-graphs-example-multi.css" />
+              <script type="text/javascript" src="line-graphs-example-multi.js"></script>
+            <!--<![endif]-->
             
-            <link rel="stylesheet" href="line-graphs-example-multi.css" />
-            <script type="text/javascript" src="line-graphs-example-multi.js"></script>
-
+            <!--[if lte IE 8]>
+              <img src="multiline-linegraph-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
 
@@ -271,12 +281,15 @@ icon: circle-lightbulb.png
 
             <p>Generally, it's best to avoid an excess of colour, but on a graph like this it's a useful way to clearly distinguish overlapping lines.</p>
 
-            <p>To make the lines distinct from each other, but without making any stand out more than others, you can use colours that are very different but of similar intensity. Try these for example:</p>
+            <p>To make the lines distinct from each other, but without making any stand out more than others, you can use colours that are very different but of similar intensity.
+            <!--[if gt IE 8]><!--> Try these for example:<!--<![endif]--></p>
             
-            <div class="palette" id="palette1"></div>
-            <div class="palette" id="palette2"></div>
-            <div class="palette" id="palette3"></div>
-            <div class="palette" id="palette4"></div>
+            <!--[if gt IE 8]><!-->
+              <div class="palette" id="palette1"></div>
+              <div class="palette" id="palette2"></div>
+              <div class="palette" id="palette3"></div>
+              <div class="palette" id="palette4"></div>
+            <!--<![endif]-->
           </div>
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
