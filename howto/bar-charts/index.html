@@ -81,20 +81,21 @@ icon: circle-lightbulb.png
         
         <div class="row step-content">
           <div class="col-sm-6">
-
             <h4>A bad example</h4>
                         
             <p>Here's an example of an ugly chart. A graphic like this may be produced by software that doesn't appreciate the importance of aesthetics in the communication of the underlying information - or by someone who doesn't understand that a few simple changes could make their data more accessible.</p>
-
           </div>
           
           <div class="col-sm-6">
-
-            <div class="svg-holder svg-holder svg-holder-simple-bad"></div>
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder svg-holder-simple-bad"></div>
+              <link rel="stylesheet" href="bar-charts-example-simple-bad.css" />
+              <script type="text/javascript" src="bar-charts-example-simple-bad.js"></script>
+            <!--<![endif]-->
             
-            <link rel="stylesheet" href="bar-charts-example-simple-bad.css" />
-            <script type="text/javascript" src="bar-charts-example-simple-bad.js"></script>
-
+            <!--[if lte IE 8]>
+              <img src="bad-graph-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -121,12 +122,15 @@ icon: circle-lightbulb.png
           </div>
           
           <div class="col-sm-6">
-
-          	<div class="svg-holder svg-holder-simple"></div>
-          	
-          	<link rel="stylesheet" href="bar-charts-example-simple.css" />
-      			<script type="text/javascript" src="bar-charts-example-simple.js"></script>
-
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-simple"></div>
+              <link rel="stylesheet" href="bar-charts-example-simple.css" />
+              <script type="text/javascript" src="bar-charts-example-simple.js"></script>
+            <!--<![endif]-->
+            
+            <!--[if lte IE 8]>
+              <img src="better-barchart-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -147,24 +151,30 @@ icon: circle-lightbulb.png
         
         <div class="row step-content" style="margin-top:1em">
         	<div class="col-sm-6">
-
             <p class="lead"><strong>Stacked bar chart</strong></p>
-
-        		<div class="svg-holder svg-holder-stacked"></div>
-
-        		<link rel="stylesheet" href="bar-charts-example-stacked.css" />
-        		<script type="text/javascript" src="bar-charts-example-stacked.js"></script>
-
+            
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-stacked"></div>
+              <link rel="stylesheet" href="bar-charts-example-stacked.css" />
+              <script type="text/javascript" src="bar-charts-example-stacked.js"></script>
+            <!--<![endif]-->
+            
+            <!--[if lte IE 8]>
+              <img src="stacked-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
         	</div>
           <div class="col-sm-6">
-
             <p class="lead"><strong>Grouped bar chart</strong></p>
-
-            <div class="svg-holder svg-holder-grouped"></div>
-
-            <link rel="stylesheet" href="bar-charts-example-grouped.css" />
-            <script type="text/javascript" src="bar-charts-example-grouped.js"></script>
-
+            
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-grouped"></div>
+              <link rel="stylesheet" href="bar-charts-example-grouped.css" />
+              <script type="text/javascript" src="bar-charts-example-grouped.js"></script>
+            <!--<![endif]-->
+            
+            <!--[if lte IE 8]>
+              <img src="grouped-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div>
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
