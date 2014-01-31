@@ -17,12 +17,10 @@ icon: circle-lightbulb.png
     <h2>Scatter plots</h2>
     
     <div class="row intro-text">
-      
       <div class="col-sm-8 intro-column bold-intro-text">
         <p class="lead"><strong>Scatter plots allow us to show the relationship between two related values, in a similar way to a <a href="/howto/line-graphs">line graph</a>.</strong></p>
         <p>They are useful to visually display a relationship between values, and can demonstrate (or disprove) a trend.</p>
       </div>
-
     </div>
   </div>
   
@@ -57,21 +55,17 @@ icon: circle-lightbulb.png
         <div class="step-circle">1</div>
         <div class="row step-content">
             <div class="col-sm-6">
-
               <h4>Some example data + coding up</h4>
               
               <p class="lead">We're creating these examples using HTML, CSS and a JavaScript data visualisation library called <a href="http://d3js.org/">D3.js</a>.</p>
               
               <p>You can use these examples as a base for your own visualisations - the code is fully commented up and you can download them as a zip below. If you want to explore D3.js further you can find many <a href="https://github.com/mbostock/d3/wiki/Gallery">examples</a> online.</p>
               <p>Our example data is from the Diabetes data available on this site. We are graphing the percentage of each CCG with Diabetes, against that CCG's per-capita spend.</p>
-
           </div>
           <div class="col-sm-6">
-
             <pre>
             
             </pre>
-
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -84,16 +78,18 @@ icon: circle-lightbulb.png
             <h4>A visually bad example</h4>
                         
             <p>Here's an example of an ugly chart. A graphic like this may be produced by software that doesn't appreciate the importance of aesthetics in the communication of the underlying information - or by someone who doesn't understand that a few simple changes could make their data more accessible.</p>
-
           </div>
           
           <div class="col-sm-6">
-
-            <div class="svg-holder svg-holder-bad"></div>
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-bad"></div>
+              <link rel="stylesheet" href="scatter-plots-example-simple-bad.css" />
+              <script type="text/javascript" src="scatter-plots-example-simple-bad.js"></script>
+            <!--<![endif]-->
             
-            <link rel="stylesheet" href="scatter-plots-example-simple-bad.css" />
-            <script type="text/javascript" src="scatter-plots-example-simple-bad.js"></script>
-
+            <!--[if lte IE 8]>
+              <img src="bad-scatter-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -117,12 +113,15 @@ icon: circle-lightbulb.png
 
           </div>
           <div class="col-sm-6">
-
-            <div class="svg-holder svg-holder-simple"></div>
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-simple"></div>
+              <link rel="stylesheet" href="scatter-plots-example-simple.css" />
+              <script type="text/javascript" src="scatter-plots-example-simple.js"></script>
+            <!--<![endif]-->
             
-            <link rel="stylesheet" href="scatter-plots-example-simple.css" />
-            <script type="text/javascript" src="scatter-plots-example-simple.js"></script>
-
+            <!--[if lte IE 8]>
+              <img src="better-scatter-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -131,12 +130,15 @@ icon: circle-lightbulb.png
         <div class="step-circle">4</div>
         <div class="row step-content">
           <div class="col-sm-6">
-
-            <div class="svg-holder svg-holder-interpret"></div>
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-interpret"></div>
+              <link rel="stylesheet" href="scatter-plots-example-simple-interpret.css" />
+              <script type="text/javascript" src="scatter-plots-example-simple-interpret.js"></script>
+            <!--<![endif]-->
             
-            <link rel="stylesheet" href="scatter-plots-example-simple-interpret.css" />
-            <script type="text/javascript" src="scatter-plots-example-simple-interpret.js"></script>
-
+            <!--[if lte IE 8]>
+              <img src="inspect-scatter-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
 
@@ -154,9 +156,15 @@ icon: circle-lightbulb.png
 
         <div class="row step-content">
           <div class="col-sm-6">
-            <div class="svg-holder svg-holder-bubble"></div>
-            <link rel="stylesheet" href="bubble-chart.css" />
-            <script type="text/javascript" src="bubble-chart.js"></script>
+            <!--[if gt IE 8]><!-->
+              <div class="svg-holder svg-holder-bubble"></div>
+              <link rel="stylesheet" href="bubble-chart.css" />
+              <script type="text/javascript" src="bubble-chart.js"></script>
+            <!--<![endif]-->
+            
+            <!--[if lte IE 8]>
+              <img src="bubble-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div>
           
           <div class="col-sm-6">
