@@ -26,14 +26,11 @@ function simpleBarChart () {
 
   // Create the SVG canvas
   var svg = d3.select(".svg-holder-simple").append("svg")
-      .attr("viewBox", "0 0 485 400")
-      .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 485 400")
+    .attr("preserveAspectRatio", "xMinYMin meet")
     .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-/*            .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)*/
-
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  
   // Load in data
   d3.tsv("bar-charts-example-simple-data.tsv", type, function(error, data) {
 

@@ -24,10 +24,10 @@ var yAxis = d3.svg.axis()
     .orient("left");
 
 var svg = d3.select(".svg-holder-interpret").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+  .attr("viewBox", "0 0 485 400")
+  .attr("preserveAspectRatio", "xMinYMin meet")
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("diabetes-spend.csv", function(error, data) {
   data.forEach(function(d) {

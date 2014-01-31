@@ -32,10 +32,10 @@ var line = d3.svg.line()
 
 // Create the SVG canvas
 var svg = d3.select(".svg-holder-simple-bad").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+  .attr("viewBox", "0 0 485 400")
+  .attr("preserveAspectRatio", "xMinYMin meet")
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 function make_x_axis() {        
     return d3.svg.axis()
