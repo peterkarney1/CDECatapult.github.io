@@ -1,0 +1,38 @@
+
+/* Border & background */
+
+.svg-holder-simple {
+	background:white;
+	font: 10px sans-serif;
+}
+
+
+/* Axes */
+
+.svg-holder-simple .axis path,
+.svg-holder-simple .axis line {
+	fill: none;
+	stroke: #ccc;
+	shape-rendering: crispEdges;
+}
+
+.svg-holder-simple .x.axis .tick line {
+	display:none;
+}
+
+
+/* Bars */
+
+.svg-holder-simple .bar {
+	fill: #79c36a;
+}
+
+
+/* Labels */
+
+.svg-holder-simple .label {
+	font-size:14px;
+	font-weight:normal;
+	fill:#999;
+	stroke:none;
+}
