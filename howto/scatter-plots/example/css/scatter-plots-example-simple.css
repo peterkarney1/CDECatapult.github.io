@@ -1,0 +1,34 @@
+
+/* Border & background */
+
+.svg-holder-simple {
+	font: 10px sans-serif;
+	background:white;
+}
+
+
+/* Axes */
+
+.svg-holder-simple .axis path,
+.svg-holder-simple .axis line {
+  fill: none;
+  stroke: #ccc;
+  shape-rendering: crispEdges;
+}
+
+
+/* Points */
+
+.svg-holder-simple .dot {
+  stroke: none;
+  fill:orange;
+}
+
+
+/* Labels */
+
+.svg-holder-simple .label {
+	font-size: 115%;
+	font-weight: normal;
+	fill:#555;
+}
