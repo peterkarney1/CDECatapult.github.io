@@ -38,3 +38,19 @@
   fill:#999;
   stroke:none;
 }
+
+
+.palette {
+  height: 30px;
+  margin-bottom: 10px;
+}
+.palette .colour {
+  float: left;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #000;
+  margin-left: -1px;
+}
+.palette button {
+  margin-left: 10px;
+}

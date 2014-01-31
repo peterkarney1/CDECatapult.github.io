@@ -157,8 +157,8 @@ function buildPalette(selector, palette) {
 }
 
 $(function() {
-  buildPalette('#palette1', colorbrewer.Reds[5])
-  buildPalette('#palette2', colorbrewer.Greens[5])
-  buildPalette('#palette3', colorbrewer.Greys[5])
+  buildPalette('#palette1', colorbrewer.Paired[5])
+  buildPalette('#palette2', colorbrewer.Dark2[5])
+  buildPalette('#palette3', colorbrewer.Accent[5])
   buildPalette('#palette4', colorbrewer.Spectral[5])
 });
