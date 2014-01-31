@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Choropleth Map Example</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="mapProcessing.js"></script>
+    <script src="choropleth.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+    
+    <style>
+      #choroplethmap {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="choroplethmap"></div>
+    
+    <script>
+      DiabetesChoropleth.init('choroplethmap');
+    </script>
+  </body>
+</html>
