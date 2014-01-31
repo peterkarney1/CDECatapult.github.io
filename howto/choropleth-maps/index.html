@@ -311,6 +311,7 @@ var DiabetesChoropleth = {
               that could be misinterpreted by colour-blind viewers.
             </p>
             
+            <!--[if gt IE 8]><!-->
             <div class="try-colouring">
               <h4>Try changing the choropleth colour scheme</h4>
               
@@ -370,6 +371,7 @@ var DiabetesChoropleth = {
                 </div>
               </div>
             </div>
+            <!--<![endif]-->
             
             <p>
               Colour can greatly enhance the communication between
@@ -386,13 +388,16 @@ var DiabetesChoropleth = {
 
           </div>
           <div class="col-sm-6">
-
-            <div id="spendmap" class="spendmap"></div>
+            <!--[if gt IE 8]><!-->
+              <div id="spendmap" class="spendmap"></div>
+              <script>
+                DiabetesChoropleth.init('spendmap');
+              </script>
+            <!--<![endif]-->
             
-            <script>
-              DiabetesChoropleth.init('spendmap');
-            </script>
-
+            <!--[if lte IE 8]>
+              <img src="choropleth-placeholder.png" style="max-width: 100%" alt="">
+            <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
