@@ -72,11 +72,104 @@ icon: circle-lightbulb.png
 
           </div><!-- /.col-sm-6 -->
           <div class="col-sm-6">
+            {% highlight html %}<!DOCTYPE html>
+<html>
+  <head>
+    <title>Line Graph Examples</title>
+    
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+  </head>
+  <body>
+    <div class="svg-holder svg-holder-simple"></div>
+    <link rel="stylesheet" href="line-graphs-example-simple.css" />
+    
+    <script>
+      function simpleLineGraph () {
+        // Set margins and size
+        var margin = {top: 20, right: 20, bottom: 30, left: 40};
+        var width = 485 - margin.left - margin.right;
+        var height = 400 - margin.top - margin.bottom;
+        
+        // Set size of x axis
+        var x = d3.scale.linear()
+          .range([0, width]);
 
-            <pre>
-              <br/>&lt;!DOCTYPE html&gt;<br/>&lt;meta charset=&quot;utf-8&quot;&gt;<br/>&lt;style&gt;<br/><br/>.bar {<br/>  fill: steelblue;<br/>}<br/><br/>.bar:hover {<br/>  fill: brown;<br/>}<br/><br/>.axis {<br/>  font: 10px sans-serif;<br/>}<br/><br/>.axis path,<br/>.axis line {<br/>  fill: none;<br/>  stroke: #000;<br/>  shape-rendering: crispEdges;<br/>}<br/><br/>.x.axis path {<br/>  display: none;<br/>}<br/><br/>&lt;/style&gt;<br/>&lt;body&gt;<br/>&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot;&gt;&lt;/script&gt;<br/>&lt;script&gt;<br/><br/>var margin = {top: 20, right: 20, bottom: 30, left: 40},<br/>    width = 960 - margin.left - margin.right,<br/>    height = 500 - margin.top - margin.bottom;<br/><br/>var x = d3.scale.ordinal()<br/>    .rangeRoundBands([0, width], .1);<br/><br/>var y = d3.scale.linear()<br/>    .range([height, 0]);<br/><br/>var xAxis = d3.svg.axis()<br/>    .scale(x)<br/>    .orient(&quot;bottom&quot;);<br/><br/>var yAxis = d3.svg.axis()<br/>    .scale(y)<br/>    .orient(&quot;left&quot;)<br/>    .ticks(10, &quot;%&quot;);<br/><br/>var svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;)<br/>    .attr(&quot;width&quot;, width + margin.left + margin.right)<br/>    .attr(&quot;height&quot;, height + margin.top + margin.bottom)<br/>  .append(&quot;g&quot;)<br/>    .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);<br/><br/>d3.tsv(&quot;data.tsv&quot;, type, function(error, data) {<br/>  x.domain(data.map(function(d) { return d.letter; }));<br/>  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;x axis&quot;)<br/>      .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)<br/>      .call(xAxis);<br/><br/>  svg.append(&quot;g&quot;)<br/>      .attr(&quot;class&quot;, &quot;y axis&quot;)<br/>      .call(yAxis)<br/>    .append(&quot;text&quot;)<br/>      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)<br/>      .attr(&quot;y&quot;, 6)<br/>      .attr(&quot;dy&quot;, &quot;.71em&quot;)<br/>      .style(&quot;text-anchor&quot;, &quot;end&quot;)<br/>      .text(&quot;Frequency&quot;);<br/><br/>  svg.selectAll(&quot;.bar&quot;)<br/>      .data(data)<br/>    .enter().append(&quot;rect&quot;)<br/>      .attr(&quot;class&quot;, &quot;bar&quot;)<br/>      .attr(&quot;x&quot;, function(d) { return x(d.letter); })<br/>      .attr(&quot;width&quot;, x.rangeBand())<br/>      .attr(&quot;y&quot;, function(d) { return y(d.frequency); })<br/>      .attr(&quot;height&quot;, function(d) { return height - y(d.frequency); });<br/><br/>});<br/><br/>function type(d) {<br/>  d.frequency = +d.frequency;<br/>  return d;<br/>}<br/><br/>&lt;/script&gt;
-            </pre>
+        // Set size of y axis
+        var y = d3.scale.linear()
+          .range([height, 0]);
+        
+        // Set position of x axis
+        var xAxis = d3.svg.axis()
+          .scale(x)
+          .orient("bottom");
 
+        // Set position of y axis
+        var yAxis = d3.svg.axis()
+          .scale(y)
+          .orient("left");
+
+        var line = d3.svg.line()
+          .x(function(d) { return x(d.timeinsec); })
+          .y(function(d) { return y(d.speed); });
+
+        // Create the SVG canvas
+        var svg = d3.select(".svg-holder-simple").append("svg")
+          .attr("viewBox", "0 0 485 400")
+          .attr("preserveAspectRatio", "xMinYMin meet")
+          .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        // Load in data and draw line graph
+        d3.tsv("line-graphs-example-simple-data.tsv", function(error, data) {
+          data.forEach(function(d) {
+            d.timeinsec = d.timeinsec;
+            d.speed = d.speed;
+          });
+
+          x.domain(d3.extent(data, function(d) { return d.timeinsec; }));
+          y.domain(d3.extent(data, function(d) { return d.speed; }));
+
+          // Draw the x axis
+          svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+          
+          // Draw the y axis
+          svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .attr("class", "label")
+            .style("text-anchor", "end")
+            .text("Speed (m/s)");
+          
+          // Draw the points
+          svg.selectAll(".point")
+            .data(data)
+            .enter().append("circle")
+            .attr("stroke", "orange")
+            .attr("fill", function(d, i) { return "orange" })
+            .attr("cx", function(d, i) { return x(d.timeinsec) })
+            .attr("cy", function(d, i) { return y(d.speed) })
+            .attr("r", function(d, i) { return 3 });
+
+          // Draw the line
+          svg.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("d", line);
+        });
+      }
+      
+      simpleLineGraph();
+    </script>
+  </body>
+</html>{% endhighlight %}
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
