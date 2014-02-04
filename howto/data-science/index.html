@@ -94,7 +94,7 @@ icon: circle-lightbulb.png
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       <div class="step">
         <div class="step-circle">2</div>
         
@@ -102,18 +102,18 @@ icon: circle-lightbulb.png
           <div class="col-sm-6">
 
             <!-- Step left column example content. -->
-            <h4>Step two - Plugging into the API</h4>
+            <h4>Step two - Get the Data</h4>
             
             <p class="lead">
-              Integer nisi velit, placerat vel aliquet at, pretium ut
-              lacus. In sed quam quis sem imperdiet rutrum.
-            </p>
-            
-            <p>
-              Cras vitae diam quis magna commodo faucibus vitae id ipsum. 
-              auris ut diam ut elit dictum porttitor. Pellentesque sodales
-              pharetra nisi. Nam non elit risus. Etiam bibendum diam ut
-              tellus sollicitudin porttitor. 
+              In order to look at variation in diabetes prescribing, we'll need:
+
+              <ul>
+                <li>A list of which prescribing items are used for diabetes</li>
+                <li>The monthly prescribing files which show all items prescribed by all GP surgeries</li>
+                <li>The diabetes prevalence in each area</li>
+                <li>Map files showing where those surgeries are, so that
+                 we can locate them in relation to where the roadshows happened</li>
+              </ul>
             </p>
             
             <a href="#" class="btn btn-default">
@@ -125,24 +125,20 @@ icon: circle-lightbulb.png
           <div class="col-sm-6">
 
             <!-- Step right column example content. -->
-            <pre>
-  module ActiveRecord
-    class Migration
-      module JoinTable #:nodoc:
-        private
+            <p>We asked the charity what drugs were relevant, and they gave us the
+              following list: </p>
 
-        def find_join_table_name(table_1, table_2, options = {})
-          options.delete(:table_name)
-        end
-
-        def join_table_name(table_1, table_2)
-          [table_1.to_s, table_2.to_s].sort.join("_").to_sym
-        end
-      end
-    end
-  end
-            </pre>
-
+            <ul>
+              <li>Metformin</li>
+              <li>Sulfonylurea</li>
+              <li>Insulin</li>
+              <li>DPP-4 inhibitors / Sitagliptin / Vildagliptin</li>
+              <li>Thiazolidinedione</li>
+              <li>Exenatide</li>
+              <li>Acarbose</li>
+              <li>Glucose Blood Testing Reagents</li>
+              <li>Lancets</li>
+            </ul>
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
