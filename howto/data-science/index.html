@@ -72,13 +72,17 @@ icon: circle-lightbulb.png
         <div class="step-circle">1</div>
         
         <div class="row step-content">
-          <h4>Step one - What Variation are we Looking For?</h4>
+          <h4>Step one - What variation are we looking for?</h4>
           <div class="col-sm-6">
             <!-- Step left column content. -->
+            <p class="lead">
+              In this tutorial, we show how to look at variation in
+              diabetes prescriptions across the country.
+            </p>
+            
             <p>
-              In this tutorial, we show how to look at variation in diabetes
-              prescriptions across the country. We have data down to GP surgery
-              level, so we could look at this at surgery or CCG (area) level.
+              We have data down to GP surgery level, so we could look
+              at this at surgery or CCG (area) level.
             </p>
             
           </div><!-- /.col-sm-6 -->
@@ -102,7 +106,7 @@ icon: circle-lightbulb.png
           <div class="col-sm-6">
 
             <!-- Step left column example content. -->
-            <h4>Step two - Get the Data</h4>
+            <h4>Step two - Get the data</h4>
             
             <p class="lead">
               In order to look at variation in diabetes prescribing, we'll need:
@@ -147,49 +151,36 @@ icon: circle-lightbulb.png
         <div class="step-circle">3</div>
         
         <div class="row step-content">
+          <h4>Step three - Sense check the data</h4>
           <div class="col-sm-6">
 
             <!-- Step left column example content. -->
-            <h4>Step three - Pull the data</h4>
             
             <p class="lead">
-              Integer nisi velit, placerat vel aliquet at, pretium ut
-              lacus. In sed quam quis sem imperdiet rutrum.
+              It's extremely common for data to contain errors or faults. 
             </p>
-            
+
             <p>
-              Cras vitae diam quis magna commodo faucibus vitae id ipsum. 
-              auris ut diam ut elit dictum porttitor. Pellentesque sodales
-              pharetra nisi. Nam non elit risus. Etiam bibendum diam ut
-              tellus sollicitudin porttitor. 
+              Therefore we always try and check for anything obviously
+              strange, using histograms, averages, counts, and any
+              other simple statistical measures of the data that might
+              confuse us later.
             </p>
-            
-            <a href="#" class="btn btn-default">
-              <span class="subtext">HOW TO</span>
-              <span class="text">Total Data per GP</span>
-            </a>
+
           </div>
           
           <div class="col-sm-6">
 
-          <!-- Step right column example content. -->
-            <pre>
-  module ActiveRecord
-    class Migration
-      module JoinTable #:nodoc:
-        private
+            <p>In this case, we might check:</p>
 
-        def find_join_table_name(table_1, table_2, options = {})
-          options.delete(:table_name)
-        end
-
-        def join_table_name(table_1, table_2)
-          [table_1.to_s, table_2.to_s].sort.join("_").to_sym
-        end
-      end
-    end
-  end
-            </pre>
+            <ul>
+              <li>how many GP surgeries are in our dataset?</li>
+              <li>what's their total drugs spend (does it sound sensible?)</li>
+              <li>what's the total spend on diabetes drugs?</li>
+              <li>what's the highest and lowest spend?</li>
+              <li>have we missed any obvious drugs? (e.g. search for "insulin" in the file to see if that picks up any new drugs names) </li>
+            </ul>
+              
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
