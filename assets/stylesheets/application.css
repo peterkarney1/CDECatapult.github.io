@@ -6451,6 +6451,11 @@ html.showfooter #footer-gradient {
   color: #e05c48;
   font-size: 16px;
 }
+
+nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a.catapult {
+  padding-top: 5px;
+}
+
 @media (min-width: 0px) {
   #footer .social-links {
     text-align: center;
