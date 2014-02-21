@@ -1,0 +1,333 @@
+---
+layout: howto
+howto: true
+title: How To's - Make an API
+page_title: How To's
+icon: circle-lightbulb.png
+---
+
+<div class="how-to">
+  <div class="container">
+    <div class="title clearfix">
+      <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
+      
+      <!-- The title of the site section "How To's", you shouldn't change this. -->
+      <h1>{{ page.page_title }}</h1>
+    </div>
+    
+    <div class="logo">
+      <img src="/assets/images/casestudies/diabetes-logo.png" alt="">
+    </div>
+    
+    <!-- The title of your How To -->
+    <h2>Make an API in Ruby</h2>
+    
+    <div class="row intro-text">
+      <div class="col-sm-12 intro-column bold-intro-text">
+        <p>
+          Spruce-leaf is a visualization grammar - a declarative format
+          for creating interactive leaflet maps.
+          
+          With spruce-leaf you can describe the visualisation in JSON format:
+          merge geojson with CSV file, colour the features, add
+          legend and info box.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tutorial">
+    <div class="container">
+      <div class="row howto-top">
+        <div class="col-sm-6">
+          <!-- The title to the tutorial section of the page, don't change this. -->
+          <h2>Tutorial</h2>
+
+          <!-- The title your guide -->
+          <h3>Make an API in Ruby</h3>
+        </div>
+        
+        <div class="col-sm-6">
+          <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
+          <ul class="howto-links row">
+            <li class="col-sm-6 tutorial-files">
+              <a target="_new" href="http://www.hscic.gov.uk/searchcatalogue?productid=14119&topics=0%2fPrescribing&sort=Relevance&size=10&page=1">Download the data files(.CSV)</a>
+            </li>
+            <li class="col-sm-6 github">
+              <a href="https://github.com/CDECatapult/gp_practice_api">Get the files on Github</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- You'll need a <div class="step"> block for each step. This template has four but use as many as you need. -->
+      <div class="step">
+        <div class="step-circle">1</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+{% highlight bash %}
+# Gemfile
+
+source "http://rubygems.org"
+
+gem 'sinatra'
+{% endhighlight %}
+          </div><!-- /.col-sm-6 -->
+          
+          <div class="col-sm-6">
+            <!-- Step right column content. -->
+            <h4>Step one - Install Sinatra</h4>
+            
+            <p>
+            This application assumes you have a recent version of ruby and the <a href="http://bundler.io/">bundler gem</a> installed.
+              You can install bundler with the following command:
+            </p>
+            
+            <div class="small-snippet">
+              {% highlight bash %} gem install bundler {% endhighlight %}
+            </div>
+            
+            <p>
+            Dependencies are defined in the Gemfile; our only dependency is the <a href="http://sinatrarb.com">sinatra</a> gem. You can install all dependencies with:
+            </p>
+
+            <div class="small-snippet">
+              {% highlight bash %} bundle install {% endhighlight %}
+            </div>
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+
+            <!-- Step left column example content. -->
+            <h4>Step two - test your environment</h4>
+            
+            <p>
+            Let's test our environment: Sinatra provides a way to quickly define routes by specifying an http method (e.g. <strong>get</strong>) and a path (<strong>/</strong> in this example).
+            </p>
+            <p>
+            It will listen on a port (4567 by default) and reply with our text message.
+            You can start it from the command line with:
+            </p>
+            <div class="small-snippet">
+              {% highlight bash %} ruby api.rb {% endhighlight %}
+            </div>
+            <p>
+            And you can test it either by pointing your browser at <a href="http://localhost:4567/">port 4567 on localhost</a>
+            </p>
+          </div>
+          
+          <div class="col-sm-6">
+            {% highlight ruby %}
+# api.rb
+
+require 'sinatra'
+
+get '/' do
+  "I'm your new API"
+end
+            {% endhighlight %}
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+      
+      <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+
+            <!-- Step left column example content. -->
+            <h4>Step two - Setup the API endpoint</h4>
+            
+            <p>
+            Now that we know that our sinatra is running, let's move on and setup the actual API endpoint.
+            </p>
+            <p>
+            We want to be able to provide information about a practice, given its identifier.
+            </p>
+            <p>
+            Let's remove the dummy route and define a new route for <strong>/practices</strong> instead;
+            it will also accept a <strong>:id</strong> parameter, which we'll use to find our practice.
+            </p>
+          </div>
+
+          <div class="col-sm-6">
+            {% highlight ruby %}
+  # api.rb
+
+  require 'sinatra'
+
+  get '/practices/:id' do
+    # nothing happens here just yet
+  end
+            {% endhighlight %}
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">3</div>
+
+        <div class="row step-content">
+          <h4>Step three - Grab the CSV from the HSCIC website</h4>
+          <div class="col-sm-6">
+            {% highlight ruby %}
+# api.rb
+
+require 'sinatra'
+require 'csv'
+
+PRACTICES_FILE = "T201310ADDR+BNFT.CSV"
+PRACTICES_HEADERS = %w( period id name building street town region postcode )
+
+# ...
+            {% endhighlight %}
+          </div><!-- /.col-sm-6 -->
+          <div class="col-sm-6">
+            <p>
+            Head over to the <a href="http://www.hscic.gov.uk/searchcatalogue?productid=14119&topics=0%2fPrescribing&sort=Relevance&size=10&page=1#top">HSCIC website</a>
+            and download the <a href="http://datagov.ic.nhs.uk/presentation/2013_10_October/T201310ADDR+BNFT.CSV">Practice codes, names and addresses</a> file.
+            </p>
+            <p>
+            Once downloaded, place the file in a folder named <strong>fixtures</strong> in your main application folder.
+            </p>
+            <p>
+            This is a <a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV formatted</a> file,
+            so we'll have to require the <a href="http://ruby-doc.org/stdlib-2.0/libdoc/csv/rdoc/CSV.html">csv</a> library in our program to properly parse it.
+            </p>
+            <p>
+            For convenience, we'll also specify the name of the file and the column labels.
+            </p>
+
+          </div>
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">4</div>
+
+        <div class="row step-content">
+          <h4>Step four - Load the Practices CSV file</h4>
+          <div class="col-sm-6">
+            <p>
+            For the sake of this howto, we're going to load the CSV file every time our application is hit.
+            </p>
+            <p>
+            In order to do that, add call the <a href="http://ruby-doc.org/stdlib-2.0/libdoc/csv/rdoc/CSV.html#method-c-read">CSV.read</a>
+            method within the route definition, passing it the path to the file we just downloaded and the column headers.
+            </p>
+            <p>
+            Pointing the browser to your API again now you will get a dump of the whole CSV file, regardless of the :id passed in.
+            </p>
+
+            <p>Try for example <a href="http://localhost:4567/practices/AAAA">http://localhost:4567/practices/AAAA</a></p>
+
+          </div>
+          <div class="col-sm-6">
+            {% highlight ruby %}
+# api.rb
+
+# ...
+
+get '/practices/:id' do
+  # ignoring the :id and just loading the whole file
+  CSV.read( practices_filename, headers: PRACTICES_HEADERS )
+end
+
+def practices_filename
+  File.join(File.dirname(__FILE__), "fixtures", PRACTICES_FILE)
+end
+            {% endhighlight %}
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">5</div>
+
+        <div class="row step-content">
+          <h4>Step five - find the practice data</h4>
+          <div class="col-sm-6">
+            {% highlight ruby %}
+# api.rb
+
+# ...
+
+get '/practices/:id' do
+  practices = CSV.read( practices_filename, headers: PRACTICES_HEADERS )
+
+  practices.find do |practice|
+    practice["id"] == params[:id]
+  end
+end
+            {% endhighlight %}
+          </div><!-- /.col-sm-6 -->
+          <div class="col-sm-6">
+            <p>
+            With the CSV is loaded in memory, we can now focus on finding the row matching the practice we are looking for.
+            </p>
+
+            <p>
+            When the column headers are specified, like in our case, we can then consider each row as a <a href="http://en.wikipedia.org/wiki/Hash_table">hash map</a> and just look for the first match on the <strong>"id"</strong> column:
+            </p>
+
+            <p>
+            <a href="http://localhost:4567">Hitting the API at this stage</a>  will return an array representation of the matching CSV row. Better, but there is one more step needed in order to make the api really useful.
+            </p>
+
+          </div>
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">6</div>
+
+        <div class="row step-content">
+          <h4>Step six- Return a JSON representation of the Practice</h4>
+          <div class="col-sm-6">
+            <p>
+            We will use Ruby's <a href="http://www.ruby-doc.org/stdlib-2.0.0/libdoc/json/rdoc/JSON.html">json</a> library to convert the practice row into a JSON object.
+            </p>
+            <p>
+            Specifically, the <a href="http://www.ruby-doc.org/stdlib-2.0.0/libdoc/json/rdoc/JSON.html#method-i-generate">generate</a>
+            method takes a ruby object and returns a json document.
+            </p>
+            <p>
+            Now we can finally <a href="http://localhost:4567/practices/Y04422">request the practice details</a> from our browser using the API we just built!
+            </p>
+
+          </div>
+          <div class="col-sm-6">
+            {% highlight ruby %}
+# api.rb
+
+# ...
+
+get '/practices/:id' do
+  practices = CSV.read( practices_filename, headers: PRACTICES_HEADERS )
+
+  practice = practices.find do |practice|
+    practice["id"] == params[:id]
+  end
+
+  JSON.generate( practice.to_hash )
+end
+
+# ...
+            {% endhighlight %}
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      {% include howto-collaborate.html %}
+    </div><!-- /.container -->
+  </div><!-- /.tutorial -->
+</div><!-- /.how-to -->
+
