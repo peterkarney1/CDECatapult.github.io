@@ -21,7 +21,7 @@ icon: circle-lightbulb.png
     <div class="row intro-text">
       <!-- The introduction for non-case-studies (delete if a case study): -->
       
-      <p>
+      <p class="lead">
         The <a href="http://www.hscic.gov.uk">Health and Social Care
         Information Centre</a> has a tremendous collection of open
         data that allows us to track how our hospitals are doing, see
@@ -68,18 +68,290 @@ icon: circle-lightbulb.png
       <!-- You'll need a <div class="step"> block for each step. This template has four but use as many as you need. -->
       
       <!-- HSCIC Data Search -->
+      <div class="step">
+        <div class="step-circle">1</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+
+            <img src="hscic-search.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%; min-width: 100%;" alt="HSCIC Search Box">
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Tip One - Searching for Data at HSCIC</h4>
+            
+            <p class="lead">
+              It all starts with the search. We'll highlight what we
+              feel are some of the gems in the HSCIC data sets, but if
+              you don't find what you are after here then you can see
+              what you can find with
+              HSCIC's <a href="http://www.hscic.gov.uk/searchcatalogue">Search
+              Catalogue</a>. 
+            </p>
+
+            <p>
+              You can also engage with the people behind the Open Data
+              at the Information Centre. They run a number of very
+              responsive and friendly twitter
+              accounts <a href="https://twitter.com/hscic">@HSCIC</a>
+              and <a href="https://twitter.com/hscicopendata">@HSCICOpenData</a>. 
+            </p>
+
+            <p>
+              Often when I'm looking for the best data to answer my
+              question a friendly tweet to them will point me to some
+              data that I didn't know existed or data that is more up
+              to date than the one I knew about.
+            </p>
+
+            <p>
+              The twitter accounts are also great places to ask
+              questions about the data sets you find and discuss
+              potential problems or errors you might see in the data.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
 
       <!-- Indicators Portal GP Data -->
+      <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Tip Two - Indicators Portal</h4>
+            
+            <p class="lead">
+              The <a href="https://indicators.ic.nhs.uk/webview/index.jsp">
+                Indicators Portal</a> is probably your next port of
+                call as you are searching for data.
+            </p>
 
-      <!-- Indicators Portal Demographic Data -->
+            <p>
+              Here you'll find lots of Excel spreadsheets that can be
+              turned into csv files that you can process with other
+              tools. Most of the data isn't what you would call big,
+              but there is a wide variety of it.
+            </p>
+
+            <p>
+              There is data on Clinical Commissioning Groups (CCGs),
+              GP Practices, Adult Social Care, Hospital Mortality and
+              the NHS Outcomes Framework.
+            </p>
+
+            <p>
+              The Indicators Portal is where we were able to find
+              the <a href="http://indicators.ic.nhs.uk/webview/index.jsp?v=2&submode=ddi&study=http%3A%2F%2Fhg-l-app-472.ic.green.net%3A80%2Fobj%2FfStudy%2FP00974&mode=documentation&top=yes">Diabetes
+              Prevalence</a> data that we used to create the maps on
+              the <a href="http://openhealthdata.cdehub.org/">Open
+              Health Data Platform</a>.
+            </p>
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <img src="indicator-portal.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%; min-width: 100%;" alt="Indicator Portal Search Box">
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+
+      <!-- GP Practice indicators -->
+      <div class="step">
+        <div class="step-circle">3</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            {% highlight text %}
+0 practice-code
+1 practice-name
+2 indicator-name
+3 value
+4 extract-date
+5 indicator-group-name
+6 indicator-sub-group-name
+7 indicator-code
+8 ccg
+9 sha-code
+10 sha-name
+11 pct-code
+12 pct-name
+13 age-band
+14 deprivation-band
+            {% endhighlight %}            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Tip Three - GP Practice Indicators</h4>
+            
+            <p class="lead">
+              Hidden deep in the guts of the Indicator Portal is one
+              of the best files for data analysis on the Indicators
+              Portal. The <a href="http://indicators.ic.nhs.uk/webview/index.jsp?v=2&catalog=http%3A%2F%2F172.16.9.26%3A80%2Fobj%2FfCatalog%2FCatalog48&submode=catalog&mode=documentation&top=yes">GP Practice Indicators</a>
+              which can be found in a complete
+              <a href="http://icdata.ic.nhs.uk/GPOutcomes.zip">.zip
+              file</a>.
+            </p>
+
+            <p>
+              As you can see on the left each line has a practice code
+              and name and which CCG that practice belongs to.
+            </p>
+
+            <p>
+              There are also indicators on demography, infrastructure,
+              patient experience and other patient care indicators. It
+              feels a bit like Trip Advisor for GP Surgeries.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
 
       <!-- Organisational Data -->
+      <div class="step">
+        <div class="step-circle">4</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Tip Four - Organisational Data</h4>
+            
+            <p class="lead">
+              While the GP Practice Indicators can give you the
+              organisational relationships between the GP's Surgeries
+              and their parent Clinical Commissioning Groups.
+            </p>
+
+            <p>
+              You need to need the clearly
+              named <a href="http://systems.hscic.gov.uk/data/ods/supportinginfo/filedescriptions#_Toc350757591">Epraccur.csv</a>
+              to get all the addresses so you can put them on a map or
+              do other geographical analyses.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            {% highlight text %}
+0 organisation-code
+1 name
+2 national-grouping
+3 high-level-health-authority
+4 address-1
+5 address-2
+6 address-3
+7 address-4
+8 address-5
+9 postcode
+10 open-date
+11 close-date
+12 status-code
+13 org-sub-type-code
+14 parent-org-code
+15 join-parent-date
+16 left-parent-date
+17 contact-telephone
+18 amend-record-indicator
+19 practice-type
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
 
       <!-- Prescriptions Data -->
+      <div class="step">
+        <div class="step-circle">5</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <p>
+              {% highlight text %}
+0 sha
+1 pct
+2 practice
+3 bnf-code
+4 bnf-name
+5 items
+6 net-ingredient-cost
+7 act-cost
+8 quantity
+9 period
+9 year
+10 month
+              {% endhighlight %}
+            </p>
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Tip Five - Prescriptions Data</h4>
+            
+            <p class="lead">
+              The <a href="http://www.hscic.gov.uk/gpprescribingdata">Prescribing by GP Practice</a> data set is perhaps one of the best data exhaust sets at HSCIC.
+            </p>
+
+            <p>
+              The data itself is produced by the NHS Business Services Authority and is used to pay GPs based on how many and what kind of drugs they've prescribed. We can use it with other information from things like the British National Formulary or NICE Guidelines to use it to get a rough estimate of the kinds of health issues in an area or see how prescriptions vary regionally. Combining this with the prevalence data in some of the indicators files can also give you an idea about how much is being spent per person who has a condition as well.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
 
       <!-- Geographic Data -->
+      <div class="step">
+        <div class="step-circle">5</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Tip Five - Geographic Data</h4>
+            
+            <p class="lead">
+              Finding geographic data can actually be quite
+              tricky. Clinical Commissioning Groups are based on
+              Census Regions like Output Areas and Super Output Areas,
+              but finding a good source to use for mapping with
+              something like <a href="/howto/spruce-leaf">Spruce
+              Leaf</a> can be tough.
+            </p>
+
+            <p>
+              We've solved some of that problem for you by having a
+              Topojson
+              file <a href="/data/ccg-boundaries.json">here</a>. Remember though that the geographical information is based on Ordnance Survey data and their license requires that you cite them when you use it.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <img src="/assets/images/casestudies/map-large.jpg" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
       
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
   </div><!-- /.tutorial -->
 </div><!-- /.how-to -->
+
+
+
+
