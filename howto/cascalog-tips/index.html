@@ -23,9 +23,41 @@ icon: circle-lightbulb.png
 
       <!-- Link to cascalog.org tutorials -->
       <p class="lead">
-        80% of data science is cleaning, scrubbing and beating on data
-        until it is in the right shape for you to do your analysis.
+        We use a big data processing library
+        called <a href="http://cascalog.org/">Cascalog</a> to process
+        the large variety and occasionally volumes of data for things
+        like the <a href="http://openhealthdata.cdehub.org/">CDEC
+        Open Health Data Platform</a>.
       </p>
+
+      <p>
+        There are already great tutorials to get you up and running
+        like <a href="https://github.com/Cascading/Impatient-Cascalog">Cascalog
+        for the Impatient</a> and other tutorials and guides at
+        the <a href="http://cascalog.org/articles/guides.html">cascalog.org
+        guide page</a> so what we'll do here is share some tips and
+        tricks that will help you be more effective in using Cascalog
+        and doing general data processing once you've learned the
+        basics. 
+      </p>
+
+      <p>
+        The reason we chose cascalog as a technology to process our
+        data is that it allows us to deal with small data locally on a
+        single machine in a very fast feedback way at
+        the <a href="http://aphyr.com/posts/301-clojure-from-the-ground-up-welcome">REPL</a>
+        yet it also allows us to scale up to dealing with petabytes of
+        data in a <a href="http://hadoop.apache.org/">Hadoop</a>
+        Cluster. This combination of flexibility, interactivity and
+        power make cascalog difficult to beat or even match.
+      </p>
+
+      <p>
+        Read below for our tips and tricks on how you can be more
+        productive and effective with Cascalog and use it to scrub,
+        query and analyse all sizes of data.
+      </p>
+      
     </div>
   </div>
   
@@ -35,29 +67,22 @@ icon: circle-lightbulb.png
       <div class="row howto-top">
         <div class="col-sm-6">
           <!-- The title to the tutorial section of the page, don't change this. -->
-          <h2>Tutorial</h2>
+          <h2>Tips and Tricks</h2>
 
           <!-- The title your guide -->
-          <h3>Munging data</h3>
+          <h3>Cascalog Tips</h3>
         </div>
         
         <div class="col-sm-6">
           <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
           <ul class="howto-links row">
-            <li class="col-sm-6 gethelp">
-              <a href="#">Get help</a>
-            </li>
-            
-            <li class="col-sm-6 tutorial-files">
-              <a href="#">Download tutorial files (.zip)</a>
-            </li>
             
             <li class="col-sm-6 live-example">
-              <a href="#">See live example</a>
+              <a href="http://openhealthdata.cdehub.org/">See live example</a>
             </li>
             
             <li class="col-sm-6 github">
-              <a href="#">Get the files on Github</a>
+              <a href="https://github.com/CDECatapult/cdec.openhealthdata">Get the files on Github</a>
             </li>
           </ul>
         </div>
@@ -65,20 +90,235 @@ icon: circle-lightbulb.png
       
       <!-- You'll need a <div class="step"> block for each step. This template has four but use as many as you need. -->
 
-      <!-- Pointers towards external tutorials -->
-      
       <!-- Basic query per input file for loading -->
-      
+      <div class="step">
+        <div class="step-circle">1</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            {% highlight clojure %}
+(defn gp-prescriptions [in]
+  (<- [?sha ?pct ?practice ?bnf-code ?bnf-chemical 
+       ?bnf-name ?items ?net-ingredient-cost 
+       ?act-cost ?quantity ?year ?month]
+      (in :> ?sha ?pct ?practice ?bnf-code ?bnf-name 
+             ?items-string ?net-ingredient-cost-string 
+             ?act-cost-string ?quantity-string 
+             ?period _)
+      (split-bnf-code ?bnf-code :> ?bnf-chemical)
+      (conv/numbers-as-strings? 
+         ?items-string 
+         ?net-ingredient-cost-string 
+         ?act-cost-string 
+         ?quantity-string)
+      (conv/parse-double
+         ?items-string :> ?items)
+      (conv/parse-double
+         ?net-ingredient-cost-string
+            :> ?net-ingredient-cost)
+      (conv/parse-double
+         ?act-cost-string :> ?act-cost)
+      (conv/parse-double
+         ?quantity-string :> ?quantity)
+      (year-month
+         ?period :> ?year ?month)))
+            {% endhighlight %}
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Tip One - A basic query per data source</h4>
+            
+            <p class="lead">
+              The first thing you should do when bringing in a new
+              data file is create a query that gives you a clean, cut
+              down version of that file with the columns you find
+              interesting. 
+            </p>
+
+            <p>
+              If the example opposite is difficult to read, you can
+              see the original
+              in <a href="https://github.com/CDECatapult/cdec.openhealthdata/blob/master/src/cdec/health_analytics/gp_prescriptions.clj#L21">github</a>.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div>
+
+      <!-- Don't filter the bad, keep the good -->
+      <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Tip Two - Don't filter the bad, keep the good</h4>
+            
+            <p class="lead">
+              The universe of bad data is infinite. Trying to come up
+              with rules to filter out every type of bad data will
+              leave you frustrated with broken code and fast
+              approaching deadlines.
+            </p>
+
+            <p>
+              The universe of good data is much smaller though. You
+              probably already know what your data rows look like in
+              the file you are processing. Find them and keep them. I
+              usually have a filter similar to the code opposite that
+              let's me know which lines are the ones that have
+              data. Everything else I just ignore.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+
+            {% highlight clojure %}
+(defn data-line? [^String row]
+  (and (not= -1 (.indexOf row ","))
+       (not (.endsWith row ","))
+       (not (.startsWith row ","))))
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+
+      <!-- Always do your disk I/O out the very outside -->
+      <!-- So you can replace with hand coded dummy data -->
+      <div class="step">
+        <div class="step-circle">3</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            {% highlight clojure %}
+(defn unknown-ccg? [^String ccg]
+  (not= 3 (.length ccg)))
+
+(defn practices-with-no-ccg [gp-outcomes]
+  (<- [?practice-code ?practice-name ?ccg]
+      (gp-outcomes :#> 15 {0 ?practice-code 
+                           1 ?practice-name 
+                           8 ?ccg 
+                           11 ?pct-code})
+      (unknown-ccg? ?ccg)
+      (:distinct true)))
+            {% endhighlight %}
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step Three - Isolate I/O</h4>
+            
+            <p class="lead">
+               Notice how the function takes an "in" parameter, this
+              time called gp-outcoomes, rather than opening up the
+              file as a part of the basic query. This is so you can
+              test with dummy data rather than being tied to always
+              needing a file.
+            </p>
+
+            <p>
+              Data sources can be local files, files on hdfs, s3 or
+              swift. They can also be functions or data structures in
+              memory. This gives us a lot of flexibility and means
+              that we can test things with a simple vector of vectors
+              or connect to local files when running locally or to big
+              data systems like Cassandra when running in a cluster.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
       <!-- Pass functions around -->
+      <div class="step">
+        <div class="step-circle">4</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Tip Four - Pass functions around</h4>
+            
+            <p class="lead">
+              Following to principles of simplicity as laid out above,
+              you should also consider passing functions into other
+              functions rather than calling them inside.
+            </p>
+
+            <p>
+              Again, this will help with testing and being able to
+              move from local files to other data sources. Being able
+              to compose functions like this gives you a tremendous
+              amount of power and flexibility.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+
+            {% highlight clojure %}
+(defn diabetes-drugs [scrips epraccur]
+  (<- [?ccg ?practice ?bnf-code ?bnf-name ?items 
+       ?net-ingredient-cost ?act-cost ?quantity 
+       ?year ?month]
+      (scrips :> ?sha ?pct ?practice ?bnf-code 
+                 ?bnf-chemical ?bnf-name ?items 
+                 ?net-ingredient-cost ?act-cost 
+                 ?quantity ?year ?month)
+      (diabetes-drug? ?bnf-chemical ?bnf-name)
+      (epraccur :#> 20 {0 ?practice 
+                        12 ?status-code 
+                        14 ?ccg})))
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
 
       <!-- Cut down number of fields early -->
+      <div class="step">
+        <div class="step-circle">5</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            {% highlight clojure %}
+(defn gp-patients [input]
+  (<- [?gp-code ?total]      (input ?line)
+      (tl/data-line? ?line)
+      (tl/split-line ?line :#> 36 {4 ?gp-code
+                                   6 ?total-dirty})
+      (scrub-number ?total-dirty :> ?total)))
+            {% endhighlight %}
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Tip Five - Cut down fields and rows early</h4>
+            
+            <p class="lead">
+              The more data you move around, the longer your queries
+              will take to complete.
+            </p>
 
-      <!-- Filter before joining -->
-
-      <!-- Testing your assumptions -->
-
-      <!-- Run locally for small data -->
-      
+            <p>
+              Thus, you should always look for ways to cut down the
+              number of fields you are interested in and the number of
+              rows that concern you. This really saves times when
+              doing joins, which are expensive in hadoop and other big
+              data systems that don't have indexes to speed things up.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+            
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
   </div><!-- /.tutorial -->
