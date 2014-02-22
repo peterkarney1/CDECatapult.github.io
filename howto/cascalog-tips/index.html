@@ -166,10 +166,14 @@ icon: circle-lightbulb.png
             <p>
               The universe of good data is much smaller though. You
               probably already know what your data rows look like in
-              the file you are processing. Find them and keep them. I
-              usually have a filter similar to the code opposite that
-              let's me know which lines are the ones that have
-              data. Everything else I just ignore.
+              the file you are processing. Find them and keep them.
+            </p>
+
+            <p>
+              Instead of writing a function to remove the bad rows,
+              write one that will keep the rows you know to be
+              good. This let's you ignore the big universe of bad
+              rows. I usually call these functions <code>data-line?</code>.
             </p>
             
           </div>
