@@ -26,7 +26,7 @@ opening and integrating data by using common standards.
 In future months, you can expect to see new health
 related data sets, maps, integration tools and functionality
 added to the site. We will decide what to incorporate based
-largely on your feedback to this alpha launch, so please do
+largely on your feedback to this beta launch, so please do
 get in touch.
 
 ### Methodology
@@ -34,7 +34,7 @@ This site takes data from sources like the [Health and
 Social Care Information Centre (HSCIC)](http://www.hscic.gov.uk)
 and shows how it can be turned into visualisations and analysis
 to answer specific questions for your organisation.
-This is the ALPHA version of the site, which shows how
+This is the BETA version of the site, which shows how
 to take a small number of datasets including data about
 GP prescriptions and diabetes prevalence to show the extent
 of diabetes treatment in the UK.
