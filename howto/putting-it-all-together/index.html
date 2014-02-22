@@ -22,8 +22,12 @@ icon: circle-lightbulb.png
       <!-- The introduction for non-case-studies (delete if a case study): -->
       
       <p class="lead">
-        80% of data science is cleaning, scrubbing and beating on data
-        until it is in the right shape for you to do your analysis.
+        The end result of all the data munging, analysis, and data
+        visualisation needs to be a compelling piece of work. Just
+        doing a dashboard without supporting analysis and clear
+        recommendations and calls for action won't bring about any
+        results. Data doesn't speak for itself. You have to speak for
+        it. 
       </p>
     </div>
   </div>
@@ -37,44 +41,196 @@ icon: circle-lightbulb.png
           <h2>Tutorial</h2>
 
           <!-- The title your guide -->
-          <h3>Munging data</h3>
+          <h3>Putting it all together</h3>
         </div>
         
         <div class="col-sm-6">
           <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
           <ul class="howto-links row">
-            <li class="col-sm-6 gethelp">
-              <a href="#">Get help</a>
-            </li>
-            
-            <li class="col-sm-6 tutorial-files">
-              <a href="#">Download tutorial files (.zip)</a>
-            </li>
             
             <li class="col-sm-6 live-example">
-              <a href="#">See live example</a>
+              <a href="http://openhealthdata.cdehub.org/">See live example</a>
             </li>
             
             <li class="col-sm-6 github">
-              <a href="#">Get the files on Github</a>
+              <a href="https://github.com/CDECatapult/cdec.openhealthdata">Get the files on Github</a>
             </li>
           </ul>
         </div>
       </div> <!-- /end howto-top -->
       
-      <!-- You'll need a <div class="step"> block for each step. This template has four but use as many as you need. -->
-
       <!-- Figure out your story -->
+      <div class="step">
+        <div class="step-circle">1</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step One - Figure out your story</h4>
+            
+            <p class="lead">
+              Figure out what you want to say and what your most
+              compelling top line numbers are and put them at the
+              top. 
+            </p>
 
-      <!-- Find and highlight the big numbers -->
+            <p>
+              Most people who look at things like this will have a
+              quick glance at what they can see in the screen and move
+              on. You have to capture them right away with something
+              that will make them stop and want to read the rest.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+
+            <img src="ohdp-lead.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
 
       <!-- Everyone loves a map -->
+      <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <img src="bradford.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step Two - Everyone Loves a map</h4>
+            
+            <p class="lead">
+              Maps are great if your data has a geographical component
+              and are something you should always consider as people
+              find them very compelling.
+            </p>
+
+            <p>
+              Time and again when I present users with a map the first
+              thing they do is zoom directly to their own area. From
+              there they usually check where they grew up or where
+              other members of their family live. This is a great way
+              to engage users and get them to dive into your data.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
 
       <!-- Give them the details -->
+      <div class="step">
+        <div class="step-circle">3</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <img src="details.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step Three - Give them the details</h4>
+            
+            <p class="lead">
+              After you have their attention you need to allow them to
+              drill into the details so that they can better
+              understand the underlying relationships in the data.
+            </p>
+
+            <p>
+              With our diabetes map there is a fair bit of variation,
+              but without being able to drill into the details of the
+              area you wouldn't know if the regional variation was
+              because all of the surgeries in an area were the same or
+              because of an enormous outlier in each CCG. Giving a
+              detailed view of the underlying data helps with this.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
 
       <!-- Show your work -->
+      <div class="step">
+        <div class="step-circle">4</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step Four - Show your work</h4>
+            
+            <p class="lead">
+              Repeatability, traceability and provenance are essential
+              to what we do here as data analysts and
+              communicators. We need to be able to show where we get
+              our data from and how we've processed it.
+            </p>
+
+            <p>
+              For public sites like this we can show what we've done
+              in
+              a <a href="https://github.com/CDECatapult/cdec.openhealthdata">github
+              repository</a>. For internal work you might have other
+              ways of publishing what you've done. 
+            </p>
+
+            <p>
+              People will make decisions that affect the world around
+              you. Your work should be able to stand up to scrutiny.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <img src="ohdp-github.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+      
 
       <!-- What does it all mean (call to action) -->
+      <div class="step">
+        <div class="step-circle">5</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <img src="call-to-action.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step Five - Call to action</h4>
+            
+            <p class="lead">
+              Your analysis should also have a clear call to
+              action. What you've done is meant to persuade
+              people. You've marshalled your data, created your
+              compelling visualisations and made your case. Now you
+              need to make your recommendation.
+            </p>
+
+            <p>
+              Good data analysis should change behaviour. In this
+              case, what we want you to see is that you can do it
+              too. We hope that from the tutorials on this site and
+              the examples in github and in the tutorials we've
+              pointed you to that you'll find what you need to build
+              your own.            
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
       
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
