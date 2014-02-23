@@ -28,6 +28,12 @@ icon: circle-lightbulb.png
         their share some identifiers. If not, then you'll have to find
         a way to map from one to the other.
       </p>
+
+      <p class="lead">
+        In this tutorial we'll show you how you can join data from the
+        Health and Social Care Information Centre (HSCIC) with data
+        from the Office of National Statistics (ONS).
+      </p>
     </div>
   </div>
   
@@ -46,32 +52,195 @@ icon: circle-lightbulb.png
         <div class="col-sm-6">
           <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
           <ul class="howto-links row">
-            <li class="col-sm-6 gethelp">
-              <a href="#">Get help</a>
-            </li>
-            
-            <li class="col-sm-6 tutorial-files">
-              <a href="#">Download tutorial files (.zip)</a>
-            </li>
-            
-            <li class="col-sm-6 live-example">
-              <a href="#">See live example</a>
-            </li>
             
             <li class="col-sm-6 github">
-              <a href="#">Get the files on Github</a>
+              <a href="https://github.com/CDECatapult/cdec.openhealthdata/commit/e1fe83e6913b4acc0ad944976d7a90e6b7ba2bf0">Get the files on Github</a>
             </li>
           </ul>
         </div>
       </div> <!-- /end howto-top -->
       
-      <!-- You'll need a <div class="step"> block for each step. This template has four but use as many as you need. -->
-
       <!-- Finding the data you want -->
+      <div class="step">
+        <div class="step-circle">1</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <img src="ons-search.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step One - Finding the data you want</h4>
+            
+            <p class="lead">
+              The Office of National Statistics has data from the
+              Censuses from 2001 and 2011 and lots of other data from
+              other studies and models that they do in between
+              censuses. One of their most useful tools for exploring
+              and downloading this is
+              <a href="http://www.neighbourhood.statistics.gov.uk/dissemination/">Neighbourhood
+              Statistics</a>, which is a searchable index of their
+              data including census and other demographic data
+            </p>
+
+            <p>
+              Most of the sections let you download csv files or excel
+              files that you can convert to csv.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+
+      <!-- Bringing the new data in --->
+      <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step Two - Bringing the data in</h4>
+            
+            <p class="lead">
+              In this tutorial we'll be dealing
+              with <a href="http://www.neighbourhood.statistics.gov.uk/dissemination/DownloadData.zip?$ph=60_61_64_65&step=6&downloadLargeFile=true&fileIndex=1">population
+              density in England and Wales</a>.
+            </p>
+
+            <p>
+              CSV data from the ONS is mostly from excel exports so
+              the data is quite a bit messier than the relatively
+              clean data we get from most of HSCIC. So you'll notice
+              in the code on the left that there is quite a bit more
+              in the way of finding good data lines and converting
+              strings to numbers.
+            </p>
+
+            <p>
+              You can see the complete code for scrubbing this data
+              on <a href="https://github.com/CDECatapult/cdec.openhealthdata/blob/master/src/cdec/health_analytics/population_density.clj">github</a>.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+
+            {% highlight clojure %}
+(defn population-density [in]
+  (<- [?la_code ?la_name ?msoa_code ?msoa_name 
+       ?lsoa_code ?lsoa_name ?area_metadata 
+       ?population ?area ?density]
+      (in :> ?line)
+      (data-line? ?line)
+      (split-line 
+        ?line :> _ _ ?la_code ?la_name
+                ?msoa_code ?msoa_name
+                ?lsoa_code ?lsoa_name
+                ?area_metadata _
+                ?population_dirty ?
+                area_dirty ?density_dirty)
+      (conv/numbers-as-strings?
+        ?population_dirty ?area_dirty ?density_dirty)
+      (conv/parse-double
+        ?population_dirty :> ?population)
+      (conv/parse-double
+        ?area_dirty :> ?area)
+      (conv/parse-double
+        ?density_dirty :> ?density)))
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      
 
       <!-- Finding the join point -->
+      <div class="step">
+        <div class="step-circle">3</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step Three - Finding the join point</h4>
+            
+            <p class="lead">
+              The tricky bit when joining data from one organisation
+              to another is finding a shared key to join on. Luckily
+              most data from the government in the UK uses the same
+              basic geography. The ONS Output Area is the basis of
+              most local authorities, ONS Data and Clinical
+              Commissioning Groups (CCGs).
+            </p>
+
+            <p>
+              The NHS has kindly provided us with a way
+              of <a href="http://www.england.nhs.uk/resources/ccg-directory/">mapping
+              from LSOAs to CCGs</a>. You can see the code opposite
+              that processes the file.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            {% highlight clojure %}
+(defn ccg-lsoa [in]
+  (<- [?lsoa11cd ?lsoa11nm ?ccgcode ?ccgname]
+      (in :> ?lsoa11cd ?lsoa11nm ?ccgcode ?ccgname)))            
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
 
       <!-- Mapping between one and another -->
+      <div class="step">
+        <div class="step-circle">4</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            {% highlight clojure %}
+(defn population-density-ccg [pop-density ccg-lsoa]
+  (<- [?ccgcode ?total_population ?total_area ?density]
+      (pop-density :#> 10 {4 ?lsoa_code
+                           7 ?population
+                           8 ?area})
+      (ccg-lsoa :#> 4 {0 ?lsoa_code
+                       2 ?ccgcode})
+      (ops/sum ?population :> ?total_population)
+      (ops/sum ?area :> ?total_area)
+      (div ?total_population ?total_area :> ?density)))
+            {% endhighlight %}
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step Four - Mapping from one to another</h4>
+            
+            <p class="lead">
+              The code on the left shows how we can join the
+              population density file from ONS with the CCG mapping
+              file from the NHS using <code>?lsoa_code</code>.
+            </p>
+
+            <p>
+              We sum up population and area for each ccg as there are
+              multiple LSOAs per CCG and then work out the density for
+              the whole CCG. Now we can take this area, population and
+              density data and join it with any other NHS data we can
+              find at HSCIC.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
       
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
