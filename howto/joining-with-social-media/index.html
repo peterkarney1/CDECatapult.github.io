@@ -20,10 +20,30 @@ icon: circle-lightbulb.png
     
     <div class="row intro-text">
       <!-- The introduction for non-case-studies (delete if a case study): -->
-      
+
       <p class="lead">
-        Get data from twitter via their location API.
+        When we deal with data from ONS as in
+        the <a href="/howto/cross-org-joins/">Joining across
+        organisations tutorial</a> we have a great advantage in that
+        the geographies are based on ONS LSOAs at the core. However,
+        twitter obviously doesn't follow this.
       </p>
+
+      <p class="lead">
+        The analysis we're doing is just indicative though. It just
+        needs to give us more information than we had before to help
+        us make decisions. So, for this analysis we're going to choose
+        the code for the largest CCG in Leeds 03C and use this as our
+        key to join to NHS data.
+      </p>
+
+      <p class="lead">
+        It isn't perfect, and it is something we should revise over
+        time, but it allows us to bring new data into our pipeline for
+        analysis. Just be careful and remember that your analysis is
+        tentative rather than authoritative.
+      </p>
+
     </div>
   </div>
   
@@ -42,34 +62,202 @@ icon: circle-lightbulb.png
         <div class="col-sm-6">
           <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
           <ul class="howto-links row">
-            <li class="col-sm-6 gethelp">
-              <a href="#">Get help</a>
-            </li>
-            
-            <li class="col-sm-6 tutorial-files">
-              <a href="#">Download tutorial files (.zip)</a>
-            </li>
-            
-            <li class="col-sm-6 live-example">
-              <a href="#">See live example</a>
-            </li>
             
             <li class="col-sm-6 github">
-              <a href="#">Get the files on Github</a>
+              <a href="https://github.com/CDECatapult/cdec.twitterhealth">Get the files on Github</a>
             </li>
+            
           </ul>
         </div>
       </div> <!-- /end howto-top -->
-      
-      <!-- You'll need a <div class="step"> block for each step. This template has four but use as many as you need. -->
 
-      <!-- Coming up with the question -->
+      <!-- Create the twitter app account-->
+      <div class="step">
+        <div class="step-circle">1</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <img src="new-twitter-app.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step One - Create the twitter application account</h4>
+            
+            <p class="lead">
+              The first thing you'll need to do is create an account
+              for your application at twitter. Go
+              to <a href="https://apps.twitter.com/app/new">https://apps.twitter.com/app/new</a>
+              and follow the instructions there to create the keys for
+              your application.
+            </p>
+
+            <p>
+              There will be some restrictions on the name of your
+              application and you'll need to have a registered mobile
+              number with your twitter account.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->      
 
       <!-- Getting the data from twitter -->
+      <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step Two - Get the data from twitter</h4>
+            
+            <p class="lead">
+              Once you have the credentials for your account set up
+              you can start to query twitter. There is extensive
+              documentation for the twitter
+              API <a href="https://dev.twitter.com/docs/api/1.1">here</a>,
+              but the bit that we'll be using most is
+              the <a href="https://dev.twitter.com/docs/api/1.1/get/search/tweets">Search
+              API</a>. 
+            </p>
+
+            <p>
+              On the right you can see the code we are using to search
+              for mentions of diabetes in a particular region.
+            </p>
+
+            <p>
+              We're using <code>(System/getenv ...)</code> so that we
+              don't accidentally check our secret keys into github.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            {% highlight clojure %}
+(ns cdec.twitterhealth
+  (:use
+   [twitter.oauth]
+   [twitter.api.restful]))
+
+(def my-creds
+  (make-oauth-creds
+   (System/getenv "TW_APP_CONSUMER_KEY")
+   (System/getenv "TW_CONSUMER_SECRET")
+   (System/getenv "TW_USER_ACCESS_TOKEN")
+   (System/getenv "TW_USER_ACCESS_TOKEN_SECRET")))
+
+(def leeds {:lat 53.7997 :lon -1.5492})
+(def birmingham {:lat 52.4831 :lon -1.8936})
+(def manchester {:lat 53.4667 :lon -2.2333})
+(def newcastle {:lat 54.9740 :lon -1.6132})
+(def oxford {:lat 51.7519 :lon -1.2578})
+
+(defn diabetes-tweets [{:keys [lat lon]}]
+  (let [search-area (str lat "," lon ",5mi")]
+    (search-tweets
+     :oauth-creds my-creds
+     :params {:q "diabetes"
+              :geocode search-area
+              :count 100})))
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
 
       <!-- Producing data to join -->
+      <div class="step">
+        <div class="step-circle">3</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            {% highlight clojure %}
+(defn get-statuses [resp]
+  (-> resp
+      :body
+      :statuses))
 
-      <!-- Joining the data -->
+(defn user-frequencies [statuses]
+  (let [users (map #(-> % :user :screen_name) statuses)]
+    (frequencies users)))
+
+(defn ccg-tweeters [tweeters-w-freq ccg-code]
+  (map (fn [[user freq]] [ccg-code user freq]) tweeters-w-freq))
+            {% endhighlight %}
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step Three - Creating the data</h4>
+            
+            <p class="lead">
+              The question we want to ask is "who are the interesting
+              twitter users in an area?". This can help us find out
+              who is talking about our subject in a particular area
+              and we can use it to judge overall activity around our
+              subject as well as find people who might be able to help
+              us. 
+            </p>
+
+            <p>
+              The code on the left will help us to find who is
+              tweeting the most in a  particular area.             
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">4</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step Four - Turning into data we can link</h4>
+            
+            <p class="lead">
+              The code on the right shows how we can produce a csv
+              data file using the data we've retrieved from
+              twitter. Because twitter doesn't know about CCGs we have
+              to manually append the CCG Code to each line.
+            </p>
+
+            <p>
+              At the end of this we'll have a csv file with a CCG Code
+              on each line that we can join to other files from the
+              NHS and HSCIC.
+            </p>
+          </div>
+          
+          <div class="col-sm-6">
+            
+            {% highlight clojure %}
+(defn ccg-tweeters-csv [tweeters-w-freq file-name]
+  (with-open [out-file (io/writer file-name)]
+    (csv/write-csv out-file
+                   tweeters-w-freq)))
+
+(def leeds-west-ccg "03C")
+
+(defn make-tweeters-csv [location ccg-code]
+  (-> (diabetes-tweets location)
+      get-statuses
+      user-frequencies
+      (ccg-tweeters ccg-code)
+      (ccg-tweeters-csv (str ccg-code "-tweeters.csv"))))
+
+(make-tweeters-csv leeds leeds-west-ccg)
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
       
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
