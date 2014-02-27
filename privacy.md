@@ -6,12 +6,103 @@ title: Privacy - Open Health Data Platform
 page_title: Privacy
 ---
 
-Nulla eu lectus quis ipsum commodo venenatis. Nunc nec congue ligula. Nunc purus neque, consequat ac ante nec, lacinia dignissim tortor. Sed a elit at lectus euismod sodales. Fusce pellentesque ante dui, ut lacinia est sagittis vel. Nullam tellus elit, molestie sit amet blandit non, malesuada vel ipsum. Sed aliquam eleifend tincidunt. Aliquam euismod purus et dignissim posuere. Praesent at sapien a arcu faucibus porttitor in ac nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ultricies fermentum neque sed facilisis. Proin vitae risus diam.
+## Your privacy - how cookies are used by Technology Strategy Board
+ 
+Technology Strategy Board uses small amounts of data stored on your
+computer called 'cookies' to collect information about how visitors
+use the website. You can control what cookies, if any, are stored on
+your computer. Find out more about cookies below.
+ 
+Details of how to request personal information under the Data
+Protection Act (1998) can be found on our Terms & conditions page.
+ 
+## What is a cookie?
 
-Etiam sapien metus, scelerisque et dapibus vitae, convallis at nulla. Vestibulum rhoncus fermentum nisi mollis sodales. Sed eget aliquam ipsum. Quisque est nulla, tempor vitae molestie vitae, egestas nec nisi. Donec in ante tellus. Proin accumsan magna quis pulvinar viverra. Phasellus porttitor, ligula ut vestibulum gravida, tortor odio mattis nibh, non facilisis lacus lacus sit amet tortor. Ut mollis aliquam turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In elementum commodo nisi ac fermentum. Fusce pellentesque risus sed eleifend volutpat. Aenean molestie libero a eleifend ultricies. Phasellus vehicula orci lorem, nec imperdiet erat iaculis vel. Vestibulum id libero a mauris dapibus scelerisque. Nam rhoncus a tortor ac consectetur. Nulla et enim sit amet nisi elementum commodo.
+A cookie is a small amount of data sent to your computer or mobile
+phone from a website. It often includes a unique identifier and is
+stored on your device's hard drive. Technology Strategy Board doesn't
+use cookies to collect information that can be used to identify you.
+ 
+Each website can send its own cookie to your browser if your browser's
+preferences allow it. Your browser is the computer program you use to
+access the internet. By default, your browser will only allow a
+website to access the cookies it's already sent to you, and not the
+cookies sent to you by any other website. This is to protect your
+privacy.
+ 
+For more information go to:
+http://www.bbc.co.uk/webwise/guides/about-cookies
+ 
+## Types of cookies
 
-Etiam facilisis sem velit, ac interdum eros condimentum id. Phasellus sollicitudin, quam in dictum malesuada, felis urna gravida est, nec aliquam nulla mauris et augue. Curabitur varius tincidunt augue, iaculis tincidunt eros pharetra vitae. Aliquam laoreet odio vel odio congue imperdiet. Etiam consequat diam ac accumsan volutpat. Vestibulum placerat enim nec tempus dictum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam a sem tempor, accumsan mauris et, blandit metus. Integer at erat aliquet, euismod nulla vel, eleifend lorem.
+There are effectively four different variants of cookies that websites
+create:
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam dui felis, aliquet eget mattis ac, auctor at lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ac sodales sem, id scelerisque massa. Curabitur ultrices iaculis nisi at hendrerit. Vestibulum sit amet nulla nisl. Cras molestie nisl ligula, vitae molestie dolor tincidunt non.
+ - Session cookies – These types of cookies are only valid when the
+ user browses a site and are expired when the user leaves a
+ website. Session cookies are used to remember if a user has logged
+ into a website for example.
+ - Persistent cookies – Persistent cookies are not cleared when a user
+ closes their browser. They are used to remember if the user has
+ visited the site before, whether they ticked a 'remember me' type
+ checkbox when logging into the site or where the user visited the
+ website from. These types of cookies generally have a fixed
+ time-frame before expiring, for example a year.
+ - First party cookies – First party cookies are examples that are
+ only used within one particular website. Data from the cookie isn't
+ accessible to other websites.
+ - Third party cookies – These cookies do contain data that third
+ party websites can access. Examples include social media sharing
+ controls or analytics based websites.
 
-Pellentesque a tortor id erat accumsan suscipit a quis leo. Nullam eu mi nisl. Duis rutrum quis nunc et accumsan. Maecenas imperdiet, leo ac cursus rutrum, erat lectus tincidunt enim, nec placerat tellus erat ac quam. Fusce nec metus a purus dictum vestibulum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus suscipit eget lacus non cursus. Ut rhoncus euismod metus, ut pulvinar lacus tincidunt et. Quisque felis libero, cursus vitae sagittis nec, laoreet vel metus.
+## Services that need cookies to work
+
+Some services need to store a cookie on your computer for them to
+work. These cookies are removed when you finish using the service. If
+cookies are blocked then these services will not work.
+ 
+## Controlling what cookies are stored on your computer
+
+You can set your devices to:
+ 
+ - Accept all cookies
+ - Tell you when a cookie is being received
+ - Not receive cookies
+
+Each browser is different, so check the 'Help' menu of your browser to
+learn how to change your cookie preferences.
+ 
+## Rejecting cookies
+
+If you want to restrict or block the cookies set by Technology
+Strategy Board you can do this through your browser settings. The
+'Help' menu in your browser should explain how you can do this, as
+well as how to delete cookies from your computer. For more
+information, see the 'About cookies' website.
+ 
+How to control or delete cookies: http://www.aboutcookies.org/
+ 
+## Mobile phones - rejecting cookies
+
+For information about how to reject cookies on your mobile phone's
+browser, see your handset manual.
+ 
+Third party cookies on http://www.innovateuk.org/
+ 
+## Google Analytics cookies
+
+Connected Digital Economy Catapult uses Google Analytics, a web
+analytics service provided by Google, Inc. Google Analytics sets a
+cookie in order to evaluate your use of the site.
+ 
+Google stores the information collected by the cookie on servers in
+the United States. Google may also transfer this information to third
+parties where required to do so by law, or where such third parties
+process the information on Google's behalf. Google will not associate
+your IP address with any other data held by Google. By using the site,
+you consent to the processing of data about you by Google in the
+manner and for the purposes set out above.
+ 
+How to reject or delete this cookie:
+http://www.google.com/intl/en/privacypolicy.html
+ 
