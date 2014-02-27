@@ -6458,7 +6458,7 @@ nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a.catapult {
 
 nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a.catapult img {
   height: 25px;
-  margin: 15px;
+  margin-top: 22px;
 }
 
 @media (min-width: 0px) {
