@@ -1,0 +1,223 @@
+---
+layout: howto
+howto: true
+title: Why clojure, ruby and javascript? - Open Health Data Platform
+page_title: How To's - Why clojure, ruby and javascript?
+icon: circle-lightbulb.png
+---
+
+<div class="how-to">
+  <div class="container">
+    <div class="title clearfix">
+      <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
+      
+      <!-- The title of the site section "How To's", you shouldn't change this. -->
+      <h1>{{ page.page_title }}</h1>
+    </div>
+    
+    <!-- The title of your How To -->
+    <h2>Why clojure, ruby and javascript?</h2>
+    
+    <div class="row intro-text">
+      <!-- The introduction for non-case-studies (delete if a case study): -->
+
+      <!-- Link to cascalog.org tutorials -->
+      <p class="lead">
+        Clojure, Ruby and JavaScript are three very different
+        languages, though they share some traits in common such as
+        being dynamic and owing a heritage to earlier expressive
+        programming languages like lisp. In these tutorials we use
+        each language in the area we think it is strongest. Below
+        you'll find a quick description of each language and what
+        situations we use it in.
+      </p>
+    </div>
+  </div>
+  
+  <div class="tutorial">
+    <div class="container">
+
+      <div class="row howto-top">
+        <div class="col-sm-6">
+          <!-- The title to the tutorial section of the page, don't change this. -->
+          <h2>Tips and Tricks</h2>
+
+          <!-- The title your guide -->
+          <h3>Why clojure, ruby and javascript?</h3>
+        </div>
+        
+      </div> <!-- /end howto-top -->
+      
+      <div class="step">
+        <div class="step-circle">1</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step One - Why Clojure?</h4>
+            
+            <p class="lead">
+              <a href="http://clojure.org/">Clojure</a> is a dynamic
+              programming language that is hosted on the Java Virtual
+              Machine and in JavaScript. It is an expressive and
+              powerful language with a lisp like syntax that gives you
+              the depth and wealth of libraries on the Java and
+              JavaScript platforms.
+            </p>
+
+            <p>
+              In addition, clojure has a fantastic library
+              called <a href="http://cascalog.org">Cascalog</a> which
+              is a wrapper around
+              the <a href="http://www.cascading.org/">Cascading</a>
+              map reduce library for
+              the <a href="http://hadoop.apache.org">Hadoop</a> big
+              data platform.
+            </p>
+
+            <p>
+              Cascalog in particular gives you the ability to do data
+              analysis on data that can be held in memory all the way
+              up to petabytes on a Hadoop cluster.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            {% highlight clojure %}
+(ns cdec.twitterhealth
+  (:require
+   [clojure.java.io :as io]
+   [clojure.data.csv :as csv]
+   [twitter.oauth :refer :all]
+   [twitter.api.restful :refer :all]))
+
+(def my-creds
+  (make-oauth-creds
+   (System/getenv "TW_APP_CONSUMER_KEY")
+   (System/getenv "TW_CONSUMER_SECRET")
+   (System/getenv "TW_USER_ACCESS_TOKEN")
+   (System/getenv "TW_USER_ACCESS_TOKEN_SECRET")))
+
+(defn diabetes-tweets [{:keys [lat lon]}]
+  (let [search-area (str lat "," lon ",5mi")]
+    (search-tweets
+     :oauth-creds my-creds
+     :params {:q "diabetes"
+              :geocode search-area
+              :count 100})))
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+
+            {% highlight ruby %}
+require 'sinatra'
+require 'csv'
+require 'json'
+
+PRACTICES_FILE = "T201310ADDR+BNFT.CSV"
+PRACTICES_HEADERS = %w( period id name building street town region postcode )
+
+get '/practices/:id' do
+  practices = CSV.read( practices_filename, headers: PRACTICES_HEADERS )
+
+  practice = practices.find do |practice|
+    practice["id"] == params[:id]
+  end
+
+  JSON.generate( practice.to_hash )
+end
+
+def practices_filename
+  File.join(File.dirname(__FILE__), "fixtures", PRACTICES_FILE)
+end
+            {% endhighlight %}
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step Two - Why Ruby?</h4>
+            
+            <p class="lead">
+              <a href="https://www.ruby-lang.org/en/">Ruby</a> is also
+              a dynamic, open source programming language. The syntax
+              is different from a lisp like clojure, but many people
+              prefer it.
+            </p>
+
+            <p>
+              Many websites are written using Ruby frameworks
+              like <a href="http://rubyonrails.org/">Ruby on Rails</a>
+              or as we've done
+              in <a href="http://www.sinatrarb.com/">Sinatra</a>. 
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">3</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step Three - Why Javascript?</h4>
+            
+            <p class="lead">
+              <a href="http://en.wikipedia.org/wiki/JavaScript">JavaScript</a>
+              is another dynamic programming language. JavaScript is
+              different from Clojure and Ruby in that it was
+              originally intended to run in web browsers.
+            </p>
+
+            <p>
+              JavaScript is used to provide advanced interactivity in
+              browsers and we use it a lot for data visualisations
+              using libraries
+              like <a href="http://dimplejs.org/">dimple.js</a> for
+              line and bar charts and <a href="http://leafletjs.com/">
+              leaflet.js</a> for maps.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            {% highlight javascript %}
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+
+    if (chart_month_by_month) { chart_month_by_month.remove() };
+
+    var ccg_code = e.target.feature.properties.ccg_code;
+    // Create a time series chart of spend month by month
+    chart_month_by_month = spend_month_by_month(chart_div, ccg_code);
+
+    if (chart_spend_comparison) { chart_spend_comparison.remove() };
+
+    chart_spend_comparison = spend_comparison(chart_div2, ccg_code);
+}            
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+
+            
+      {% include howto-collaborate.html %}
+    </div><!-- /.container -->
+  </div><!-- /.tutorial -->
+</div><!-- /.how-to -->
