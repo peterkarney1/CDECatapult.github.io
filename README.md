@@ -8,6 +8,6 @@ This is the repository for the CDEC Open Health Data Platform website. It's host
 
 ## License
 
-Copyright © 2013 Error Creative Studio	
+Copyright © 2014 Connected Digital Economy Catapult
 
 Distributed under the Apache v2 License
