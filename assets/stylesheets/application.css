@@ -6346,6 +6346,13 @@ nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a {
   font-size: 13px;
   text-decoration: underline;
 }
+nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a.catapult {
+  padding: 0px;
+}
+nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a.catapult img {
+  height: 25px;
+  margin-top: 22px;
+}
 nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a:hover {
   color: #a82e1b;
   text-decoration: none;
@@ -6451,16 +6458,6 @@ html.showfooter #footer-gradient {
   color: #e05c48;
   font-size: 16px;
 }
-
-nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a.catapult {
-  padding: 0px;
-}
-
-nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a.catapult img {
-  height: 25px;
-  margin-top: 22px;
-}
-
 @media (min-width: 0px) {
   #footer .social-links {
     text-align: center;
