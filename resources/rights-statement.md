@@ -45,4 +45,4 @@ ONS and Ordnance Survey can be found on the
 ## Let us know!
 
 If you use anything here it would be lovely if you were to point back
-to the CDEC Open Health Platform.
+to the Digital Catapult Open Health Data Platform.
