@@ -6,9 +6,9 @@ title: Privacy - Open Health Data Platform
 page_title: Privacy
 ---
 
-## Your privacy - how cookies are used by Technology Strategy Board
+## Your privacy - how cookies are used by Connected Digital Economy Catapult
  
-Technology Strategy Board uses small amounts of data stored on your
+Connected Digital Economy Catapult uses small amounts of data stored on your
 computer called 'cookies' to collect information about how visitors
 use the website. You can control what cookies, if any, are stored on
 your computer. Find out more about cookies below.
@@ -20,8 +20,9 @@ Protection Act (1998) can be found on our Terms & conditions page.
 
 A cookie is a small amount of data sent to your computer or mobile
 phone from a website. It often includes a unique identifier and is
-stored on your device's hard drive. Technology Strategy Board doesn't
-use cookies to collect information that can be used to identify you.
+stored on your device's hard drive. Connected Digital Economy Catapult
+doesn't use cookies to collect information that can be used to
+identify you.
  
 Each website can send its own cookie to your browser if your browser's
 preferences allow it. Your browser is the computer program you use to
@@ -74,8 +75,8 @@ learn how to change your cookie preferences.
  
 ## Rejecting cookies
 
-If you want to restrict or block the cookies set by Technology
-Strategy Board you can do this through your browser settings. The
+If you want to restrict or block the cookies set by Connected Digital
+Economy Catapult you can do this through your browser settings. The
 'Help' menu in your browser should explain how you can do this, as
 well as how to delete cookies from your computer. For more
 information, see the 'About cookies' website.
