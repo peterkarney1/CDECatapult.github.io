@@ -7589,6 +7589,11 @@ html.lt-ie9 .block.homepage-whowhathow-block .column.how p {
   overflow: auto;
   padding: 10px;
 }
+.block.homepage-latest-block .lanyrd-inner h3 {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
 .block.homepage-latest-block .latest-social-icon.twitter {
   width: 30px;
   height: 24px;
