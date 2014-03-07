@@ -6350,8 +6350,9 @@ nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a.catapult {
   padding: 0px;
 }
 nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a.catapult img {
-  height: 25px;
-  margin-top: 22px;
+  height: 40px;
+  margin-top: 11px;
+  margin-left: 10px;
 }
 nav.navbar.navbar-default .nav.navbar-nav.navbar-right li a:hover {
   color: #a82e1b;
