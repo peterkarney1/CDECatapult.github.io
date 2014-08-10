@@ -1,0 +1,283 @@
+---
+layout: howto
+howto: true
+title: Creating a score or index - Open Health Data Platform
+page_title: How To's - Creating a score or index
+icon: circle-lightbulb.png
+---
+
+<div class="how-to">
+  <div class="container">
+    <div class="title clearfix">
+      <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
+      
+      <!-- The title of the site section "How To's", you shouldn't change this. -->
+      <h1>{{ page.page_title }}</h1>
+    </div>
+    
+    <!-- The title of your How To -->
+    <h2>Creating a score or index</h2>
+    
+    <div class="row intro-text">
+      <!-- The introduction for non-case-studies (delete if a case study): -->
+
+      <p class="lead">
+        A classic way to simplify a complex set of information is to combine it into a single score or index.
+        This is an effective way to provide a rough guide or ranking for users, who can then dig into the detail. 
+        It's also a good way to promote a business, as the scoring can create a lot of fun and different stories to explore - 
+        top ten, bottom ten, whose scores are rising or falling.        
+      </p>
+
+      <p class="lead">
+         However, in order to make sure that the score is a sensible reflection of reality, we need to be careful about
+         what information we use, and that we make sure each item of information has a reasonable effect on the overall score. 
+         This tutorial walks through the process of creating a score and visualisation for local areas in England, showing "how easy
+         it is to be healthy" in that area. The score is to be used by Toothpick, a business which helps people find and book
+         a dentist online, as a basis for creating interesting online content which can promote their business. 
+      </p>
+
+    </div>
+  </div>
+  
+  <div class="tutorial">
+    <div class="container">
+
+      <div class="row howto-top">
+        <div class="col-sm-6">
+          <!-- The title to the tutorial section of the page, don't change this. -->
+          <h2>Tutorial</h2>
+
+          <!-- The title your guide -->
+          <h3>Creating a score or index</h3>
+        </div>
+        
+        <div class="col-sm-6">
+          <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
+          <ul class="howto-links row">
+            
+            <li class="col-sm-6 github">
+              <a href="https://github.com/CDECatapult/cdec.twitterhealth">Get the files on Github</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div> <!-- /end howto-top -->
+
+      <!-- Choose your data sources-->
+      <div class="step">
+        <div class="step-circle">1</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <a href="https://apps.twitter.com/app/new"><img src="new-twitter-app.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step one - choose your data sources and get the raw data</h4>
+            
+            <p class="lead">
+              First you will need some raw data sources to work with. We started out with about twenty ideas, and whittled these down to the data that was most relevant and available.
+            </p>
+
+            <p>
+              Each data source needs to be relevant to the topic that you're scoring; cover all the places that you're scoring; be legally available for use; and be available in a form that you can feasibly match across sources. On this basis, we had to ditch some of our initial ideas. For example, air quality data would have been excellent to include in our calculations, but <a href="http://uk-air.defra.gov.uk/">public air quality data feeds</a> weren't available at a geography that we could match up to local authority boundaries. We also had to check that a couple of our sources were legally licensed for us to reuse - for example, we got green space data from the <a href="http://www.naturalengland.org.uk/ourwork/evidence/mene.aspx">"Monitor of Engagement with the Natural Environment" survey</a> - we emailed them to clarify that the data was available under Open Government License, which meant that we were free to reuse it in a commercial context.  
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->      
+
+      <!-- Check data  -->
+      <div class="step">
+        <div class="step-circle">2</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step Two - Get the data from twitter</h4>
+            
+            <p class="lead">
+              Once you have the credentials for your account set up
+              you can start to query twitter. There is extensive
+              documentation for the twitter
+              API <a href="https://dev.twitter.com/docs/api/1.1">here</a>,
+              but the bit that we'll be using most is
+              the <a href="https://dev.twitter.com/docs/api/1.1/get/search/tweets">Search
+              API</a>. 
+            </p>
+
+            <p>
+              On the right you can see the code we are using to search
+              for mentions of diabetes in a particular region.
+            </p>
+
+            <p>
+              We're using <code>(System/getenv ...)</code> so that we
+              don't accidentally check our secret keys into github.
+            </p>
+            
+          </div>
+          
+          <div class="col-sm-6">
+            
+            {% highlight clojure %}
+(ns cdec.twitterhealth
+  (:use
+   [twitter.oauth]
+   [twitter.api.restful]))
+
+(def my-creds
+  (make-oauth-creds
+   (System/getenv "TW_APP_CONSUMER_KEY")
+   (System/getenv "TW_CONSUMER_SECRET")
+   (System/getenv "TW_USER_ACCESS_TOKEN")
+   (System/getenv "TW_USER_ACCESS_TOKEN_SECRET")))
+
+(def leeds {:lat 53.7997 :lon -1.5492})
+(def birmingham {:lat 52.4831 :lon -1.8936})
+(def manchester {:lat 53.4667 :lon -2.2333})
+(def newcastle {:lat 54.9740 :lon -1.6132})
+(def oxford {:lat 51.7519 :lon -1.2578})
+
+(defn diabetes-tweets [{:keys [lat lon]}]
+  (let [search-area (str lat "," lon ",5mi")]
+    (search-tweets
+     :oauth-creds my-creds
+     :params {:q "diabetes"
+              :geocode search-area
+              :count 100})))
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <!-- Producing data to join -->
+      <div class="step">
+        <div class="step-circle">3</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            {% highlight clojure %}
+(defn get-statuses [resp]
+  (-> resp
+      :body
+      :statuses))
+
+(defn user-frequencies [statuses]
+  (let [users (map #(-> % :user :screen_name) statuses)]
+    (frequencies users)))
+
+(defn ccg-tweeters [tweeters-w-freq ccg-code]
+  (map (fn [[user freq]] [ccg-code user freq]) tweeters-w-freq))
+            {% endhighlight %}
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step Three - Creating the data</h4>
+            
+            <p class="lead">
+              The question we want to ask is "who are the interesting
+              twitter users in an area?". This can help us find out
+              who is talking about our subject in a particular area
+              and we can use it to judge overall activity around our
+              subject as well as find people who might be able to help
+              us. 
+            </p>
+
+            <p>
+              The code on the left will help us to find who is
+              tweeting the most in a  particular area.             
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <div class="step">
+        <div class="step-circle">4</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <!-- Step left column content. -->
+            <h4>Step Four - Turning into data we can link</h4>
+            
+            <p class="lead">
+              The code on the right shows how we can produce a csv
+              data file using the data we've retrieved from
+              twitter. Because twitter doesn't know about CCGs we have
+              to manually append the CCG Code to each line.
+            </p>
+
+            <p>
+              At the end of this we'll have a csv file with a CCG Code
+              on each line that we can join to other files from the
+              NHS and HSCIC.
+            </p>
+          </div>
+          
+          <div class="col-sm-6">
+            
+            {% highlight clojure %}
+(defn ccg-tweeters-csv [tweeters-w-freq file-name]
+  (with-open [out-file (io/writer file-name)]
+    (csv/write-csv out-file
+                   tweeters-w-freq)))
+
+(def leeds-west-ccg "03C")
+
+(defn make-tweeters-csv [location ccg-code]
+  (-> (diabetes-tweets location)
+      get-statuses
+      user-frequencies
+      (ccg-tweeters ccg-code)
+      (ccg-tweeters-csv (str ccg-code "-tweeters.csv"))))
+
+(make-tweeters-csv leeds leeds-west-ccg)
+            {% endhighlight %}
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      <!-- Top Tweeters -->
+      <div class="step">
+        <div class="step-circle">5</div>
+        
+        <div class="row step-content">
+          <div class="col-sm-6">
+            <a href="https://twitter.com/OurDiabetes"><img src="our-diabetes.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
+          </div>
+          
+          <div class="col-sm-6">
+            
+            <!-- Step right column content. -->
+            <h4>Step Five - Top Tweeters</h4>
+            
+            <p class="lead">
+              After doing this analysis we find a local campaigner
+              with type 1
+              diabetes <a href="https://twitter.com/StorryT_Jewels">Laura
+              Storr</a> and a weekly diabetes tweet
+              chat <a href="https://twitter.com/OurDiabetes">Our
+              Diabetes</a>. 
+            </p>
+
+            <p>
+              We now have a better idea of who the active voices are
+              talking about this condition in the Leeds area.
+            </p>
+            
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row.step-content -->
+      </div><!-- /.step -->
+
+      
+      {% include howto-collaborate.html %}
+    </div><!-- /.container -->
+  </div><!-- /.tutorial -->
+</div><!-- /.how-to -->
