@@ -10,35 +10,35 @@ icon: circle-lightbulb.png
   <div class="container">
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
-      
+
       <!-- The title of the site section "How To's", you shouldn't change this. -->
       <h1>{{ page.page_title }}</h1>
     </div>
-    
+
     <!-- The title of your How To -->
     <h2>Creating a score or index</h2>
-    
+
     <div class="row intro-text">
       <!-- The introduction for non-case-studies (delete if a case study): -->
 
       <p class="lead">
         A classic way to simplify a complex set of information is to combine it into a single score or index.
-        This is an effective way to provide a rough guide or ranking for users, who can then dig into the detail. 
-        It's also a good way to promote a business, as the scoring can create a lot of fun and different stories to explore - 
-        top ten, bottom ten, whose scores are rising or falling.        
+        This is an effective way to provide a rough guide or ranking for users, who can then dig into the detail.
+        It's also a good way to promote a business, as the scoring can create a lot of fun and different stories to explore -
+        top ten, bottom ten, whose scores are rising or falling.
       </p>
 
       <p class="lead">
          However, in order to make sure that the score is a sensible reflection of reality, we need to be careful about
-         what information we use, and that we make sure each item of information has a reasonable effect on the overall score. 
+         what information we use, and that we make sure each item of information has a reasonable effect on the overall score.
          This tutorial walks through the process of creating a score and visualisation for local areas in England, showing "how easy
          it is to be healthy" in that area. The score is to be used by Toothpick, a business which helps people find and book
-         a dentist online, as a basis for creating interesting online content which can promote their business. 
+         a dentist online, as a basis for creating interesting online content which can promote their business.
       </p>
 
     </div>
   </div>
-  
+
   <div class="tutorial">
     <div class="container">
 
@@ -50,15 +50,15 @@ icon: circle-lightbulb.png
           <!-- The title your guide -->
           <h3>Creating a score or index</h3>
         </div>
-        
+
         <div class="col-sm-6">
           <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
           <ul class="howto-links row">
-            
+
             <li class="col-sm-6 github">
-              <a href="https://github.com/CDECatapult/cdec.twitterhealth">Get the files on Github</a>
+              <a href="https://github.com/MastodonC/toothpick">Get the files on Github</a>
             </li>
-            
+
           </ul>
         </div>
       </div> <!-- /end howto-top -->
@@ -66,79 +66,73 @@ icon: circle-lightbulb.png
       <!-- Choose your data sources-->
       <div class="step">
         <div class="step-circle">1</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
-            <a href="https://apps.twitter.com/app/new"><img src="new-twitter-app.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
+            <a href="http://statistics.data.gov.uk/doc/statistical-geography"><img src="/assets/images/casestudies/ons-screenshot.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <!-- Step right column content. -->
             <h4>Choose your data sources and check that they're usable</h4>
-            
+
             <p class="lead">
               First you will need some raw data sources to work with. We started out by brainstorming about twenty ideas, and whittled these down to the data that was most relevant and available to our overall theme of healthy surroundings.
             </p>
 
             <p>
-              Each data source needs to be relevant to the topic that you're scoring; cover all the places that you're scoring; be legally available for use; and be available in a form that you can feasibly match across sources. On this basis, we had to ditch some of our initial ideas. For example, air quality data would have been excellent to include in our calculations, but <a href="http://uk-air.defra.gov.uk/">public air quality data feeds</a> weren't available at a geography that we could match up to local authority boundaries. We also had to check that a couple of our sources were legally licensed for us to reuse - for example, we got green space data from the <a href="http://www.naturalengland.org.uk/ourwork/evidence/mene.aspx">"Monitor of Engagement with the Natural Environment" survey</a> - we emailed them to clarify that the data was available under Open Government License, which meant that we were free to reuse it in a commercial context.  
+              Each data source needs to be relevant to the topic that you're scoring; cover all the places that you're scoring; be legally available for use; and be available in a form that you can feasibly match across sources. On this basis, we had to ditch some of our initial ideas. For example, air quality data would have been excellent to include in our calculations, but <a href="http://uk-air.defra.gov.uk/">public air quality data feeds</a> weren't available at a geography that we could match up to local authority boundaries. We also had to check that a couple of our sources were legally licensed for us to reuse - for example, we got green space data from the <a href="http://www.naturalengland.org.uk/ourwork/evidence/mene.aspx">"Monitor of Engagement with the Natural Environment" survey</a> - we emailed them to clarify that the data was available under Open Government License, which meant that we were free to reuse it in a commercial context.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
-      </div><!-- /.step -->      
+      </div><!-- /.step -->
 
       <!-- Filter data  -->
       <div class="step">
         <div class="step-circle">2</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <!-- Step left column content. -->
             <h4>Filter the data and aggregate up to the right level</h4>
-            
+
             <p class="lead">
-              Once we selected the data sources, we needed to get them into a usable form - which in this case meant being able to aggregate up to a single value per local authority. Very few data sources come pre-packaged in an easy format, so we wrote some Cascalog code to filter the data and join it to the right area identifiers - mostly using the <a href="">ONS postcode file</a>, which assigns every postcode in the UK to a local authority area. The raw data we used, and the extra information we applied, were: 
+              Once we selected the data sources, we needed to get them into a usable form - which in this case meant being able to aggregate up to a single value per local authority. Very few data sources come pre-packaged in an easy format, so we wrote some Cascalog code to filter the data and join it to the right area identifiers - mostly using the <a href="">ONS postcode file</a>, which assigns every postcode in the UK to a local authority area. The raw data we used, and the extra information we applied, were:
               <li><a href="https://www.gov.uk/government/statistics/local-area-walking-and-cycling-in-england-2012-to-2013">Cycling and walking data</a> from the Department for Transport's annual statistics - this was already supplied at local authority level</li>
               <li><a href="http://www.naturalengland.org.uk/ourwork/evidence/mene.aspx#year4">Data on 2013 visits to green space</a> from Natural England - again already gave local authority names, although not codes</li>
               <li><a href="http://icdata.ic.nhs.uk/GPOutcomes.zip">Data on whether people could see their GP fairly quickly</a>, which is buried in the NHS Indicators portal, described more in our <a href="http://www.cde.org.uk/howto/hscic-data/">HSCIC guide</a>. We had to filter this down to the indicator on GP visit time (code P01146) and then also match GPs' postcodes to local authority code by using the ONS postcode file</li>
               <li><a href="http://www.england.nhs.uk/statistics/statistical-work-areas/friends-and-family-test/friends-and-family-test-data/">Friends and family test data</a>, which suggests which hospitals users would recommend to their friends or family. Again, we had to match hospital postcodes to local authorities, using the ONS postcode file</li>
               <li>Finally, data on dentist availability, provided by Toothpick, who were using this index</li>
-              You can see the complete code for tidying up this data on <a href="">github</a>.
-            </p>            
+              You can see the complete code for tidying up this data on <a href="https://github.com/MastodonC/toothpick">github</a>.
+            </p>
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             {% highlight clojure %}
-(ns cdec.twitterhealth
-  (:use
-   [twitter.oauth]
-   [twitter.api.restful]))
+(defn postcode->borough [in]
+  (<- [?post-code ?borough-code]
+      (in :#> 10 {0 ?post-code
+                  8 ?borough-code-dirty})
+      (borough-code-corrections ?borough-code-dirty :> ?borough-code)))
 
-(def my-creds
-  (make-oauth-creds
-   (System/getenv "TW_APP_CONSUMER_KEY")
-   (System/getenv "TW_CONSUMER_SECRET")
-   (System/getenv "TW_USER_ACCESS_TOKEN")
-   (System/getenv "TW_USER_ACCESS_TOKEN_SECRET")))
+(defn toothpick->borough [toothpick postcodes]
+  (<- [?practice-id  ?borough-code]
+      (toothpick :#> 5 {0 ?practice-id
+                        2 ?post-code})
+      (postcodes :> ?post-code ?borough-code)))
 
-(def leeds {:lat 53.7997 :lon -1.5492})
-(def birmingham {:lat 52.4831 :lon -1.8936})
-(def manchester {:lat 53.4667 :lon -2.2333})
-(def newcastle {:lat 54.9740 :lon -1.6132})
-(def oxford {:lat 51.7519 :lon -1.2578})
+(defn distinct-english-boroughs [postcodes]
+  (<- [?borough-code]
+      (postcodes :#>  10 {8 ?borough-code-dirty})
+      (borough-code-corrections ?borough-code-dirty :> ?borough-code)
+      (english? ?borough-code)
+      (:distinct ?borough-code)))
 
-(defn diabetes-tweets [{:keys [lat lon]}]
-  (let [search-area (str lat "," lon ",5mi")]
-    (search-tweets
-     :oauth-creds my-creds
-     :params {:q "diabetes"
-              :geocode search-area
-              :count 100})))
             {% endhighlight %}
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -146,29 +140,44 @@ icon: circle-lightbulb.png
       <!-- Clean, scale, and join  data sources -->
       <div class="step">
         <div class="step-circle">3</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
-            {% highlight clojure %}
-(defn get-statuses [resp]
-  (-> resp
-      :body
-      :statuses))
+            {% highlight R %}
+## MERGE ALL DATASETS AND RANKINGS TO CREATE A SINGLE SCORE
+borough.healthscore<-cycling.frequency
+borough.healthscore<-merge(borough.healthscore,walking.frequency,all=TRUE)
+borough.healthscore$LA.name<-toupper(borough.healthscore$LA.name)
 
-(defn user-frequencies [statuses]
-  (let [users (map #(-> % :user :screen_name) statuses)]
-    (frequencies users)))
+# Fix borough names so that they match greenspace naming conventions
+borough.healthscore$LA.name<-gsub("MEDWAY","MEDWAY TOWNS",borough.healthscore$LA.name)
+borough.healthscore$LA.name<-gsub(", CITY OF","",borough.healthscore$LA.name)
+borough.healthscore$LA.name<-gsub(", COUNTY OF","",borough.healthscore$LA.name)
 
-(defn ccg-tweeters [tweeters-w-freq ccg-code]
-  (map (fn [[user freq]] [ccg-code user freq]) tweeters-w-freq))
+borough.healthscore<-merge(borough.healthscore,mene.borough,all=TRUE)
+borough.healthscore<-merge(borough.healthscore,borough.hospital.experience,by="LA.code",all=TRUE)
+borough.healthscore<-merge(borough.healthscore,borough.gp.experience,by="LA.code",all=TRUE)
+borough.healthscore<-merge(borough.healthscore,dentists.borough,by="LA.code",all=TRUE)
+borough.healthscore<-merge(borough.healthscore,bikes,by="LA.code",all.x=TRUE)
+
+borough.healthscore$overall.rank<-
+  rowMeans(
+    borough.healthscore[,c("cycling.rank",
+                           "walking.rank",
+                           "greenspace.rank",
+                           "hospital.rank",
+                           "gp.rank",
+                           "dentists.rank")], na.rm = TRUE, dims = 1)
+
+
             {% endhighlight %}
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <!-- Step right column content. -->
             <h4>Clean, scale, and join  data sources</h4>
-            
+
             <p class="lead">
               Now we've got all the data sources together, we need to make them comparable, and average them together to create a single score. We've used R for this, as it's a good language for complex mathematical operations.
             </p>
@@ -176,83 +185,36 @@ icon: circle-lightbulb.png
             <p>
               In order to make sure we give proportionate weight to each factor, we turn the raw numbers from each source into a ranking, and then 'scale' that ranking to be centred on zero and to go from -1 to +1. This means that we don't get funny scores just because a particular data source has a lot of missing data, or has naturally high or low numbers in its raw data. We then join all the data sources together, and average across our six chosen figures, to get a single number for each local authority. Last of all, we change those numbers into a grade from "A" to "F", to make it even easier to understand.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
 
       <div class="step">
         <div class="step-circle">4</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
-            <!-- Step left column content. -->
-            <h4>Step Four - Turning into data we can link</h4>
-            
-            <p class="lead">
-              The code on the right shows how we can produce a csv
-              data file using the data we've retrieved from
-              twitter. Because twitter doesn't know about CCGs we have
-              to manually append the CCG Code to each line.
-            </p>
-
-            <p>
-              At the end of this we'll have a csv file with a CCG Code
-              on each line that we can join to other files from the
-              NHS and HSCIC.
-            </p>
+            <a href="http://openhealthdata.cdehub.org/"><img src="/assets/images/casestudies/toothpick-screenshot.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
           </div>
-          
+
           <div class="col-sm-6">
-            
-            {% highlight clojure %}
-(defn ccg-tweeters-csv [tweeters-w-freq file-name]
-  (with-open [out-file (io/writer file-name)]
-    (csv/write-csv out-file
-                   tweeters-w-freq)))
 
-(def leeds-west-ccg "03C")
-
-(defn make-tweeters-csv [location ccg-code]
-  (-> (diabetes-tweets location)
-      get-statuses
-      user-frequencies
-      (ccg-tweeters ccg-code)
-      (ccg-tweeters-csv (str ccg-code "-tweeters.csv"))))
-
-(make-tweeters-csv leeds leeds-west-ccg)
-            {% endhighlight %}
-            
-          </div><!-- /.col-sm-6 -->
-        </div><!-- /.row.step-content -->
-      </div><!-- /.step -->
-
-      <!-- Top Tweeters -->
-      <div class="step">
-        <div class="step-circle">5</div>
-        
-        <div class="row step-content">
-          <div class="col-sm-6">
-            <a href="https://twitter.com/OurDiabetes"><img src="our-diabetes.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
-          </div>
-          
-          <div class="col-sm-6">
-            
             <!-- Step right column content. -->
             <h4>Put into a web visualisation</h4>
-            
+
             <p class="lead">
               Finally, now that we have a score for each area, as well as raw information, we put it all together into a nice looking, interactive map. This last step makes it easy for users to play with and explore all the data, and for Toothpick to use it to create new web content.</p>
 
             <p>
-              NEALE ADD TEXT ABOUT HOW WE DID THIS
+              Firstly we needed to get the boundary data for each of the boroughs, this is available from the <a href="http://statistics.data.gov.uk/doc/statistical-geography">ONS</a>. The boundaries are supplied as a series of co-ordinates that describe polygons. We take that data and convert it <a href="http://geojson.org">GeoJSON</a> format which can easily be manipulated in modern browsers. Since their is a lot of this data, we futher converted the data to <a href="https://github.com/mbostock/topojson">TopoJSON</a> which is a more compact form. We then linked the borough boundaries and score data by joining on the Local Authority code and arranged for a popup to appear when you hovered the mouse over a particular borough.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
 
-      
+
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
   </div><!-- /.tutorial -->
