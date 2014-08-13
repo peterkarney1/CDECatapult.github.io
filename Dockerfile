@@ -9,4 +9,5 @@ RUN mkdir /vagrant
 WORKDIR /vagrant
 EXPOSE 4000
 
-CMD ["jekyll","serve"]
+ENTRYPOINT ["jekyll"]
+CMD ["serve", "--watch"]
