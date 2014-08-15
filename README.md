@@ -4,6 +4,8 @@ This is the repository for the Digital Catapult Open Health Data
 Platform website. It's hosted here on GitHub, using GitHub pages
 (powered by [Jekyll](http://jekyllrb.com)).
 
+The URL for the live site is http://www.cde.org.uk/
+
 # Usage
 
 1. Fork or clone this repo
