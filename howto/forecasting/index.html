@@ -10,23 +10,23 @@ icon: circle-lightbulb.png
   <div class="container">
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
-      
+
       <!-- The title of the site section "How To's", you shouldn't change this. -->
       <h1>{{ page.page_title }}</h1>
     </div>
-    
+
     <!-- The title of your How To -->
     <h2>Making a forecast</h2>
-    
+
     <div class="row intro-text">
       <!-- The introduction for non-case-studies (delete if a case study): -->
-      
+
       <p class="lead">
         Organisations often need to forecast future demand accurately, in order to plan better, measure performance against expectation, and respond to problems. This how-to walks through creating a forecast for drugs demand - first for all antihistamines, and then a more detailed forecast for a specific type of antidepressant. The same methods will apply to any kind of healthcare demand.
       </p>
     </div>
   </div>
-  
+
   <div class="tutorial">
     <div class="container">
 
@@ -38,44 +38,44 @@ icon: circle-lightbulb.png
           <!-- The title your guide -->
           <h3>Making forecasts</h3>
         </div>
-        
+
         <div class="col-sm-6">
           <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
           <ul class="howto-links row">
-            
+
             <li class="col-sm-6 live-example">
               <a href="http://openhealthdata.cdehub.org/">See live example</a>
             </li>
-            
+
             <li class="col-sm-6 github">
               <a href="https://github.com/CDECatapult/cdec.openhealthdata">Get the files on Github</a>
             </li>
           </ul>
         </div>
       </div> <!-- /end howto-top -->
-      
+
       <!-- Read in and clean the data-->
       <div class="step">
         <div class="step-circle">1</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <!-- Step left column content. -->
             <h4>Read in and clean the data</h4>
-            
+
             <p class="lead">
               First we need to tidy up the data to a usable time series format.
             </p>
 
             <p>
               PAUL PLS ADD TEXT HERE        </p>
-            
+
           </div>
-          
+
           <div class="col-sm-6">
 
-            <img src="ohdp-lead.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
-            
+            <img src="/assets/images/ohdp-lead.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -83,17 +83,17 @@ icon: circle-lightbulb.png
       <!-- Basic data exploration -->
       <div class="step">
         <div class="step-circle">2</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <img src="time_series.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <!-- Step right column content. -->
             <h4>Basic data exploration</h4>
-            
+
             <p class="lead">
               Now we need to explore what the data looks like, to see what kind of model is appropriate.
             </p>
@@ -101,7 +101,7 @@ icon: circle-lightbulb.png
             <p>
               In the case of antihistamines, we see that the volume of prescriptions is gradually growing over time, and that there is also a very strong seasonal cycle, with prescriptions being at their highest from March to August, and low in winter when fewer people suffer from hayfever. If we plot the 'differenced series', which removes the effect of growth, this is even clearer. We can also doubly confirm the seasonal cycle by plotting the autocorrelation function (ACF) - this shows a big spike at step 12, confirming that the value now is strongly correlated with the value of 12 months ago. The cycle is obvious in this case, but in some more subtle cases the cycle will be more obvious from an ACF than from a straightforward graph.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -110,17 +110,17 @@ icon: circle-lightbulb.png
       <!-- Create a model -->
       <div class="step">
         <div class="step-circle">3</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <img src="antihistamine_forecast.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <!-- Step right column content. -->
             <h4>Create a model</h4>
-            
+
             <p class="lead">
               Once you have confirmed the basic features - in this case, that the series is growing steadily over time, and has a strong seasonal cycle - we can forecast with a mathematical model.
             </p>
@@ -128,7 +128,7 @@ icon: circle-lightbulb.png
             <p>
               We've used a seasonal ARIMA model - this is a good general-purpose time series model. The important variables are the 'order' of the basic model and the seasonal part. You can experiment with different model orders, to find one that's a good fit, or use an automated function like auto.arima if you're not sure what to do. We held back the last 6 months of data from the model, just as an extra sense check.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -136,49 +136,49 @@ icon: circle-lightbulb.png
       <!-- Plot the forecast -->
       <div class="step">
         <div class="step-circle">4</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <!-- Step left column content. -->
             <h4>Plot the forecast</h4>
-            
+
             <p class="lead">
               Finally, we've plotted the actual data, and a forecast for 18 months, to see what we get. Happily, it looks like a good fit - if not, we could go back and tweak the model more to try and improve it.
             </p>
-            
+
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <img src="antihistamine_forecast.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-   
+
       <!-- Doing fancier forecasts - next steps -->
       <div class="step">
         <div class="step-circle">5</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <!-- Step left column content. -->
             <h4>Doing fancier forecasts</h4>
-            
+
             <p class="lead">
-              Once you've mastered this kind of forecasting, you can try more difficult forecasts - for example, in the code we've also written a forecast for the antidepressant Celexa, which has a more complicated growth pattern and a 3-month cycle. If you get stuck, you can always go back to simple graphs to help you think about what drives the forecast (underlying growth, seasonality, something else?) and then your numbers will never go far wrong. 
+              Once you've mastered this kind of forecasting, you can try more difficult forecasts - for example, in the code we've also written a forecast for the antidepressant Celexa, which has a more complicated growth pattern and a 3-month cycle. If you get stuck, you can always go back to simple graphs to help you think about what drives the forecast (underlying growth, seasonality, something else?) and then your numbers will never go far wrong.
             </p>
-            
+
           </div>
-          
+
           <div class="col-sm-6">
-            
-            <img src="ohdp-github.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
-            
+
+            <img src="/assets/images/ohdp-github.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
   </div><!-- /.tutorial -->
