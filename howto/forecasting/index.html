@@ -43,12 +43,8 @@ icon: circle-lightbulb.png
           <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
           <ul class="howto-links row">
 
-            <li class="col-sm-6 live-example">
-              <a href="http://openhealthdata.cdehub.org/">See live example</a>
-            </li>
-
             <li class="col-sm-6 github">
-              <a href="https://github.com/CDECatapult/cdec.openhealthdata">Get the files on Github</a>
+              <a href="https://github.com/CDECatapult/OHDP.Prescription-Based_Forecasting">Get the files on Github</a>
             </li>
           </ul>
         </div>
@@ -68,7 +64,7 @@ icon: circle-lightbulb.png
             </p>
 
             <p>
-              PAUL PLS ADD TEXT HERE        </p>
+              PAUL PLS ADD TEXT AND PICTURE HERE        </p>
 
           </div>
 
@@ -113,7 +109,20 @@ icon: circle-lightbulb.png
 
         <div class="row step-content">
           <div class="col-sm-6">
-            <img src="/assets/images/antihistamine_forecast.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+            {% highlight R %}
+## Basic plot of total antihistamines, and differenced series
+plot.a<-ggplot(antihistamine.totals,aes(x=PERIOD,y=total_items))+geom_line()+scale_y_continuous(limits = c(0, 1700000))
+plot.b<-ggplot(antihistamine.totals,aes(x=PERIOD,y=c(NA,diff(total_items))))+geom_line()
+plot.c<-acf(antihistamine.totals$total_items)
+plot.d<-acf(diff(antihistamine.totals$total_items))
+
+grid.arrange(plot.a, plot.b, nrow=2)
+
+## Create a seasonal ARIMA model, holding back the last 6 months' data as a test
+model<-arima(antihistamine.totals$total_items[1:39],order=c(0,1,1),seasonal=list(order=c(2,1,0),period=12))
+myprediction<-predict(model,n.ahead=18)
+
+            {% endhighlight %}
           </div>
 
           <div class="col-sm-6">
@@ -143,7 +152,10 @@ icon: circle-lightbulb.png
             <h4>Plot the forecast</h4>
 
             <p class="lead">
-              Finally, we've plotted the actual data, and a forecast for 18 months, to see what we get. Happily, it looks like a good fit - if not, we could go back and tweak the model more to try and improve it.
+              Finally, we've plotted the actual data, and a forecast for 18 months, to see what we get. 
+              </p>
+              
+              <p>Happily, it looks like a good fit - if not, we could go back and tweak the model more to try and improve it.
             </p>
 
           </div>
@@ -166,14 +178,15 @@ icon: circle-lightbulb.png
             <h4>Doing fancier forecasts</h4>
 
             <p class="lead">
-              Once you've mastered this kind of forecasting, you can try more difficult forecasts - for example, in the code we've also written a forecast for the antidepressant Celexa, which has a more complicated growth pattern and a 3-month cycle. If you get stuck, you can always go back to simple graphs to help you think about what drives the forecast (underlying growth, seasonality, something else?) and then your numbers will never go far wrong.
+              Once you've mastered this kind of forecasting, you can try more difficult forecasts.</p>
+              <p> For example, in the code we've also written a forecast for the antidepressant Celexa, which has a more complicated growth pattern and a 3-month cycle. If you get stuck, you can always go back to simple graphs to help you think about what drives the forecast (underlying growth, seasonality, something else?) and then your numbers will never go far wrong.
             </p>
 
           </div>
 
           <div class="col-sm-6">
 
-            <img src="/assets/images/ohdp-github.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
+            <img src="/assets/images/citalopram_forecast.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt="">
 
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
