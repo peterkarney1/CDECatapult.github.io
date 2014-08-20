@@ -26,12 +26,12 @@ icon: circle-lightbulb.png
   <div class="container">
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
-      
+
       <h1>{{ page.page_title }}</h1>
     </div>
-    
+
     <h2>Choropleth Maps</h2>
-    
+
     <div class="row intro-text">
       <div class="col-sm-8 intro-column bold-intro-text">
         <p class="lead">
@@ -41,7 +41,7 @@ icon: circle-lightbulb.png
           displayed on the map, such as population density
           or per-capita income.</strong>
         </p>
-        
+
         <p>
           The choropleth map provides an easy way to
           visualize how a measurement varies across a
@@ -51,7 +51,7 @@ icon: circle-lightbulb.png
       </div>
     </div>
   </div>
-  
+
   <div class="tutorial">
     <div class="container">
       <div class="row howto-top">
@@ -61,18 +61,18 @@ icon: circle-lightbulb.png
           <h3>Making an attractive choropleth map</h3>
 
         </div>
-        
+
         <div class="col-sm-6">
 
           <ul class="howto-links row">
             <li class="col-sm-6 tutorial-files">
               <a href="/howto/choropleth-maps/example.zip">Download tutorial files (.zip)</a>
             </li>
-            
+
             <li class="col-sm-6 live-example">
               <a href="/howto/choropleth-maps/example/">See live example</a>
             </li>
-            
+
             <li class="col-sm-6 github">
               <a href="https://github.com/CDECatapult/CDECatapult.github.io/tree/master/howto/choropleth-maps/example/">Get the files on Github</a>
             </li>
@@ -80,7 +80,7 @@ icon: circle-lightbulb.png
 
         </div>
       </div>
-      
+
       <div class="step">
         <div class="step-circle">1</div>
         <div class="row step-content">
@@ -92,7 +92,7 @@ icon: circle-lightbulb.png
           <div class="col-sm-6">
 
             <h4>Introduction</h4>
-            
+
             <p>
               Choropleth maps are a great way to visualise a
               dataset over a geographical area. Data that may
@@ -100,23 +100,23 @@ icon: circle-lightbulb.png
               can instantly make sense when displayed as a
               choropleth map.
             </p>
-            
+
             <p>
               Choropleth maps have a number of advantages over
               other ways of displaying the same data:
             </p>
-            
+
             <ul>
               <li>
                 Easy to understand and very visual.
               </li>
-              
+
               <li>
                 Helpful for finding hot spots and anomalies that might
                 otherwise be missed.
               </li>
             </ul>
-            
+
             <p>
               Choropleth maps are often favoured by geographers for displaying
               the variations of a statistic, such as population density or
@@ -126,14 +126,14 @@ icon: circle-lightbulb.png
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       <div class="step">
         <div class="step-circle">2</div>
         <div class="row step-content">
           <div class="col-sm-6">
 
             <h4>Setting up the HTML</h4>
-            
+
             <p class="lead">
               We're creating these examples using HTML, CSS, a JavaScript
               data visualisation library called
@@ -141,14 +141,14 @@ icon: circle-lightbulb.png
               and <a href="http://leafletjs.com/">Leaflet.js</a>, a
               Javascript library for creating interactive maps.
             </p>
-            
+
             <p>
-              To build a choropleth map with D3 and Leaflet, you need 
+              To build a choropleth map with D3 and Leaflet, you need
               to include a number of Javascript libraries. In the
               code snippet on the right, we include them and set up
               an empty div where the choropleth map will be rendered.
             </p>
-            
+
             <p>
               We also include some styles - for Leaflet, the Javascript
               map library, and for styling the choropleth overlay.
@@ -172,7 +172,7 @@ icon: circle-lightbulb.png
     <script src="choropleth.js"></script>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
     <link rel="stylesheet" href="styles.css" />
-    
+
     <style>
       #choroplethmap {
         width: 500px;
@@ -182,7 +182,7 @@ icon: circle-lightbulb.png
   </head>
   <body>
     <div id="choroplethmap"></div>
-    
+
     <script>
       DiabetesChoropleth.init('choroplethmap');
     </script>
@@ -192,23 +192,23 @@ icon: circle-lightbulb.png
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       <div class="step">
         <div class="step-circle">3</div>
         <div class="row step-content">
           <div class="col-sm-6">
 
             <h4>Creating the choropleth map</h4>
-            
+
             <p>
               The Javascript on the right will, once called, render the
               choropleth map into the div we created earlier.
             </p>
-            
+
             <p>
               We call the function like this:
             </p>
-            
+
             <div class="small-snippet">
               {% highlight javascript %}diabetes_per_head_per_ccg_per_month('choroplethmap');{% endhighlight %}
             </div>
@@ -220,26 +220,26 @@ var DiabetesChoropleth = {
   init: function(div) {
     this.div = div;
     this.map = L.map(this.div).setView([53.0, -1.5], 6);
-    
+
     L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
       attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2012 CloudMade',
       key: 'BC9A493B41014CAABB98F0471D759707'
     }).addTo(this.map);
-    
+
     mergedFeatureLayer(this.map, "data/diabetes_per_head_per_ccg_per_month.csv", "data/ccg-boundaries.json", "ccg_code", this.style, null, null, "ccg_boundaries");
-    
+
     addLegend([0, 20, 22, 24, 26, 28, 30, 34], this.map, this.color);
   },
-  
+
   destroy: function() {
     this.map.remove();
   },
-  
+
   refresh: function() {
     this.destroy();
     this.init(this.div);
   },
-  
+
   color: function(d) {
     return  d == 'NA' ? '#333333' :
             d == 'undefined' ? '#333333' :
@@ -251,7 +251,7 @@ var DiabetesChoropleth = {
             d > 20 ? '#C7E9B4' :
             '#FFFFCC';
   },
-  
+
   style: function(feature) {
     return {
       fillColor: DiabetesChoropleth.color(feature.properties.per_capita_spend),
@@ -261,7 +261,7 @@ var DiabetesChoropleth = {
       fillOpacity: 0.8
     }
   },
-  
+
   defaultStyle: function(feature) {
     return {
       outlineColor: "#000000",
@@ -276,26 +276,26 @@ var DiabetesChoropleth = {
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       <div class="step">
         <div class="step-circle">4</div>
         <div class="row step-content">
           <div class="col-sm-6">
 
             <h4>Styling the map</h4>
-            
+
             <p>
               When choosing the colours for your choropleth map, it's important
               to make sure you don't pick colours that are too close together -
               and therefore hard to distinguish - or too many colours, which
               the viewer may find overwhelming.
             </p>
-            
+
             <a href="http://colorbrewer2.org" class="btn btn-default">
               <span class="subtext">TOOL</span>
               <span class="text">Pick sensible colours for your map with ColorBrewer</span>
             </a>
-            
+
             <p>
               It's also important to pay attention to how
               strong the colours you use are. A darker
@@ -304,21 +304,21 @@ var DiabetesChoropleth = {
               low population density with a dark grey might
               be confusing.
             </p>
-            
+
             <p>
               Finally, it's important that your choropleth map
               is accessible. Make sure that you don't pick colours
               that could be misinterpreted by colour-blind viewers.
             </p>
-            
+
             <!--[if gt IE 8]><!-->
             <div class="try-colouring">
               <h4>Try changing the choropleth colour scheme</h4>
-              
+
               <p>
                 Which colour scheme do you think is best?
               </p>
-              
+
               <div class="row" style="margin: 10px 0">
                 <div class="col-xs-1 colour_1" style="height: 30px; background: #0C2C84;"></div>
                 <div class="col-xs-1 colour_2" style="height: 30px; background: #225EA8;"></div>
@@ -331,7 +331,7 @@ var DiabetesChoropleth = {
                   <button class="colour-scheme-change">Change to this</button>
                 </div>
               </div>
-              
+
               <div class="row" style="margin: 10px 0">
                 <div class="col-xs-1 colour_1" style="height: 30px; background: #0000FF;"></div>
                 <div class="col-xs-1 colour_2" style="height: 30px; background: #6666FF;"></div>
@@ -344,7 +344,7 @@ var DiabetesChoropleth = {
                   <button class="colour-scheme-change">Change to this</button>
                 </div>
               </div>
-              
+
               <div class="row" style="margin: 10px 0">
                 <div class="col-xs-1 colour_1" style="height: 30px; background: #C2523C;"></div>
                 <div class="col-xs-1 colour_2" style="height: 30px; background: #E68E1C;"></div>
@@ -357,7 +357,7 @@ var DiabetesChoropleth = {
                   <button class="colour-scheme-change">Change to this</button>
                 </div>
               </div>
-              
+
               <div class="row" style="margin: 10px 0">
                 <div class="col-xs-1 colour_1" style="height: 30px; background: #000;"></div>
                 <div class="col-xs-1 colour_2" style="height: 30px; background: #222;"></div>
@@ -372,7 +372,7 @@ var DiabetesChoropleth = {
               </div>
             </div>
             <!--<![endif]-->
-            
+
             <p>
               Colour can greatly enhance the communication between
               the cartographer and their audience but poor colour
@@ -380,10 +380,10 @@ var DiabetesChoropleth = {
               nor appealing to the map user; sometimes simpler
               is better.
             </p>
-            
+
             <p>
               The colour choices in the example above can be altered
-              in the <em>color()</em> function. 
+              in the <em>color()</em> function.
             </p>
 
           </div>
@@ -394,9 +394,9 @@ var DiabetesChoropleth = {
                 DiabetesChoropleth.init('spendmap');
               </script>
             <!--<![endif]-->
-            
+
             <!--[if lte IE 8]>
-              <img src="choropleth-placeholder.png" style="max-width: 100%" alt="">
+              <img src="/assets/images/choropleth-placeholder.png" style="max-width: 100%" alt="">
             <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
@@ -408,7 +408,7 @@ var DiabetesChoropleth = {
           <div class="col-sm-8">
 
             <h4>Thanks &amp; graph well!</h4>
-            
+
             <p class="lead">You can download <a href="/howto/choropleth-maps/example.zip">all the examples</a> from this how-to - feel free to use them as a base for your our work.</p>
 
             <p>Check out more of <a href="/howto">our how-tos</a>, or for tools, examples and further reading see the useful links section below.</p>
@@ -416,7 +416,7 @@ var DiabetesChoropleth = {
           </div>
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
   </div><!-- /.tutorial -->
