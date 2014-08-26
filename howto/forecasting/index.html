@@ -63,8 +63,11 @@ icon: circle-lightbulb.png
               First we need to tidy up the data to a usable time series format.
             </p>
 
-            <p>
-              PAUL PLS ADD TEXT AND PICTURE HERE        </p>
+            <p>Since September 2012 <a href="http://data.gov.uk/dataset/prescribing-by-gp-practice-presentation-level">GP Practice Prescription data</a> is available on data.gov.uk website. This detail set lists quantity of each item prescribed by every GP Practice in England. This adds up to ~1.3GB per month. </p>
+
+<p>A list of relevant medications has been selected using their <em>BNF codes</em>. The first 9 characters of the code maps uniquely to the <em>BNF Chemical Name</em> of each drug. Simple aggregation of <em>Items dispensed</em> by <em>BNF Chemical Name</em> gives a monthly total of each drug prescribed by GP Practices in England. </p>
+
+<p>Since we are looking to aggregate 4 years of data (about 60GB), the best way to process it is by running map and reduce steps on each set separately. The final data can be aggregated into a single time series matrix (m months by n drugs) and indexed by date. This compact matrix is further used as input data for our model.</p>
 
           </div>
 
