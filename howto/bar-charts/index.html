@@ -10,12 +10,12 @@ icon: circle-lightbulb.png
   <div class="container">
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
-      
+
       <h1>{{ page.page_title }}</h1>
     </div>
-    
+
     <h2>Bar charts</h2>
-    
+
     <div class="row intro-text">
 
       <div class="col-sm-8 intro-column bold-intro-text">
@@ -28,7 +28,7 @@ icon: circle-lightbulb.png
 
     </div>
   </div>
-  
+
   <div class="tutorial">
     <div class="container">
       <div class="row howto-top">
@@ -37,13 +37,13 @@ icon: circle-lightbulb.png
 
           <h3>Creating an elegant bar chart</h3>
         </div>
-        
+
         <div class="col-sm-6">
           <ul class="howto-links row">
             <li class="col-sm-6 tutorial-files">
               <a href="example.zip">Download tutorial files (.zip)</a>
             </li>
-            
+
             <li class="col-sm-6 github">
               <a href="https://github.com/CDECatapult/CDECatapult.github.io/tree/master/howto/bar-charts/example/">Get the files on Github</a>
             </li>
@@ -53,16 +53,16 @@ icon: circle-lightbulb.png
 
       <!-- Load in D3 for all examples -->
       <script src="http://d3js.org/d3.v3.min.js"></script>
-      
+
       <div class="step">
         <div class="step-circle">1</div>
         <div class="row step-content">
           <div class="col-sm-6">
 
             <h4>Some example data + coding up</h4>
-            
+
             <p class="lead">We're creating these examples using HTML, CSS and a JavaScript data visualisation library called <a href="http://d3js.org/">D3.js</a>.</p>
-            
+
             <p>You can use these examples as a base for your own visualisations - the code is fully commented up and you can download them as a zip below. If you want to explore D3.js further you can find many <a href="https://github.com/mbostock/d3/wiki/Gallery">examples</a> online. D3 doesn't support for IE8 so you may want to try other libraries, such as <a href="http://raphaeljs.com">Raphaël</a>, if you need to support these browsers.</p>
 
           </div>
@@ -78,40 +78,40 @@ icon: circle-lightbulb.png
 
       <div class="step">
         <div class="step-circle">2</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <h4>A bad example</h4>
-                        
+
             <p>Here's an example of an ugly chart. A graphic like this may be produced by software that doesn't appreciate the importance of aesthetics in the communication of the underlying information - or by someone who doesn't understand that a few simple changes could make their data more accessible.</p>
           </div>
-          
+
           <div class="col-sm-6">
             <!--[if gt IE 8]><!-->
               <div class="svg-holder svg-holder svg-holder-simple-bad"></div>
               <link rel="stylesheet" href="bar-charts-example-simple-bad.css" />
               <script type="text/javascript" src="bar-charts-example-simple-bad.js"></script>
             <!--<![endif]-->
-            
+
             <!--[if lte IE 8]>
-              <img src="bad-graph-placeholder.png" style="max-width: 100%" alt="">
+              <img src="/assets/images/bad-graph-placeholder.png" style="max-width: 100%" alt="">
             <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       <div class="step">
         <div class="step-circle">3</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
 
             <h4>That's better!</h4>
-            
+
             <p class="lead">
               Here is the same chart after some visual improvements have been made:
             </p>
-            
+
             <ul>
               <li><strong>Remove Chartjunk</strong> - chart borders, grid lines and unnecessary tick mark have gone, leaving the chart feeling less cluttered.</li>
               <li><strong>Use softer lines for the axes</strong> - strong black can look too harsh on white, by softening it a touch the axes look more considered and also allow your data to stand out.</li>
@@ -120,60 +120,60 @@ icon: circle-lightbulb.png
             </ul>
 
           </div>
-          
+
           <div class="col-sm-6">
             <!--[if gt IE 8]><!-->
               <div class="svg-holder svg-holder-simple"></div>
               <link rel="stylesheet" href="bar-charts-example-simple.css" />
               <script type="text/javascript" src="bar-charts-example-simple.js"></script>
             <!--<![endif]-->
-            
+
             <!--[if lte IE 8]>
-              <img src="better-barchart-placeholder.png" style="max-width: 100%" alt="">
+              <img src="/assets/images/better-barchart-placeholder.png" style="max-width: 100%" alt="">
             <![endif]-->
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       <div class="step">
         <div class="step-circle">4</div>
         <div class="row step-content">
           <div class="col-sm-6 col-sm-offset-6">
 
             <h4>Other ideas</h4>
-            
+
             <p>Here's a couple of other bar chart examples.</p>
 
             <p>You'd use a <strong>stacked</strong> bar chart when each bar can be split into multiple categories. A <strong>grouped</strong> bar chart would display the same data in a different way.</p>
 
           </div>
         </div><!-- /.row.step-content -->
-        
+
         <div class="row step-content" style="margin-top:1em">
-        	<div class="col-sm-6">
+                <div class="col-sm-6">
             <p class="lead"><strong>Stacked bar chart</strong></p>
-            
+
             <!--[if gt IE 8]><!-->
               <div class="svg-holder svg-holder-stacked"></div>
               <link rel="stylesheet" href="bar-charts-example-stacked.css" />
               <script type="text/javascript" src="bar-charts-example-stacked.js"></script>
             <!--<![endif]-->
-            
+
             <!--[if lte IE 8]>
-              <img src="stacked-placeholder.png" style="max-width: 100%" alt="">
+              <img src="/assets/images/stacked-placeholder.png" style="max-width: 100%" alt="">
             <![endif]-->
-        	</div>
+                </div>
           <div class="col-sm-6">
             <p class="lead"><strong>Grouped bar chart</strong></p>
-            
+
             <!--[if gt IE 8]><!-->
               <div class="svg-holder svg-holder-grouped"></div>
               <link rel="stylesheet" href="bar-charts-example-grouped.css" />
               <script type="text/javascript" src="bar-charts-example-grouped.js"></script>
             <!--<![endif]-->
-            
+
             <!--[if lte IE 8]>
-              <img src="grouped-placeholder.png" style="max-width: 100%" alt="">
+              <img src="/assets/images/grouped-placeholder.png" style="max-width: 100%" alt="">
             <![endif]-->
           </div>
         </div><!-- /.row.step-content -->
@@ -185,7 +185,7 @@ icon: circle-lightbulb.png
           <div class="col-sm-8">
 
             <h4>Thanks &amp; graph well!</h4>
-            
+
             <p class="lead">You can download <a href="example.zip">all the examples</a> from this how-to - feel free to use them as a base for your our work.</p>
 
             <p>Check out more of <a href="/howto">our how-tos</a>, or for tools, examples and further reading see the useful links section below.</p>
@@ -193,7 +193,7 @@ icon: circle-lightbulb.png
           </div>
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
-      
+
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
   </div><!-- /.tutorial -->

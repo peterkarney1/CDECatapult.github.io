@@ -10,17 +10,17 @@ icon: circle-lightbulb.png
   <div class="container">
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
-      
+
       <!-- The title of the site section "How To's", you shouldn't change this. -->
       <h1>{{ page.page_title }}</h1>
     </div>
-    
+
     <!-- The title of your How To -->
     <h2>Joining across organisations</h2>
-    
+
     <div class="row intro-text">
       <!-- The introduction for non-case-studies (delete if a case study): -->
-      
+
       <p class="lead">
         Often, the data you want doesn't reside in just one
         organisation. This means you need to link records from one
@@ -36,7 +36,7 @@ icon: circle-lightbulb.png
       </p>
     </div>
   </div>
-  
+
   <div class="tutorial">
     <div class="container">
 
@@ -48,32 +48,32 @@ icon: circle-lightbulb.png
           <!-- The title your guide -->
           <h3>Joining across organisations</h3>
         </div>
-        
+
         <div class="col-sm-6">
           <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
           <ul class="howto-links row">
-            
+
             <li class="col-sm-6 github">
               <a href="https://github.com/CDECatapult/cdec.openhealthdata/commit/e1fe83e6913b4acc0ad944976d7a90e6b7ba2bf0">Get the files on Github</a>
             </li>
           </ul>
         </div>
       </div> <!-- /end howto-top -->
-      
+
       <!-- Finding the data you want -->
       <div class="step">
         <div class="step-circle">1</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
-            <a href="http://www.neighbourhood.statistics.gov.uk/dissemination/"><img src="ons-search.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
+            <a href="http://www.neighbourhood.statistics.gov.uk/dissemination/"><img src="/assets/images/ons-search.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <!-- Step right column content. -->
             <h4>Step One - Finding the data you want</h4>
-            
+
             <p class="lead">
               The Office of National Statistics has data from the
               Censuses from 2001 and 2011 and lots of other data from
@@ -89,7 +89,7 @@ icon: circle-lightbulb.png
               Most of the sections let you download csv files or excel
               files that you can convert to csv.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -98,12 +98,12 @@ icon: circle-lightbulb.png
       <!-- Bringing the new data in --->
       <div class="step">
         <div class="step-circle">2</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <!-- Step left column content. -->
             <h4>Step Two - Bringing the data in</h4>
-            
+
             <p class="lead">
               In this tutorial we'll be dealing
               with <a href="http://www.neighbourhood.statistics.gov.uk/dissemination/DownloadData.zip?$ph=60_61_64_65&step=6&downloadLargeFile=true&fileIndex=1">population
@@ -123,19 +123,19 @@ icon: circle-lightbulb.png
               You can see the complete code for scrubbing this data
               on <a href="https://github.com/CDECatapult/cdec.openhealthdata/blob/master/src/cdec/health_analytics/population_density.clj">github</a>.
             </p>
-            
+
           </div>
-          
+
           <div class="col-sm-6">
 
             {% highlight clojure %}
 (defn population-density [in]
-  (<- [?la_code ?la_name ?msoa_code ?msoa_name 
-       ?lsoa_code ?lsoa_name ?area_metadata 
+  (<- [?la_code ?la_name ?msoa_code ?msoa_name
+       ?lsoa_code ?lsoa_name ?area_metadata
        ?population ?area ?density]
       (in :> ?line)
       (data-line? ?line)
-      (split-line 
+      (split-line
         ?line :> _ _ ?la_code ?la_name
                 ?msoa_code ?msoa_name
                 ?lsoa_code ?lsoa_name
@@ -151,22 +151,22 @@ icon: circle-lightbulb.png
       (conv/parse-double
         ?density_dirty :> ?density)))
             {% endhighlight %}
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
 
-      
+
 
       <!-- Finding the join point -->
       <div class="step">
         <div class="step-circle">3</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <!-- Step left column content. -->
             <h4>Step Three - Finding the join point</h4>
-            
+
             <p class="lead">
               The tricky bit when joining data from one organisation
               to another is finding a shared key to join on. Luckily
@@ -182,17 +182,17 @@ icon: circle-lightbulb.png
               from LSOAs to CCGs</a>. You can see the code opposite
               that processes the file.
             </p>
-            
+
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             {% highlight clojure %}
 (defn ccg-lsoa [in]
   (<- [?lsoa11cd ?lsoa11nm ?ccgcode ?ccgname]
-      (in :> ?lsoa11cd ?lsoa11nm ?ccgcode ?ccgname)))            
+      (in :> ?lsoa11cd ?lsoa11nm ?ccgcode ?ccgname)))
             {% endhighlight %}
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -201,7 +201,7 @@ icon: circle-lightbulb.png
       <!-- Mapping between one and another -->
       <div class="step">
         <div class="step-circle">4</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             {% highlight clojure %}
@@ -217,12 +217,12 @@ icon: circle-lightbulb.png
       (div ?total_population ?total_area :> ?density)))
             {% endhighlight %}
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <!-- Step right column content. -->
             <h4>Step Four - Mapping from one to another</h4>
-            
+
             <p class="lead">
               The code on the left shows how we can join the
               population density file from ONS with the CCG mapping
@@ -236,12 +236,12 @@ icon: circle-lightbulb.png
               density data and join it with any other NHS data we can
               find at HSCIC.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
 
-      
+
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
   </div><!-- /.tutorial -->

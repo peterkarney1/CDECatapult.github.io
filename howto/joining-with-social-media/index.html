@@ -10,14 +10,14 @@ icon: circle-lightbulb.png
   <div class="container">
     <div class="title clearfix">
       <img src="/assets/images/{{ page.icon }}" class="icon" alt="">
-      
+
       <!-- The title of the site section "How To's", you shouldn't change this. -->
       <h1>{{ page.page_title }}</h1>
     </div>
-    
+
     <!-- The title of your How To -->
     <h2>Joining with social media</h2>
-    
+
     <div class="row intro-text">
       <!-- The introduction for non-case-studies (delete if a case study): -->
 
@@ -46,7 +46,7 @@ icon: circle-lightbulb.png
 
     </div>
   </div>
-  
+
   <div class="tutorial">
     <div class="container">
 
@@ -58,15 +58,15 @@ icon: circle-lightbulb.png
           <!-- The title your guide -->
           <h3>Joining with social media</h3>
         </div>
-        
+
         <div class="col-sm-6">
           <!-- The misc links. Add in hrefs and delete unneeded <li>s. -->
           <ul class="howto-links row">
-            
+
             <li class="col-sm-6 github">
               <a href="https://github.com/CDECatapult/cdec.twitterhealth">Get the files on Github</a>
             </li>
-            
+
           </ul>
         </div>
       </div> <!-- /end howto-top -->
@@ -74,17 +74,17 @@ icon: circle-lightbulb.png
       <!-- Create the twitter app account-->
       <div class="step">
         <div class="step-circle">1</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
-            <a href="https://apps.twitter.com/app/new"><img src="new-twitter-app.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
+            <a href="https://apps.twitter.com/app/new"><img src="/assets/images/new-twitter-app.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <!-- Step right column content. -->
             <h4>Step One - Create the twitter application account</h4>
-            
+
             <p class="lead">
               The first thing you'll need to do is create an account
               for your application at twitter. Go
@@ -98,20 +98,20 @@ icon: circle-lightbulb.png
               application and you'll need to have a registered mobile
               number with your twitter account.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
-      </div><!-- /.step -->      
+      </div><!-- /.step -->
 
       <!-- Getting the data from twitter -->
       <div class="step">
         <div class="step-circle">2</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <!-- Step left column content. -->
             <h4>Step Two - Get the data from twitter</h4>
-            
+
             <p class="lead">
               Once you have the credentials for your account set up
               you can start to query twitter. There is extensive
@@ -119,7 +119,7 @@ icon: circle-lightbulb.png
               API <a href="https://dev.twitter.com/docs/api/1.1">here</a>,
               but the bit that we'll be using most is
               the <a href="https://dev.twitter.com/docs/api/1.1/get/search/tweets">Search
-              API</a>. 
+              API</a>.
             </p>
 
             <p>
@@ -131,11 +131,11 @@ icon: circle-lightbulb.png
               We're using <code>(System/getenv ...)</code> so that we
               don't accidentally check our secret keys into github.
             </p>
-            
+
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             {% highlight clojure %}
 (ns cdec.twitterhealth
   (:use
@@ -163,7 +163,7 @@ icon: circle-lightbulb.png
               :geocode search-area
               :count 100})))
             {% endhighlight %}
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -171,7 +171,7 @@ icon: circle-lightbulb.png
       <!-- Producing data to join -->
       <div class="step">
         <div class="step-circle">3</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             {% highlight clojure %}
@@ -188,38 +188,38 @@ icon: circle-lightbulb.png
   (map (fn [[user freq]] [ccg-code user freq]) tweeters-w-freq))
             {% endhighlight %}
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <!-- Step right column content. -->
             <h4>Step Three - Creating the data</h4>
-            
+
             <p class="lead">
               The question we want to ask is "who are the interesting
               twitter users in an area?". This can help us find out
               who is talking about our subject in a particular area
               and we can use it to judge overall activity around our
               subject as well as find people who might be able to help
-              us. 
+              us.
             </p>
 
             <p>
               The code on the left will help us to find who is
-              tweeting the most in a  particular area.             
+              tweeting the most in a  particular area.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
 
       <div class="step">
         <div class="step-circle">4</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
             <!-- Step left column content. -->
             <h4>Step Four - Turning into data we can link</h4>
-            
+
             <p class="lead">
               The code on the right shows how we can produce a csv
               data file using the data we've retrieved from
@@ -233,9 +233,9 @@ icon: circle-lightbulb.png
               NHS and HSCIC.
             </p>
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             {% highlight clojure %}
 (defn ccg-tweeters-csv [tweeters-w-freq file-name]
   (with-open [out-file (io/writer file-name)]
@@ -253,7 +253,7 @@ icon: circle-lightbulb.png
 
 (make-tweeters-csv leeds leeds-west-ccg)
             {% endhighlight %}
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
@@ -261,36 +261,36 @@ icon: circle-lightbulb.png
       <!-- Top Tweeters -->
       <div class="step">
         <div class="step-circle">5</div>
-        
+
         <div class="row step-content">
           <div class="col-sm-6">
-            <a href="https://twitter.com/OurDiabetes"><img src="our-diabetes.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
+            <a href="https://twitter.com/OurDiabetes"><img src="/assets/images/our-diabetes.png" style="border:10px solid white;-moz-box-shadow: 4px 4px 0 #a9d3e0; -webkit-box-shadow: 4px 4px 0 #a9d3e0; box-shadow: 4px 4px 0 #a9d3e0; max-width: 100%;" alt=""></a>
           </div>
-          
+
           <div class="col-sm-6">
-            
+
             <!-- Step right column content. -->
             <h4>Step Five - Top Tweeters</h4>
-            
+
             <p class="lead">
               After doing this analysis we find a local campaigner
               with type 1
               diabetes <a href="https://twitter.com/StorryT_Jewels">Laura
               Storr</a> and a weekly diabetes tweet
               chat <a href="https://twitter.com/OurDiabetes">Our
-              Diabetes</a>. 
+              Diabetes</a>.
             </p>
 
             <p>
               We now have a better idea of who the active voices are
               talking about this condition in the Leeds area.
             </p>
-            
+
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row.step-content -->
       </div><!-- /.step -->
 
-      
+
       {% include howto-collaborate.html %}
     </div><!-- /.container -->
   </div><!-- /.tutorial -->
